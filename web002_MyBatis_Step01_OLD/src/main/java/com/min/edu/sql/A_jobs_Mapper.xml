@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- mapper 파일 : 사용되는 쿼리의 집합체 -->
+<!-- namespace 설정 ; 여러개의 mapper 파일을 구분하기 위해서 mapper 이름 -->
+<mapper namespace="com.min.edu.job"> <!-- 패키지명X 아무거나 해도 되는데 springboot는 이름 같아야 함 -->
+	
+	<!-- 
+				SQL문, 매핑되어 반환된 결과(resultType)와 객체를 연결, 
+				ID는 호출 되는 유일한 값(mapper 내에서)
+				mapper 파일의 구분은 namespace로 한다.
+	 -->
+	<select id="selectAllJob" resultType="JVO">
+		SELECT JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY
+			FROM JOB
+	</select>
+	
+</mapper>
