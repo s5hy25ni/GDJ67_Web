@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+
+	<!-- database 접속 값 -->
+	<properties resource="properties/ojdbc.properties" />
+
+	<!-- DTO/VO 객체의 Alias -->
+	<typeAliases>
+		<typeAlias type="com.min.edu.dto.Job_Dto" alias="JOBDto" />
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="${oracle_driver}"/>
+				<property name="url" value="${oracle_url}"/>
+				<property name="username" value="${oracle_user}"/>
+				<property name="password" value="${oracle_pw}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/min/edu/sql/MyBatis_Statement.xml"/>
+	</mappers>
+	
+</configuration>

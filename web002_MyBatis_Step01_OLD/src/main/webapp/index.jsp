@@ -8,5 +8,6 @@
 </head>
 <body>
 	<a href="./view/secondpage.jsp">다음 화면으로 이동합니다.</a>
+	<div ></div>
 </body>
 </html>

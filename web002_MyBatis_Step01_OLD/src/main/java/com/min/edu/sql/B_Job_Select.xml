@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.JobSelectDaoImpl">
+
+	<sql id="allColumn">
+		SELECT JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY
+		FROM JOB
+	</sql>
+
+	<!-- resultMap 선언된 컬럼의 갯수를 다르게 하거나, mapping되는 컬럼명과 DTO의 setter 메소드를 연결해주기 
+		위해서 사용 -->
+	<resultMap type="JVO" id="JMap">
+		<!-- column은 쿼리의 컬럼, property는 type의 setter 메소드 -->
+		<result column="FIRST_NAME" property="job_title" />
+		<result column="SALARY" property="max_salary" />
+	</resultMap>
+	<resultMap type="JVO" id="PMap">
+		<result column="ID" property="job_id" />
+		<result column="TITLE" property="job_title" />
+	</resultMap>
+
+	<!-- 전달되는 Parameter 타입에 따라 사용방법이 달라짐 - Primitive Type의 경우는 객체 클래스에 getter/setter가 
+		없기 때문에 판단할 수 없다. - Primitive Type은 변수를 정해져 있지 않은 값만을 전송받는다. - myBatis에서 3.x 
+		부터는 parameterType을 작성하지 않아도 Object로 받아서 처리해주기 때문에 생략이 가능 - myBatis에서 3.x 
+		부터는 java.lang.Integer -> int 혹은 Integer로만 작성해도 됨 -->
+	<select id="select01" parameterType="java.lang.String"
+		resultType="java.lang.Integer">
+		SELECT MAX_SALARY
+		FROM JOB
+		WHERE JOB_ID=#{x}
+	</select>
+
+	<!-- Primitive type으로 Parameter 작성, myBatis에서는 parameterType을 작성하지 않아도 된다. 
+		결과를 VO로 받음 SQL문 작성시 반복되는 쿼리 문장은 <sql>로 선언하고 사용시 <include refid="">를 통해서 사용할 
+		수 있다. -->
+	<select id="select02" resultType="JVO">
+		<include refid="allColumn" />
+		WHERE JOB_ID=#{job_id}
+	</select>
+
+	<!-- 만약 쿼리의 컬럼명이 Mapping되어 있는 DTO/VO와 다른 경우 해결방법은 타입이 유사한 DTO에 Mapping을 
+		정의하여 사용 1) 컬럼의 Alias를 사용 A <-> A, A <-> B <select id="select03" resultType="JVO"> 
+		SELECT FIRST_NAME AS JOB_ID, LAST_NAME AS JOB_TITLE, EMPLOYEE_ID AS MIN_SALARY, 
+		SALARY AS MAX_SALARY 2) myBatis 문법인 resultMap을 사용 (1) Mapping되는 컬럼명과 setter명이 
+		다른 경우 (2) 쿼리 결과의 일부분만 Mapping해서 가져가는 경우 -->
+	<select id="select03" resultMap="JMap">
+		SELECT FIRST_NAME,
+		LAST_NAME,
+		EMPLOYEE_ID,
+		SALARY
+		FROM EMPLOYEES
+		WHERE EMPLOYEE_ID=#{id}
+	</select>
+
+	<!-- resultType이 java.util.Map {key:value} Map은 키와 값이 동시에 입력이 되어야 합니다. 실행 
+		메소드는 selectMap("키가 되는 컬럼", NameSpace , parameter) 반환 객체는 selectMap의 타입에 의해서 
+		정의 됨 Map<String, JobVo>이였다면 쿼리의 컬럼은 자동으로 JobVo에 매핑되고 컬럼의 결과가 없다면 생성되지 않는다. -->
+	<select id="select04" resultType="java.util.Map">
+		<include refid="allColumn" />
+	</select>
+
+	<!-- parameter를 여러 개 받는 방법 DTO/VO getter를 통해서 여러 개의 arguments를 받음 #{job_id}은 
+		JobVo의 getJob_id()를 호출 -->
+	<select id="select05" resultType="JVO">
+		<include refid="allColumn" />
+		WHERE JOB_ID=#{job_id}
+		AND JOB_TITLE=#{job_title}
+	</select>
+
+	<!-- parameterType 타입을 키:값 형태인 java.util.Map으로 처리
+		** 주의점은 Map의 SQL문장에서 사용했던 변수 이름으로 바인딩되기 때문에 반드시 확인
+		결과인 resultMap은 COLUMN명은 대문자, 매핑되는 자바의 setter는 소문자 작성 -->
+	<select id="select06" resultMap="PMap" parameterType="java.util.Map">
+		SELECT PLAYER_NAME || '(' || BACK_NO || ')' AS ID,
+							TEAM_ID TITLE
+				FROM PLAYER
+				WHERE PLAYER_ID=#{pid}
+	</select>
+	
+	<!-- 
+		CDATA 처리 문자열이 컴파일되지 않도록 한다.
+		CDATA 처리되는 문법은 Entity tag로 대체 할 수 있다.
+		HTML, XML 등과 같은 markup language 에서 < 표시는 markup 언어의 시작 tag이기 때문에
+		문법적 오류가 발생
+	 -->
+	<select id="select07" parameterType="java.lang.Object"
+											resultType="JVO">
+		<include refid="allColumn"/>
+			<![CDATA[WHERE MIN_SALARY < #{sal}]]>
+			<!-- WHERE MIN_SALARY &lt; #{sal}  -->
+	</select>
+</mapper>

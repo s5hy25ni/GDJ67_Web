@@ -29,7 +29,7 @@ public class EmpDaoImpl extends DataBase implements IEmpDao {
 			System.out.println("3단계 쿼리 준비 성공");
 			
 			rs = stmt.executeQuery();
-			System.out.println("4단게 쿼리 실행 성공");
+			System.out.println("4단계 쿼리 실행 성공");
 			
 			while(rs.next()) {
 				//EMPNO, ENAME , JOB , HIREDATE
