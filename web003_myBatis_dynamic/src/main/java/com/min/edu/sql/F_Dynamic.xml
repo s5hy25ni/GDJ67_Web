@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.DynamicDaoImpl">
+<!-- 
+		Dynamic 쿼리 사용시 주의점
+		1) 판단문을 사용할 때는 객체를 사용해서 처리(Object, Map)
+		2) 특수문법의 사용시 반드시 테스트
+		3) <where> 사용시 필요한 곳에 작업
+ -->
+	<sql id="selAll">
+		SELECT JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY
+			FROM JOB
+	</sql>
+	
+	<!-- 
+			IF문은 로직처리하면 너무 느림 쿼리가 가장 빠름 
+			IF문을 통해서 조건판단을 만들어 WHERE 절을 추가
+	-->
+	<select id="getJobIf" parameterType="java.util.Map" resultType="JobDTO">
+				<include refid="selAll"/>
+				<where>
+					<if test="job_id != null"> <!-- java 문법(equals = eq, not equals = ne, 문장 비교시에 '') -->
+						JOB_ID = #{job_id}
+					</if>
+				</where>
+	</select>
+</mapper>

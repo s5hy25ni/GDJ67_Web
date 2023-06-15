@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML에서 CSS 적용하기</title>
+<style type="text/css">
+	/*
+		1. 작성방법 : 반드시 <head> 안에 선언 및 작성해야 함
+						inline(tag에 style 속성에 직접 작성, 우선순위가 가장 높음), embeded, link 방식으로 나누어 진다.
+		2. 선택자 : 적용시킬 대상을 선택
+						id(100) > class(10) > tag(1)
+		3. 우선순위
+			0순위 : inline
+			1순위 : 작성된 순서(선택자 점수)
+	*/
+	/*
+		id : 하나만 호출
+		class : 여러 개 호출
+	*/
+	
+	body {
+	/* 크기를 선정할 때는 px 단위인지 아니면 비율(%, em) 단위인지 확인해야 함 */
+		border: 2px solid green; /* 단순 작업 방식 */
+		border-bottom-color: orange; 
+		border-radius: 20px;
+	    padding-left: 10px;
+	    background-color: #ccc;
+	    height : 700px;
+	    
+	    margin : 100px 0px 30px; /* 위 오른쪽 아래 왼쪽 */ /* 위/아래, 오-왼 쌍 */
+	    margin-left : 30px;
+	    margin-right : 10%;
+	    
+	    font-family : fantasy monospace;
+	}
+	
+	p {
+		margin-left : 20px;
+		background: white;
+	}
+</style>
+</head>
+<body>
+	<div style="font-size:20px;">
+		<p style="background-color : yellow; ">나는 p tag 이다</p>
+		<font style="color:tomato; font-size:10px; font-family: fantasy;">오늘은 수요일</font>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

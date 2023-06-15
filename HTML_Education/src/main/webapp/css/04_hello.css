@@ -1,0 +1,39 @@
+@charset "UTF-8";
+td, tr{
+		border: 1px solid #008000;
+		padding : 10px;
+}
+
+table {
+	width : 600px;
+	border: 3px solid pink;
+	border-bottom-color : maroon;
+	text-align : center;
+	margin : 20px;
+	border-collapse:collapse;
+}
+
+.txt_bold {
+	font-weight: bold;	
+}
+
+th{
+	text-align: center;	
+}
+
+.tab2 thead{
+	background-color: olive;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	border-bottom: 1px double green;
+	padding: 5px 0px; 
+}
+
+.tab2 tfoot {
+	background-color: #ffff80;
+}
+
+.tab2 tr:hover{
+	background-color: #ffd5ea;
+}

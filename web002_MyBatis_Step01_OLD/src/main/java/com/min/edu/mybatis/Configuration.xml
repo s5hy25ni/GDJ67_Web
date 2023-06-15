@@ -22,5 +22,6 @@
 	<mappers>
 		<mapper resource="com/min/edu/sql/A_jobs_Mapper.xml" />
 		<mapper resource="com/min/edu/sql/B_Job_Select.xml" />
+		<mapper resource="com/min/edu/sql/C_Job_IUD.xml" />
 	</mappers>
 </configuration>
