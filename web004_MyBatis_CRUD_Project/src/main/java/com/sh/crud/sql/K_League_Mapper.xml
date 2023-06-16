@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sh.crud.model.KLeagueImpl">
+  
+  	<sql id="playerSummary">
+	  	SELECT TEAM_NAME, BACK_NO, PLAYER_NAME, E_PLAYER_NAME
+			FROM PLAYER JOIN TEAM
+			USING(TEAM_ID)
+	</sql>
+	
+  <select id="stadium_sel" resultType="TSDTO">
+  	SELECT STADIUM_ID, STADIUM_NAME, HOMETEAM_ID,SEAT_COUNT,
+		ZIP_CODE1, ZIP_CODE2, ADDRESS, DDD, TEL, FAX
+		FROM STADIUM
+  </select>
+  
+  <select id="team_sel" resultType="TSDTO">
+  	SELECT TEAM_ID, REGION_NAME, TEAM_NAME, ORIG_YYYY, STADIUM_ID, HOMEPAGE
+		FROM TEAM
+  </select>
+  
+  <select id="player_sel" resultType="PDTO">
+  	SELECT PLAYER_ID, PLAYER_NAME, E_PLAYER_NAME, TEAM_ID, "POSITION", BACK_NO, NATION, BIRTH_DATE, HEIGHT, WEIGHT
+		FROM PLAYER
+  </select>
+  
+  <select id="player_his_sel" resultType="HDTO">
+ 	SELECT SEQ, TRADE_DATE, PLAYER_ID, OLD_TEAM, NEW_TEAM, ACTIVE
+		FROM PLAYER_HISTORY
+  </select>
+  
+  <select id="sche_sel" resultType="SDTO">
+  	SELECT STADIUM_ID, SCHE_DATE, GUBUN, HOMETEAM_ID, AWAYTEAM_ID, HOME_SCORE, AWAY_SCORE
+		FROM SCHEDULE
+  </select>
+  
+  <select id="user_p_summary" resultType="PDTO">
+  	<include refid="playerSummary" />
+  	<where>
+  		<if test="teamId != null">
+  			TEAM_ID=#{teamId}
+  		</if>
+  		<if test="position != null">
+  			"POSITION"=#{position}
+  		</if>
+  		<if test="playerName != null || backNo != null">
+  			PLAYER_NAME LIKE '%' || #{playerName} || '%'
+				OR BACK_NO LIKE '%' || #{backNo} || '%'
+  		</if>
+  	</where>
+	ORDER BY TEAM_ID, BACK_NO, PLAYER_NAME
+  </select>
+  
+  <select id="user_p_detail" resultType="PDTO">
+  	SELECT TEAM_NAME, BACK_NO, PLAYER_NAME, E_PLAYER_NAME, "POSITION", BIRTH_DATE, WEIGHT, HEIGHT, NATION
+		FROM PLAYER JOIN TEAM
+		USING(TEAM_ID)
+		WHERE PLAYER_ID=#{playerId}
+  </select>
+  
+  <select id="user_t_detail" resultType="TSDTO">
+  	SELECT REGION_NAME, TEAM_NAME, ORIG_YYYY, HOMEPAGE, STADIUM_NAME, SEAT_COUNT, ADDRESS, DDD, TEL, FAX
+		FROM TEAM FULL OUTER JOIN STADIUM
+		ON TEAM.TEAM_ID = STADIUM.HOMETEAM_ID
+		<where>
+			<if test="teamName != null || stadiumName != null">
+				TEAM_NAME LIKE '%' || #{teamName} || '%'
+					OR STADIUM_NAME LIKE '%' || #{stadiumName} || '%'
+			</if>
+		</where>
+  </select>
+  
+  <select id="user_s_detail" resultType="SDTO">
+  	SELECT SCHE_DATE, STADIUM_NAME, t1.TEAM_NAME AS HOMETEAM_NAME, HOME_SCORE, 
+	t2.TEAM_NAME AS AWAYTEAM_NAME, AWAY_SCORE
+	FROM SCHEDULE sc JOIN STADIUM st
+		USING(STADIUM_ID) JOIN TEAM t1
+		ON sc.HOMETEAM_ID = t1.TEAM_ID JOIN TEAM t2
+		ON sc.AWAYTEAM_ID = t2.TEAM_ID 
+		<where>
+			<if test="scheDate != null">
+				SCHE_DATE=#{scheDate}
+			</if>
+			<if test="hometeamName != null || awayteamName != null">
+				t1.TEAM_NAME LIKE '%' || #{hometeamName} || '%'
+					OR t2.TEAM_NAME LIKE '%' || #{awayteamName} || '%'
+			</if>
+		</where>
+  </select>
+  
+  <select id="user_rank" resultType="RDTO">
+  	SELECT "RANK", TEAM_NAME, SCORE, VICTORY, TIE, LOSE, GAIN, LOSS, DIFF
+		FROM GAME_RESULT JOIN TEAM
+		USING(TEAM_ID)
+  </select>
+  
+</mapper>
