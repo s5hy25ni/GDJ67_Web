@@ -28,5 +28,23 @@ public interface IKLeagueDao {
 	public List<ScheduleDTO> userSearchSchedule(Map<String, Object> map);
 	public List<ResultDTO> userSearchRank();
 	
+	// insert
+	public int insertStadium(TeamStadiumDTO dto);
+	public int insertTeam(TeamStadiumDTO dto);
+	public int insertPlayer(PlayerDTO dto);
+	public int insertSchedule(ScheduleDTO dto);
 	
+	// update
+	public boolean updateStadiumTeam(Map<String, Object> map);
+	public boolean updateStadium(Map<String, Object> map);
+	public boolean updateTeamStadium(Map<String, Object> map);
+	public boolean updateTeam(Map<String, Object> map);
+	public boolean updatePlayerTeam(Map<String, Object> map);
+	public boolean updatePlayer(Map<String, Object> map);
+	public boolean updateSchedule(Map<String, Object> map);
+	
+	// delete
+	public boolean deletePlayer(String playerId);
+	public boolean deleteTeam(String teamId);
+	public boolean deleteStadium(String stadiumId);
 }

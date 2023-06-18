@@ -17,11 +17,13 @@ public class KLeagueDaoImpl implements IKLeagueDao {
 	private final String NS = "com.sh.crud.model.KLeagueImpl.";
 	private SqlSessionFactory manager = SqlDaoSupport.getFactory();
 	private SqlSession session = manager.openSession();
+	private SqlSession sessionIUD = manager.openSession(true);
 	private List<TeamStadiumDTO> tsDTO;
 	private List<PlayerDTO> pDTO;
 	private List<HistoryDTO> hDTO;
 	private List<ScheduleDTO> sDTO;
 	private List<ResultDTO> rDTO;
+	private int result;
 	
 	
 	@Override
@@ -94,5 +96,89 @@ public class KLeagueDaoImpl implements IKLeagueDao {
 	public List<ResultDTO> userSearchRank() {
 		rDTO = session.selectList(NS+"user_rank");
 		return rDTO;
+	}
+	
+	@Override
+	public int insertStadium(TeamStadiumDTO dto) {
+		result = sessionIUD.insert(NS+"stadium_in",dto);
+		return result;
+	}
+	
+	@Override
+	public int insertTeam(TeamStadiumDTO dto) {
+		result = sessionIUD.insert(NS+"team_in",dto);
+		return result;
+	}
+	
+	@Override
+	public int insertPlayer(PlayerDTO dto) {
+		result = sessionIUD.insert(NS+"player_in",dto);
+		return result;
+	}
+	
+	@Override
+	public int insertSchedule(ScheduleDTO dto) {
+		result = sessionIUD.insert(NS+"sche_in",dto);
+		return result;
+	}
+	
+	@Override
+	public boolean updateStadiumTeam(Map<String, Object> map) {
+		result = sessionIUD.update(NS+"stadium_team_up", map);
+		return result>0?true:false;
+	}
+	
+	@Override
+	public boolean updateStadium(Map<String, Object> map) {
+		result = sessionIUD.update(NS+"stadium_up", map);
+		return result>0?true:false;
+	}
+	
+	@Override
+	public boolean updateTeamStadium(Map<String, Object> map) {
+		result = sessionIUD.update(NS+"team_stadium_up", map);
+		return result>0?true:false;
+	}
+	
+	@Override
+	public boolean updateTeam(Map<String, Object> map) {
+		result = sessionIUD.update(NS+"team_up", map);
+		return result>0?true:false;
+	}
+	
+	@Override
+	public boolean updatePlayerTeam(Map<String, Object> map) {
+		result = sessionIUD.update(NS+"player_team_up", map);
+		return result>0?true:false;
+	}
+	
+	@Override
+	public boolean updatePlayer(Map<String, Object> map) {
+		result = sessionIUD.update(NS+"player_up", map);
+		return result>0?true:false;
+	}
+	
+	@Override
+	public boolean updateSchedule(Map<String, Object> map) {
+		result = sessionIUD.update(NS+"sche_up", map);
+		return result>0?true:false;
+	}
+	
+	@Override
+	public boolean deletePlayer(String playerId) {
+		result = sessionIUD.delete(NS+"player_del", playerId);
+		return result>0?true:false;
+	}
+	
+	@Override
+	public boolean deleteTeam(String teamId) {
+		result = sessionIUD.delete(NS+"team_del", teamId);
+		return result>0?true:false;
+	}
+	
+	@Override
+	public boolean deleteStadium(String stadiumId) {
+		result = sessionIUD.delete(NS+"stadium_del", stadiumId);
+		return result>0?true:false;
 	}
 }

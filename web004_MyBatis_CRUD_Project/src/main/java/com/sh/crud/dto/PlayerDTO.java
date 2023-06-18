@@ -1,6 +1,5 @@
 package com.sh.crud.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,6 @@ import lombok.ToString;
 @Setter
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
 public class PlayerDTO {
 	private String playerId;
 	private String playerName;
@@ -25,4 +23,12 @@ public class PlayerDTO {
 	private String birthDate;
 	private int height;
 	private int weight;
+	
+	public PlayerDTO(String playerId, String playerName, String teamId, String position, int backNo) {
+		this.playerId = playerId;
+		this.playerName = playerName;
+		this.teamId = teamId;
+		this.position = position;
+		this.backNo = backNo;
+	}
 }

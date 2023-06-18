@@ -1,6 +1,5 @@
 package com.sh.crud.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,6 @@ import lombok.ToString;
 @Setter
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
 public class ScheduleDTO {
 	private String stadiumId;
 	private String stadiumName;
@@ -24,4 +22,11 @@ public class ScheduleDTO {
 	private String awayteamName;
 	private int homeScore;
 	private int awayScore;
+	
+	public ScheduleDTO(String stadiumId, String scheDate, String hometeamId, String awayteamId) {
+		this.stadiumId = stadiumId;
+		this.scheDate = scheDate;
+		this.hometeamId = hometeamId;
+		this.awayteamId = awayteamId;
+	}
 }
