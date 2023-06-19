@@ -10,6 +10,9 @@ public class Job_DTO implements Serializable{
 	private String minSalary; // MIN_SALARY와 매핑
 	private String maxSalary; // MAX_SALARY와 매핑
 	
+	public Job_DTO() {
+	}
+	
 	public Job_DTO(String jobId, String jobTitle, String minSalary, String maxSalary) {
 		super();
 		this.jobId = jobId;

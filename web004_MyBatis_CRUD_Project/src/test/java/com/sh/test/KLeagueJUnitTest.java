@@ -20,6 +20,121 @@ import com.sh.crud.model.KLeagueDaoImpl;
 public class KLeagueJUnitTest {
 
 	private IKLeagueDao dao = new KLeagueDaoImpl();
+	
+//	@Test
+	public void stadium_in() {
+		TeamStadiumDTO dto1 = new TeamStadiumDTO("E01", "한화이글스파크", 15000, "대전광역시 동구");
+		TeamStadiumDTO dto2 = new TeamStadiumDTO("E02", "잠실", 15000, "서울특별시");
+		int result1 = dao.insertStadium(dto1);
+		int result2 = dao.insertStadium(dto2);
+		assertEquals(1, result1);
+		assertEquals(1, result2);
+		
+	}
+	
+//	@Test
+	public void team_in() {
+		TeamStadiumDTO dto1 = new TeamStadiumDTO("K99", "대전", "한화이글스", "1989", "E01");
+		TeamStadiumDTO dto2 = new TeamStadiumDTO("K88", "잠실", "두산베어스", "E02");
+		int result1 = dao.insertTeam(dto1);
+		int result2 = dao.insertTeam(dto2);
+		assertEquals(1, result1);
+		assertEquals(1, result2);
+	}
+	
+//	@Test
+	public void player_in() {
+		PlayerDTO dto = new PlayerDTO("0", "문동주", "K99", "DF", 1);
+		int result = dao.insertPlayer(dto);
+		assertEquals(1, result);
+	}
+	
+//	@Test
+	public void sche_in() {
+		ScheduleDTO dto = new ScheduleDTO("E01", "20121231", "K99", "K88");
+		int result = dao.insertSchedule(dto);
+		assertEquals(1, result);
+	}
+	
+//	@Test
+	public void stadium_team_up() {
+		Map<String, Object> map1 = new HashMap<String, Object>();
+		map1.put("teamId", "K99");
+		map1.put("stadiumId", "E01");
+		boolean result1 = dao.updateStadiumTeam(map1);
+		assertEquals(true, result1);
+		Map<String, Object> map2 = new HashMap<String, Object>();
+		map2.put("teamId", "K88");
+		map2.put("stadiumId", "E02");
+		boolean result2 = dao.updateStadiumTeam(map2);
+		assertEquals(true, result2);
+	}
+	
+//	@Test
+	public void stadium_up() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("zipCode1", "123");
+		map.put("zipCode2", "");
+		map.put("ddd", "789");
+		map.put("tel", "101-1121");
+		map.put("fax", "314-1516");
+		map.put("stadiumId", "E01");
+		boolean result = dao.updateStadium(map);
+		assertEquals(true, result);
+	}
+	
+//	@Test
+	public void team_stadium_up() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("stadiumId", "E01");
+		map.put("teamId", "K99");
+		boolean result = dao.updateTeamStadium(map);
+		assertEquals(true, result);
+	}
+	
+//	@Test
+	public void team_up() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("homepage", "https://www.hanwhaeagles.co.kr");
+		map.put("teamId", "K99");
+		boolean result = dao.updateTeam(map);
+		assertEquals(true, result);
+	}
+	
+//	@Test
+	public void player_team_up() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("teamId", "K88");
+		map.put("playerId", "2023001");
+		boolean result = dao.updatePlayerTeam(map);
+		assertEquals(true, result);
+	}
+	
+//	@Test
+	public void player_up() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("ePlayerName", "MUN, DONGJU");
+		map.put("backNo", "1");
+		map.put("nation", "대한민국");
+		map.put("birthDate", "");
+		map.put("height", "");
+		map.put("weight", "");
+		map.put("playerId", "2023001");
+		boolean result = dao.updatePlayer(map);
+		assertEquals(true, result);
+	}
+	
+//	@Test
+	public void sche_up() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("gubun", "Y");
+		map.put("homeScore", 3);
+		map.put("awayScore", 1);
+		map.put("stadiumId", "E01");
+		map.put("scheDate", "20121231");
+		boolean result = dao.updateSchedule(map);
+		assertEquals(true, result);
+	}
 
 //	@Test
 	public void stadium_sel() {
@@ -58,7 +173,7 @@ public class KLeagueJUnitTest {
 	
 //	@Test
 	public void user_p_summary() {
-//		List<PlayerDTO> lists = dao.userSearchPlayer();
+		List<PlayerDTO> lists = dao.userSearchPlayer();
 		
 		Map<String, Object> mapTeam = new HashMap<String, Object>();
 		mapTeam.put("teamId","K99");
@@ -138,117 +253,10 @@ public class KLeagueJUnitTest {
 		System.out.println(lists);
 	}
 	
-//	@Test
-	public void stadium_in() {
-//		TeamStadiumDTO dto = new TeamStadiumDTO("E01", "한화이글스파크", 15000, "대전광역시 동구");
-		TeamStadiumDTO dto = new TeamStadiumDTO("E02", "잠실", 15000, "서울특별시");
-		int result = dao.insertStadium(dto);
-		assertEquals(1, result);
-		
-	}
-	
-//	@Test
-	public void team_in() {
-		TeamStadiumDTO dto1 = new TeamStadiumDTO("K99", "대전", "한화이글스", "1989", "E01");
-		TeamStadiumDTO dto2 = new TeamStadiumDTO("K88", "잠실", "두산베어스", "E02");
-		int result1 = dao.insertTeam(dto1);
-		int result2 = dao.insertTeam(dto2);
-		assertEquals(1, result1);
-		assertEquals(1, result2);
-	}
-	
-//	@Test
-	public void player_in() {
-		PlayerDTO dto = new PlayerDTO("0", "문동주", "K99", "DF", 1);
-		int result = dao.insertPlayer(dto);
-		assertEquals(1, result);
-	}
-	
-//	@Test
-	public void sche_in() {
-		ScheduleDTO dto = new ScheduleDTO("E01", "20121231", "K99", "K88");
-		int result = dao.insertSchedule(dto);
-		assertEquals(1, result);
-	}
-	
-//	@Test
-	public void stadium_team_up() {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("teamId", "K88");
-		map.put("stadiumId", "E02");
-		boolean result = dao.updateStadiumTeam(map);
-		assertEquals(true, result);
-	}
-	
-//	@Test
-	public void stadium_up() {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("zipCode1", "123");
-		map.put("zipCode2", "");
-		map.put("ddd", "789");
-		map.put("tel", "101-1121");
-		map.put("fax", "314-1516");
-		map.put("stadiumId", "E02");
-		boolean result = dao.updateStadium(map);
-		assertEquals(true, result);
-	}
-	
-//	@Test
-	public void team_stadium_up() {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("stadiumId", "E02");
-		map.put("teamId", "K99");
-		boolean result = dao.updateTeamStadium(map);
-		assertEquals(true, result);
-	}
-	
-//	@Test
-	public void team_up() {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("homepage", "https://www.hanwhaeagles.co.kr");
-		map.put("teamId", "K99");
-		boolean result = dao.updateTeam(map);
-		assertEquals(true, result);
-	}
-	
-//	@Test
-	public void player_team_up() {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("teamId", "K88");
-		map.put("playerId", "2023001");
-		boolean result = dao.updatePlayerTeam(map);
-		assertEquals(true, result);
-	}
-	
-//	@Test
-	public void player_up() {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("ePlayerName", "MUN, DONGJU");
-		map.put("backNo", "1");
-		map.put("nation", "대한민국");
-		map.put("birthDate", "");
-		map.put("height", "");
-		map.put("weight", "");
-		map.put("playerId", "2023001");
-		boolean result = dao.updatePlayer(map);
-		assertEquals(true, result);
-	}
-	
-//	@Test
-	public void sche_up() {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("gubun", "Y");
-		map.put("homeScore", 3);
-		map.put("awayScore", 1);
-		map.put("stadiumId", "E01");
-		map.put("scheDate", "20121231");
-		boolean result = dao.updateSchedule(map);
-		assertEquals(true, result);
-	}
-	
+
 //	@Test
 	public void player_del() {
-		boolean result = dao.deletePlayer("2023001");
+		boolean result = dao.deletePlayer("2023053");
 		assertEquals(true, result);
 	}
 	

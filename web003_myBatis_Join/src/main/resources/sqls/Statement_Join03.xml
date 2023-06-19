@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.join03">
+
+		<resultMap type="com.min.edu.dto.Team_DTO" id="teamJoin">
+		<result property="team_name" column="TEAM_NAME"/>
+		<result property="region_name" column="REGION_NAME"/>
+		<result property="address" column="ADDRESS"/>
+		<result property="homepage" column="HOMEPAGE"/>	
+		<collection property="pdto" resultMap="playerMap"/>
+	</resultMap>
+	
+	<resultMap type="com.min.edu.dto.Player_DTO" id="playerMap">
+		<result property="player_id" column="PLAYER_ID"/>
+		<result property="player_name" column="PLAYER_NAME"/>
+		<result property="back_no" column="BACK_NO"/>
+		<result property="position" column="POSITION"/>			
+	</resultMap>
+	
+	<select id="joinCombine03" resultMap="teamJoin">
+		SELECT PLAYER_ID, PLAYER_NAME, BACK_NO, "POSITION", 
+					TEAM_NAME, REGION_NAME, ADDRESS, HOMEPAGE 
+			FROM PLAYER p JOIN TEAM t 
+			ON p.TEAM_ID = t.TEAM_ID
+	</select>
+	
+</mapper>
