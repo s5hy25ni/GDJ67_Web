@@ -1,4 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.min.edu.join04">
+
+	<resultMap type="com.min.edu.dto.Team_DTO4" id="TeamDto">
+		<result property="team_name" column="TEAM_NAME" />
+		<result property="region_name" column="REGION_NAME" />
+		<result property="address" column="ADDRESS" />
+		<result property="homepage" column="HOMEPAGE" />
+	</resultMap>	
+	
+	<resultMap type="com.min.edu.dto.Player_DTO4" id="JoinDto">
+		<result property="player_id" column="PLAYER_ID" />
+		<result property="player_name" column="PLAYER_NAME" />
+		<result property="back_no" column="BACK_NO" />
+		<result property="position" column="POSITION" />
+		<collection property="tdto" resultMap="TeamDto" />
+	</resultMap>
+	
+	<!-- 
+		컬럼이 모두 같은 선수가 있을 경우(PK, UK 빼고 호출시) 확인 필수 
+			JUnit 테스트 및 쿼리의 로그이 경우는 모든 값이 출력 => 483
+			하지만 myBatis의 객체의 결과에서는 myBatis에서 값을 재정렬(중복이 제거, distinct) => 482
+	-->
+	<select id="joinCombine04" resultMap="JoinDto">
+<!-- 		SELECT PLAYER_ID, PLAYER_NAME, BACK_NO, "POSITION", 
+					TEAM_NAME, REGION_NAME, ADDRESS, HOMEPAGE 
+			FROM PLAYER p JOIN TEAM t 
+			ON p.TEAM_ID = t.TEAM_ID -->
+		SELECT PLAYER_NAME, BACK_NO, "POSITION", 
+				TEAM_NAME, REGION_NAME, ADDRESS, HOMEPAGE
+			FROM PLAYER p JOIN TEAM t 
+			ON p.TEAM_ID = t.TEAM_ID
+	</select>
+	
 </mapper>

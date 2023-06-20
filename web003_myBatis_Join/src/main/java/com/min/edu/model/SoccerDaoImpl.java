@@ -7,7 +7,11 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
 
 import com.min.edu.dto.All_Dto;
+import com.min.edu.dto.Player_DTO4;
+import com.min.edu.dto.Player_DTO5;
 import com.min.edu.dto.Team_DTO;
+import com.min.edu.dto.Team_DTO4;
+import com.min.edu.dto.Team_DTO5;
 import com.min.edu.manager.SqlSessionFactoryManager;
 
 public class SoccerDaoImpl implements ISoccerDao {
@@ -44,6 +48,24 @@ public class SoccerDaoImpl implements ISoccerDao {
 		logger.info("하나의 객체에 소속된 DTO 조인");
 		SqlSession session = manager.openSession();
 		List<Team_DTO> lists = session.selectList(NS3+"joinCombine03");
+		return lists;
+	}
+	
+	//TODO 04-02 Dao
+	@Override
+	public List<Player_DTO4> joinCombine04() {
+		logger.info("하나의 객체에 소속된 DTO 조인");
+		SqlSession session = manager.openSession();
+		List<Player_DTO4> lists = session.selectList(NS4+"joinCombine04");
+		return lists;
+	}
+	
+	//TODO 05-02 Dao
+	@Override
+	public List<Team_DTO5> joinCombine05() {
+		logger.info("Team에 소속된 Player의 리스트로 조인");
+		SqlSession session = manager.openSession();
+		List<Team_DTO5> lists = session.selectList(NS5+"joinCombine05");
 		return lists;
 	}
 }

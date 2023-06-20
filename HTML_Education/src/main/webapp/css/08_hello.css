@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+
+body{
+	font-size: small;
+	font-family: 'Orbit', sans-serif;
+	width: 980px;
+	margin: auto;
+	border: 4px double purple;
+	padding: 10px;
+}
+
+p>img{
+	width: 100%;
+}
