@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@media screen and (min-width:701px){
+
 @import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
 
 body{
@@ -10,7 +12,109 @@ body{
 	border: 4px double purple;
 	padding: 10px;
 }
-
 p>img{
 	width: 100%;
+}
+
+/* h1 h2 */
+h1, h2{
+	color: #008080;
+}
+
+/* h1은 기본 1.5em */
+h1{
+	font-size : 150%;
+}
+h2{
+	font-size : 130%;
+}
+
+#footer{
+	font-size: 50%;
+	text-align: center;
+	margin-top : 50px;
+	line-height: normal;
+	color : #800000;
+	clear: both;
+}
+
+.ex{
+	font-family: cursive;
+}
+
+.edu{
+	font-weight: bold;
+}
+
+/* <a> tag의 모든 표현식은 적용하지 않겠다 => _ 처리가 사라짐 */
+a{
+	text-decoration: none;
+}
+
+/* 한 번이라도 방문한 적이 있다면 */
+a:visited {
+	color: #800000;
+}
+
+/* 한 번이라도 클릭한 적이 없다면 */
+a:link{
+	color: orange;
+}
+
+#gurantee{
+	border: 3px dotted white;
+	background-color: #0ffeff;
+	padding:25px;
+	padding-left: 30px;
+	margin: 30px;
+	margin-right : 220px;
+	
+	background-image: url("../img/DM/stamp.png");
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
+
+#animal{
+	border: thin solid #888888;
+	padding: 30px 20px 30px 30px;
+	width : 150px;
+	text-align: center;
+	line-height: 1.2;
+	float: right;
+	
+	background-image: url("../img/DM/snow.png"), url("../img/DM/snow.png");
+	background-repeat: repeat-x;
+	background-position: top, bottom;
+}
+
+#animal a:visited{
+	color: teal;
+}
+
+#animal a:link{
+	background-color: yellow;
+	color : orange;
+}
+
+#animal a:hover{
+	background-color: tomato;
+	color: white;
+	border-bottom: 2px solid lime;
+}
+
+#animal h2{
+	text-shadow: #FC0 1px 0 10px;
+}
+
+#animal h3{
+	text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #f09,
+      0 0 80px #f09,
+      0 0 90px #f09,
+      0 0 100px #f09,
+      0 0 150px #f09;
+}
 }

@@ -1,0 +1,95 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+
+body{
+	background-color: #ddc8b7;
+	font-family : 'Orbit', Time, serif;
+	/*TODO 09-001 화면 전체 폰트 및 기본 margin 적용 */
+	font-size: small;
+	margin: 0px;
+}
+
+
+#header{
+	background-color: #c9a88d;
+	margin: 10px;
+	height: 110px;
+	text-align: center;
+}
+
+#main{
+	background: #efe5dd url("../img/background.gif") top left;
+	font-size: 105%;
+	padding: 15px;
+	margin: 0px 10px 10px;
+	
+	/*TODO 09-002 main의 배경은 float에 의해서 조절해줌 */
+	margin: 0px 330px 10px 10px;
+	
+	/*TODO 09-005 #sideBar를 Main 밑으로 옮김 */
+	margin: 0px 10px 10px;
+	width: 420px;
+	float: left;
+}
+
+#footer{
+	background: #c9a88d;
+	color:#efe5dd;
+	text-align: center;
+	padding: 15px;
+	margin: 10px;
+	font-size: 90%;
+	
+	/*TODO 09-003 #sidebar에 의해서 영역이 겸치게 된다 따라서 겹치지 않도록 처리 해줘야 함 */
+	clear: both;
+}
+
+#sidebar{
+	background: #efe5dd url("../img/background.gif") top left;
+	font-size: 105%;
+	padding: 15px;
+	margin: 0px 10px 10px;
+	
+	/*TODO 09-004 float을 통해 띄움 
+		#sidebar 영역은 header 아래로 위치시켜 다음 영역(#main)이 흐를 수 있도록 해준다
+	*/
+	/* width: 280px;
+	float: right; */
+	
+	/*TODO 09-006 margin을 설정해서 #sideBar의 크기를 조절 */
+	margin: 0px 10px 10px 470px;
+}
+
+.heading{
+	text-align: center;
+	line-height: 1.8em;
+}
+.slogan{
+	color: #954b4b;
+}
+
+h1{
+	font-size: 120%;
+	color: #954b4b;
+}
+
+a:visited {
+	color: #7b6666;
+	text-decoration: none;
+	border-bottom: thin dotted #7b6666;
+}
+
+a:link {
+	color: #676767;
+	text-decoration: none;
+	border-bottom: thin dotted #676767;
+}
+
+#allcontent{
+	position: relative;
+	width: 820px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #675c47;
+	margin: 0px auto;
+}
