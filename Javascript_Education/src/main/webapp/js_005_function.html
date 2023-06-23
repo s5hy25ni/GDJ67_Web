@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 함수 객체 사용</title>
+<script type="text/javascript" src="./js/js005.js" defer="defer"></script>
+</head>
+<body>
+    <h1>함수의 종류</h1>
+    <p onclick="func01()">1. 명시적 함수</p>
+    <p onclick="func02()">2. 익명적 함수</p>
+    <p onclick="func03()">3. 함수 리터럴</p>
+    
+    <!-- <button onclick="stopInterval()">멈춤</button>
+    <p id="demo"></p> -->
+
+    <hr>
+    <h1 onclick="valuesArguments('오전', '오후', '점심', '저녁')">arguments</h1>
+    <fieldset>
+        <legend>for문을 사용한 검색 및 출력</legend>
+        <pre>
+            1. 현재 HTML에서 p태그를 탐색
+            2. 탐색된 p element의 content를 출력
+            3. in 연산자를 통해 출력
+            4. of 연산자를 통해 출력
+        </pre>
+        <button onclick="pPrint()">p탐색</button>
+    </fieldset>
+
+    <hr>
+    <h1>클로저(함수리턴)</h1>
+
+    <label for="am">오전수업</label>
+    <input type="text" id="am">
+    <input type="button" value="오전" onclick="amEdu(this.value)">
+
+    <label for="pm">오후수업</label>
+    <input type="text" id="pm">
+    <input type="button" value="오후" onclick="pmEdu(this.value)">
+
+    <button onclick="closureTest()">클로저 함수</button>
+
+</body>
+</html>

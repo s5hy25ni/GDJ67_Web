@@ -91,5 +91,68 @@ function local_Variable(){
 }
 
 function variableType(){
-	
+	var var02 = 5; // 정수
+	var var03 = 3.14; // 실수
+	console.log(typeof var02); // number
+	console.log(typeof var03); // number
+
+	var var04 = '문자';
+	console.log(typeof var04); // string
+
+	var var05 = [1, 3, 4, 7]; // array => object
+	console.log(typeof var05);
+	console.log(var05.length);
+	console.log(var05[0]);
+	for(let i=0; i<var05.length; i++){
+		console.log(i, var05[i]);
+	}
+
+	for(let n in var05){ // index
+		console.log(n);
+	}
+
+	for(let n of var05){ // value
+		console.log(n);
+	}
+
+	var var06 = false; // 0(false) 1(true)
+	console.log(typeof var06);
+
+	var var07 = null; // null -> object
+	console.log(typeof var07);
+	console.log(var07+1); // 1
+	console.log(var07+"kor"); // nullkor
+
+	var undef;
+	console.log(undef);
+	console.log(undef+1); // undefined는 미지의 값이기 때문에 만약 숫자 연산을 처리하면 nan이 뜬다.(Not a Number)
+	console.log(undef+"kor"); // undefinedkor
+
+	// 변수에 함수를 값으로 가질 수 있다.
+	// 변수에 함수를 값으로 갖고 있다면 함수는 이름이 없어진다.(익명함수)
+	var var08 = function(id){
+		alert("값="+id);
+		return "값="+id;
+	};
+
+	/* 
+		javascript의 function 은 parameter/argument가 선언되어 있어도 필수값이 아님
+		선언만 되어 있는 변수가 되기 때문에 undefined가 된다.
+	 */
+	// console.log(var08); // 함수가 찍힌다.
+	// console.log(var08()); // undefined
+	console.log(var08("kor")); // undefine -> return이 없을 때
+	console.log(typeof var08);
+
+	// 객체 Node, Element
+	// HTML은 tag로 되어 있음
+	// HTML에 body tag를 탐색하면 Element를 가지고 옴 => 객체
+	// HTML 내에 단독의 속성(ID)으로 탐색하면 하나의 Element
+	// 			여러 개의 속성 tag, class, name 은 여러개 Elements => Array
+	// Dom 탐색 후 id, class, name, tag 등이 없다면 null이 됨
+
+	var var10 = document.getElementById("v1");
+	console.log(typeof var10);
+	console.log(var10);
+	alert(var10);
 }

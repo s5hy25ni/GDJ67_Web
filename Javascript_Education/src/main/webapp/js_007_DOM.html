@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM 탐색 방법</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script type="text/javascript" src="./js/js007.js"></script>
+</head>
+<body>
+    <fieldset>
+        <legend>쿼리셀렉터(Query Selector)</legend>
+        <p onclick="searchQuerySelector()" id="query">
+            쿼리셀렉터는 CSS 셀렉터를 이야기함 : id, class, tag 사용<br>
+            <b>NodeList</b>
+        </p>
+        <ul>
+            <li>querySelector</li>
+            <li>querySelectorAll</li>
+        </ul>
+
+        <legend>JQUery 셀렉터</legend>
+        <p onclick="searchJQuery()" id="query1">
+            쿼리셀렉터는 CSS 셀렉터를 이야기함 : id, class, tag 사용<br>
+            <b>NodeList</b>
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>ID를 통한 검색</legend>
+        <p onclick="searchId()" id="testId" style="color:green">
+            엘리먼트를 ID를 통해 검색
+            id는 HTML에 아무리 많이 작성해도 첫 번째 ID tag만 검색됨
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>name을 통한 검색</legend>
+        <div>
+            <table style="border: 1px solid black; border-collapse:collapse;">
+                <col style="width:50px;"><col style="width:300px;"><col style="width:100px;">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="allCheck" onclick="checkAll(this.checked)"></th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="chk"></td>
+                        <td>오늘의 날씨는</td>
+                        <td>기상청</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="chk"></td>
+                        <td>국제 유가</td>
+                        <td>만수르</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="chk"></td>
+                        <td>태양의 수명</td>
+                        <td>나사</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="3"><input type="button" value="삭제" onclick="remove()"></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </fieldset>
+</body>
+</html>
