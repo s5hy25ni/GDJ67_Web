@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바 스크립트의 사용 방법</title>
+</head>
+<!-- js 파일도 css 처럼 오버라이드 가능 -->
+<script type="text/javascript" src="./js/js001.js"></script>
+<script type="text/javascript">
+	function embeded(){
+		console.log("임베디드 방식");
+		alert("임베디드 방식");
+	}
+	function linked(){
+		alert("임베디드에서 오버라이드");
+	}
+</script>
+<body>
+	<ul>
+		<li onclick="javascript:alert('인라인 동작')"><em>1. 인라인(inline) 방식</em></li>
+		<li onclick="embeded()">2. 임베디드(embede) : 내 페이지에 같이 적혀 있음</li>
+		<li onclick="linked()">3. 링크(link) 방식</li>
+	</ul>
+	<div>
+		<fieldset>
+			<legend>javascript 탐색</legend>
+			<div>
+				연습 : li tag의 두 번째 있는 항목을 글자색은 red, 두껍게, 속성에 title="search"를 추가
+			</div>
+			<button onclick="search()">적용</button>
+		</fieldset>
+	</div>
+	
+	<script type="text/javascript">
+		function search(){
+			var lis = document.getElementsByTagName("li"); // array의 형태로 가져 옴
+			console.log(lis[1]);
+			/* alert(lis[1]); */
+			lis[1].style.color = "red";
+			lis[1].style.fontWeight = "bold";
+			lis[1].title = "search";
+			var txt = lis[0].textContent;
+			console.log(txt);
+			var html = lis[0].innerHTML;
+			console.log(html);
+			lis[0].textContent="<b>글자 변경 기능 실행</b>";
+			lis[0].innerHTML="<b>글자 변경 기능 실행</b>";
+		}
+	</script>
+</body>
+</html>

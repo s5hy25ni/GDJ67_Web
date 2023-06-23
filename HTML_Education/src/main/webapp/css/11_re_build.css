@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+/* 부모 static(default): 자식과 관계 X relative: 자식과 관계 O */
+/* fixed : 위치를 고정시켜 맨 위/맨 아래로 이동시 사용 */
+/* absolute : 부모가 static이 아닐 때 부모의 위치를 기준으로 움직임 */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+/* font-family: 'Orbit', sans-serif; */
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background: #fff;
+	font-family : 'Orbit', sans-serif;
+}
+
+a{
+	text-decoration: none;
+}
+
+nav a:link, a:visited{ /* >은 바로 아래, 한 칸 띄우면 안에 */
+	color: white;
+	
+}
+
+nav a:active{
+	color: yellow;
+}
+
+nav{
+	background-color: #000;
+	height: 50px;
+}
+
+
+li{
+	font-size: 1em;
+	list-style: disc;	
+}
+
+#content{
+	width: 100%;
+	margin: 0px auto;
+}
+
+h1{
+	font-size: 1.8em;
+}
+
+h2{
+	font-size: 1.3em;
+}
+
+p{
+	font-size: 1.3em;
+	line-height: 2;
+}
+
+.photo>img{
+	width: 70%;
+	max-width: 240px;
+	height: auto;
+	margin-bottom: 30px;
+}
+
+header{
+	width: 100%;
+	height: 300px;
+	background: url("../img/DM/pokemon.png") center no-repeat;
+	background-size: cover;
+	margin: 0px;
+}
+
+#main-nav{
+	margin: 0px;
+	padding: 10px;
+}
+
+#main-nav li{
+	list-style: none;
+	display: inline-block;
+	color: #fff;
+	font-family: "맑은 고딕", sans-serif;
+	font-size: 0.8em;
+	margin: 5px 15px;
+}
+
+nav a:hover{
+	border-bottom: 2px solid yellow;
+}
+
+section{
+	position: relative;
+	width: 100%;
+	padding: 15px 5%;
+}
+
+#content section:nth-child(odd){
+	background: #eee;
+}
+
+.page-title{
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	padding: 30px 50px;
+}
+
+.page-title h1{
+	margin-bottom: 30px;	
+}
+
+.content{
+	margin: 80px auto 10px;
+	width: 90%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.photo{
+	display: none;
+}
+
+footer{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+}
+
+footer p{
+	font-family : 'Orbit', sans-serif;
+	font-size: 1.5em;
+	line-height: 100%;
+	color: white;
+	text-align: center;
+}
+
+/* 테블릿 화면 */
+@media screen and (min-width: 760px){
+	header{
+		height: 400px;
+	}	
+	#intro, #roadMap{
+		box-sizing: border-box;
+		width: 50%;
+		height: 400px;
+		float: left;
+		margin: 0px;
+		border: 1px dotted #8000ff;
+	}
+	#coffee{
+		clear: both;
+	}
+}
+
+/* pc 화면 992px 이상 */
+@media screen and (min-width: 992px){
+	#content{
+		width: 900px;
+		margin: 0px auto;
+		border: 2px solid green;
+	}
+	
+	header{
+		height: 350px;
+	}
+	
+	#intro, #roadMap, #coffee{
+		box-sizing: border-box;
+		clear: both;
+		position: relative;
+		width: 100%;
+		height: 420px;
+		padding: 15px 2% 10px 5%;
+	}
+	
+	.content{
+		margin: 80px auto 10px;
+		width: 90%;
+		padding: 20px;
+	}
+	
+	.photo{
+		display: block;
+		width: 40%;
+	}
+	
+	.photo>img{
+		width: 100%;
+		max-width: 320px;
+		height: auto;
+		margin-bottom: 30px;
+	}
+	
+	.text{
+		width: 42%;
+	}
+	
+	#intro .photo, #coffee .photo{
+		float: left;
+		margin: 5%;
+	}
+	
+	#intro .text, #coffee .text{
+		float: left;
+	}
+	
+	#roadMap .photo{
+		float: right;
+		margin: 5%;
+	}
+	
+	#roadMap .text{
+		float: right;
+	}
+	
+	footer{
+		clear: both;
+	}
+}
+
+.fixedBanner{
+	position : fixed;
+	top: 40%;
+	right: 0px;
+	width: 100px;
+	height: 100px;
+	z-index: 999; /* 요소 중 가장 앞쪽으로 배치 */
+}

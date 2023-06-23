@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div#div_click{
+		cursor: pointer;
+	}
+	div#div_click:hover{
+		background-color: red;
+	}
+</style>
+</head>
+<!--TODO js002-03 JS 실행 순서 -->
+<script type="text/javascript">
+	alert("임베디드 방식 : body위에 선언 1");
+</script>
+<body>
+
+	<script type="text/javascript" src="./js/js002.js" defer></script>
+	<script type="text/javascript">
+		alert("임베디드 방식 : body안에 선언 2");
+	</script>
+	
+
+	<h2>자바스크립트 실행순서와 지연처리 방식(defer)</h2>
+	<ul>
+		<li>1.defer 속성 사용 : 외부 파일을 연결하는 속성으로 선언이 가능</li>
+		<li>2.body tag 마지막에 사용하여 화면이 모두 렌더링이 된 후 동작</li>
+	</ul>
+
+	<!--TODO js002-02 HTML이 실행되기 전에 작성한 JS -->
+	<script type="text/javascript">
+		var sample = document.getElementById("sample").value;
+		console.log(sample);
+	</script>		
+	<input type="text" id="sample" value="testValue">
+	<div id="div_click" onclick="alert('동작')">눌러보세요</div>
+</body>
+
+<!--TODO js002-01 HTML 마지막 하위에 작성하는 JS -->
+<script type="text/javascript">
+	var sample = document.getElementById("sample").value;
+	console.log(sample);
+</script>
+</html>
