@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>개미수열 실습</title>
+<script type="text/javascript" src="./js/js011_test.js"></script>
+</head>
+<body>
+    <button onclick="makeAnt('122111')">개미수열 test</button>
+    <button onclick="antStage('4')">층수계산 test</button> <!--makeAnt 호출-->
+
+    <fieldset>
+        <legend>개미수열</legend>
+        <input type="text" id="initVal">
+        <button onclick="antPrint(initVal.value)">수열출력</button> <!--유효값 처리 -> antStage 호출-->
+        <div id="printArea"></div>
+    </fieldset>
+</body>
+</html>

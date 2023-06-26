@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+    #wrap{
+        width: 233px;
+        height : 338px;
+        border: 1px solid palevioletred;
+        border-radius: 5px;
+    }
+
+    #view{
+        width: 218px;
+        height: 48px;
+        margin: 5px 5px 0px 5px;
+        padding: 1px 2px;
+        border: 1px solid palevioletred;
+        border-radius: 5px;
+        text-align: end;
+        overflow : hidden;
+    }
+
+    .line{
+        width: 228px;
+        height: 50px;
+        margin: 5px 5px 0px 0px;
+        display: flex;
+    }
+
+    .btn, #result{
+        width: 50px;
+        height: 40px;
+        margin-left: 5px;
+        padding-top: 10px;
+        border: 1px solid palevioletred;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.2em;   
+    }
+
+    .btn:hover, #result:hover{
+        cursor: pointer;
+        background-color: pink;
+    }
+</style>
+<script type="text/javascript" src="./js/js012.js"></script>
+</head>
+<body>
+    <div>
+        <div id="wrap">
+            <div id="view"></div>
+            <div class="line">
+                <div class="btn">%</div>
+                <div class="btn">CE</div>
+                <div class="btn">C</div>
+                <div id="result" onclick="calView()"> = </div>
+            </div>
+            <div class="line">
+                <div class="btn">7</div>
+                <div class="btn">8</div>
+                <div class="btn">9</div>
+                <div class="btn">/</div>
+            </div>
+            <div class="line">
+                <div class="btn">4</div>
+                <div class="btn">5</div>
+                <div class="btn">6</div>
+                <div class="btn">*</div>
+            </div>
+            <div class="line">
+                <div class="btn">1</div>
+                <div class="btn">2</div>
+                <div class="btn">3</div>
+                <div class="btn">-</div>
+            </div>
+            <div class="line">
+                <div class="btn">+/-</div>
+                <div class="btn">0</div>
+                <div class="btn">.</div>
+                <div class="btn">+</div>
+            </div>
+        </div>
+
+        <h1>1. 숫자형 형변환 Number()</h1>
+        <p>문자형의 정수 형태 혹은 실수 형태를 숫자형으로 변환</p>
+        <input type="number" id="num">
+        <button onclick="numTest(num.value)">변환확인</button>
+        <!--numTest('${}')-->
+        <hr>
+
+        <h1>2. 정수형 형변환</h1>
+        <p>문자형 정수를 숫자형으로 변환</p>
+        <input type="text" id="int">
+        <button onclick="intTest(int.value)">숫자로 변경</button>
+        <hr>
+
+        <h1>3. 실수형 형변환</h1>
+        <p>문자형 실수를 실수형으로 변환</p>
+        <input type="text" id="float">
+        <button onclick="floatTest(float.value)">실수로 변경</button>
+        <hr>
+
+        <h1>4. 검증함수 eval</h1>
+        <p>문자열로 연산된 코드를 javascript에서 처리(계산기)</p>
+        <input type="text" name="eValue" placeholder="ex) 10+1">
+        <button onclick="evalTest()">계산</button>
+        <span></span>
+        <hr>
+    </div>
+</body>
+</html>
