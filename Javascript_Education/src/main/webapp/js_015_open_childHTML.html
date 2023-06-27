@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>open되는 HTML</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var parentVal = opener.document.getElementById("val").textContent;
+		console.log(parentVal);
+		
+		document.getElementById("sendVal").value = parentVal;
+	}
+</script>
+</head>
+<body>
+	<!-- 
+		자식창에서 부모의 HTML을 DOM 탐색할 때 앞에 "opener." prefix 사용 
+	 -->
+	<input type="text" name="sendVal" id="sendVal">
+	<input type="button" value="부모에게 값 전달" onclick="sendParent()">
+	<input type="button" value="부모에게 값 받기" onclick="resiveParent()">
+	<input type="button" value="창닫기" onclick="self.close()">
+	
+	<div id="copyParent"></div>
+	
+	<script type="text/javascript">
+		function sendParent(){
+			var sendVal = document.getElementsByName("sendVal")[0].value;
+			console.log(sendVal);
+			opener.document.getElementById("val").textContent = sendVal;
+			
+			if(confirm("창을 닫을까요?")){
+				self.close();
+			}
+		}
+		
+		function resiveParent(){
+			var ul_HTML = opener.document.getElementsByTagName("ul")[0].innerHTML;
+			var ul_Text = opener.document.getElementsByTagName("ul")[0].textContent;
+			console.log("innerHTML : ", ul_HTML);
+			console.log("textContent : ", ul_Text);
+			
+			document.getElementById("copyParent").innerHTML = ul_HTML;
+			document.getElementById("copyParent").innerHTML = ul_Text;
+			document.getElementById("copyParent").TextContent = ul_Text;
+			
+			var btn='<button name="btn" onclick="self.close()">창 닫기</button>';
+			document.getElementById("copyParent").innerHTML = btn;
+		}
+	</script>
+</body>
+</html>

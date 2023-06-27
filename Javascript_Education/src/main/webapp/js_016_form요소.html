@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form 요소</title>
+<script type="text/javascript" src="./js/js016.js"></script>
+</head>
+<body>
+	<!-- 
+		HTML : DTD의 문법에 의해 작성하고 Brower에 의해 번역됨
+		문서의 DOCTYPE에 의해서 번역하며 보여지게 됨
+		server(IP, PORT)에 값을 전송할 수 있다. => protocol => HTTP
+		값을 전송하는 방식은 주소, HTML을 전송하는 방식으로 나뉨
+			HTML 전송 -> form요소 사용
+			<form></form>에 작성되어야 하고
+			form 내부 혹은 외부에서 submit을 통해서 action의 요청으로 server에 전송하게 됨
+			전송된 객체는 HTTPServletRequest 객체로 전송
+	 -->
+	 <h3>Protocol 처리 방식</h3>
+	 <fieldset>
+	 	<label>페이지 / 네이버 첫 페이지 호출</label>
+	 	<!-- GET방식 호출 -->
+	 	<!-- server의 주소 : https://search.naver.com/search.naver -->
+	 	<!-- server에 전달되는 값 : QueryString name=value -->
+	 	<!-- 완성된 주소 : https://search.naver.com/search.naver?query=날씨 -->
+	 	<div>
+	 		<ul>
+	 			<li>
+	 				a tag 방식 : <br>
+	 				<a href="https://search.naver.com/search.naver?query=날씨">네이버 날씨 검색</a>
+	 			</li>
+	 			<li>
+	 				form 전송 방식 : <br>
+	 				<form id="was" name="frm" action="https://search.naver.com/search.naver" method="get">
+	 					<input type="text" name="query">검색어 <br>
+	 					<input type="submit" value="검색">
+	 					<input type="reset" value="input 초기화">
+	 				</form>
+	 			</li>
+	 			<li>
+	 				외부 submit 실행<br>
+	 				<button onclick="jsSubmit()">javascript를 통해서 submit 실행</button>
+	 			</li>
+	 		</ul>
+	 	</div>
+	 </fieldset>
+	 
+	 <!-- https://starbuzzcoffee.com/processorder.php -->
+	 <!-- 
+	 	form 요소
+	 		- text, textarea
+	 		- password
+	 		- radio
+	 		- checkbox
+	 		- file
+	 		- button
+	 		- submit
+	 		- date
+	 		- select, option
+	  -->
+	  
+	  <fieldset>
+	  	<form action="https://starbuzzcoffee.com/processorder.php" method="get">
+	  		<div>커피선택</div>
+	  		<select name="beans">
+	  			<option value="coffee01">케냐AA</option>
+	  			<option value="coffee02">에티오피아</option>
+	  			<option value="coffee03">아라비카</option>
+	  		</select>
+	  		<input type="submit" value="값전송">
+	  	</form>
+	  </fieldset>
+</body>
+</html>
