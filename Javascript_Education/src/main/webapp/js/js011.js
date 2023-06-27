@@ -6,7 +6,6 @@
 //다음값을 반환
 
 function makeAnt(ss){
-
     var nextRow = "";
     var nums = 1;
     var StartNum = 0;

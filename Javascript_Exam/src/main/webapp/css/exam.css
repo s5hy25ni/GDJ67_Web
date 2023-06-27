@@ -1,0 +1,67 @@
+@charset "EUC-KR";
+
+body{
+    width: 400px;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+input{
+    border: 1px solid palevioletred;
+    border-radius: 3px;
+    margin: 0px;
+    padding: 2px;
+}
+
+input[type="text"]:focus{
+    outline: none;
+}
+
+input[type="button"]{
+    margin-left: 10px;
+    border: 1px solid gray;
+    background-color: gainsboro;
+}
+
+input[type="button"]:hover{
+    cursor: pointer;
+    border: 1px solid palevioletred;
+    background-color: pink;
+}
+
+#no01{
+    width: 400px;
+    display: flex;
+}
+
+#number{
+    width: 146px;
+    height: 26px;
+}
+
+#isNumBtn{
+    width: 50px;
+    height: 30px;
+}
+
+#text{
+    border: 1px solid palevioletred;
+    border-radius: 3px;
+    color: gray;
+}
+
+#no02{
+    width: 400px;
+    margin-top: 10px;
+    display: flex;
+}
+
+#searchWord{
+    width: 146px;
+    height: 26px;
+}
+
+#isInTextBtn{
+    width: 50px;
+    height: 30px;
+}
