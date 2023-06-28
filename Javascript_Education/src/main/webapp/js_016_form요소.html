@@ -62,12 +62,82 @@
 	  <fieldset>
 	  	<form action="https://starbuzzcoffee.com/processorder.php" method="get">
 	  		<div>커피선택</div>
+	  		<!-- 
+	  			select option 중에서 하나의 선택된 value만을 전송
+	  			선택된 option(selected)되어 있지 않다면 기본은 첫 번째 자식노드가 선택됨
+	  		 -->
 	  		<select name="beans">
 	  			<option value="coffee01">케냐AA</option>
 	  			<option value="coffee02">에티오피아</option>
 	  			<option value="coffee03">아라비카</option>
 	  		</select>
+	  		
+	  		<div>
+	  			<label>유형</label>
+	  			<!-- radio, checkbox : 상태는 checked -->
+	  			<!-- radio 버튼은 name을 통해 그룹을 만들어 그 중 한 개만 선택되도록 만듦 -->
+	  			<!-- checkbox는 하나의 name에 여러 개의 값이 전송되므로 array로 받아야 한다. -->
+	  			<p>
+	  				<input type="radio" name="beantype" value="비행기" checked>비행기<br>
+	  				<input type="radio" name="beantype" value="자동차">자동차<br>
+	  				<input type="radio" name="beantype" value="배">배<br>
+	  			</p>
+	  		</div>
+	  		<div>
+	  			<label>숫자</label>
+	  			<input type="number" name="bags" min=1 max=4>
+	  		</div>
+	  		<div>
+	  			<label>날짜</label>
+	  			<input type="date" name="date" id="date" value="1111-01-01">
+	  		</div>
+	  		<div>
+	  			<!-- name이 같은 그룹의 값을 여러 개 서버로 전송 -->
+	  			<label>checkbox</label><br>
+	  			<input type="checkbox" name="extras[]" value="box">박스<br>
+	  			<input type="checkbox" name="extras[]" value="message">메시지<br>
+	  		</div>
 	  		<input type="submit" value="값전송">
+	  	</form>
+	  </fieldset>
+	  
+	  <fieldset>
+	  	<!-- text, tel, textarea -->
+	  	<legend>배송지 주소</legend>
+	  	<form action="https://starbuzzcoffee.com/processorder.php
+	  	" method="get"> <!-- method default get -->
+	  		<div>
+	  			<label>성명</label>
+	  			<input type="text" name="name" placeholder="성명을 입력해주세요." required> 
+	  		</div>
+	  		<div>
+	  			<label>주소</label>
+	  			<input type="text" name="address" placeholder="주소를 입력해주세요." required>
+	  		</div>
+	  		<div>
+	  			<label>지역</label>
+	  			<input type="text" name="city" placeholder="지역을 입력해주세요." required>
+	  		</div>
+	  		<div>
+	  			<label>state</label>
+	  			<input type="text" name="state" placeholder="주를 입력해주세요." required>
+	  		</div>
+	  		<div>
+	  			<label>우편번호</label>
+	  			<input type="text" name="zip" placeholder="우편번호를 입력해주세요." required>
+	  		</div>
+	  		<div>
+	  			<label>전화번호</label>
+	  			<input type="tel" name="phone" placeholder="전화번호를 입력해주세요." required>
+	  		</div>
+	  		<div>
+	  			<label>요구사항</label>
+	  			<!-- 공백/탭 사용하지 말기 -->
+	  			<button onclick="textAreaCheck()">textarea확인</button>
+	  			<textarea id="txt" rows="5" cols="30" name="comments">안녕하세요.</textarea>
+	  		</div>
+	  		
+	  		<input type="submit" value="주문배송">
 	  	</form>
 	  </fieldset>
 </body>

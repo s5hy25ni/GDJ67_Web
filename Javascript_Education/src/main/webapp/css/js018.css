@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+#colorbox{
+    width: 330px;
+    height: 280px;
+    position: relative;
+    border: 1px dotted #ccc;
+    padding: 5px;
+    box-sizing: border-box
+}
+
+#colorbox>div{
+    width : 150px;
+    height: 120px;
+    border : 1px solid black;
+    margin: 5px;
+    position: absolute;
+}
+
+#blue{
+    left: 160px;
+}
+
+#yellow{
+    top: 140px;
+}
+
+#green{
+    left: 160px;
+    top: 140px;
+}

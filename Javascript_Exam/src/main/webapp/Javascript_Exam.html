@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="./js/Javascript_Exam.js" defer="defer"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<body>
+<h3>1. 숫자 판별하기</h3>
+<small>*입력란에 값을 입력하고 버튼을 클릭하면 입력값이 숫자인지 아닌지를 판별하여 대화창으로 "숫자입니다."/"숫자가 아닙니다." 출력하기</small>
+<br>
+<fieldset>
+	<legend>숫자 입력</legend>
+	<input type="text" name="num">
+	<input type="number" id="realNum">
+	<input type="text" id="phone">
+	<input type="button" value="판별" onclick="numCheck01()">
+</fieldset>
+<hr>
+<h3>2. 문자열 검색하기</h3>
+<small>*입력란에 원하는 검색어를 입력하고 버튼을 클릭하면 검색한 내용에서 검색어가 존재하는지 여부를 <br>
+		대화창으로 "검색어 존재함"/"검색어 존재하지 않음" 출력하기
+</small>
+<fieldset>
+	<b>검색할 단어: </b>
+	<input type="text" id="val">
+	<input type="button" value="검색" onclick="searchStr02()">
+	<br>
+	-검색할 내용
+	<!-- HTML에 작성하는 형태는 compress(압축)되지만 pre태그는 작성하는 그대로 보여짐 -->
+<div id="num2">
+		코로나 나빠요
+		<span>
+		날씨가 매우 좋아요
+		</span>
+</div>
+	<pre>
+	확진자가 100만단위가 넘어가는 미국이나 인도 브라질은 원래부터 의료시설이나 의료체계가 미비하여 
+	폭발적으로 나오지만 치사율은 그렇게 높지 않습니다. 즉, 거꾸로 말하면 병자체로는 매우 심각한병이 
+	아니라는 말이되죠.
+	우리 세계인들은 원래부터 다른 질병들도 코로나랑 비슷하거나 더한 수치로 감염되고 사망하였으나, 
+	이번 코로나처럼 데이터적으로 시각적으로 더 위협적이게 느껴지는게 아닐까요?
+	</pre>
+</fieldset>
+
+<h3>3.팝업창 띄우기</h3>
+<small>* 라디오버튼을 클릭하면 원하는 사이트를 팝업창에 띄운다.(새로운 창에 이동시킨다.)</small>
+<fieldset>
+	<legend>원하는 사이트를 선택하세요</legend>
+	<input type="radio" name="site" value="http://www.naver.com">네이버<br>
+	<input type="radio" name="site" value="http://www.daum.net">다음<br>
+	<input type="radio" name="site" value="http://www.google.com">구글<br>
+</fieldset>
+
+<!-- -----------------------------------------------------------------------------------------------------------  -->
+<h3>4.전체선택버튼 구현하기</h3>
+<small>* 전체선택버튼을 클릭하면 체크항목을 모두 체크하거나 해제시키자.</small>
+<fieldset>
+	<legend>가장 좋아하는 과목은?</legend>
+	<input type="checkbox" id="all" name="all" onclick="allchk04(this.checked)">전체선택<br>
+	<input type="checkbox" name="subject" >jQuery<br>
+	<input type="checkbox" name="subject">C#<br>
+	<input type="checkbox" name="subject">DataBase<br>
+	<input type="checkbox" name="subject">Script<br>
+	<input type="checkbox" name="subject">ASP
+</fieldset>
+
+<!-- -----------------------------------------------------------------------------------------------------------  -->
+<h3>5. 랜덤숫자생성하기</h3>
+<fieldset>
+	<legend>1~20까지 숫자중 랜덤으로 생성하시오?</legend>
+	출력:<input type="text" id="rdmNum" readonly><input type="button" value="생성" onclick="randomNum05()">
+</fieldset>
+
+<!-- -----------------------------------------------------------------------------------------------------------  -->
+<h3>6.select태그 사용하기</h3>
+<small>* 선택된 항목의 사이트로 페이지 이동하기.(현재창에서 이동한다.)</small>
+<fieldset>
+	<legend>이동할 페이지를 선택하세요</legend>
+	<select name="selsite" id="selsite" onchange="selPage06()">
+	<!-- name이 없으면 값을 전송할 수 없음 -->
+	<!-- onchange: 값이 변경되었을 때 자동으로 이동 -->
+		<option value="http://www.naver.com">네이버</option>
+		<option value="http://www.daum.net">다음</option>
+		<option value="http://www.hankyung.com">한경</option>
+	</select>
+</fieldset>
+
+<!-- -----------------------------------------------------------------------------------------------------------  -->
+<h3>7.숫자 정렬하기</h3>
+<fieldset>
+	*숫자:<span id="numVal">1,15,8,69,45,23,37,19</span><br>
+	*정렬:<span id="numSort"></span><br>
+	<button onclick="sortNum()">숫자정렬</button>
+</fieldset>
+
+<!-- -----------------------------------------------------------------------------------------------------------  -->
+<h3>8.나의 살아온 일수 구하기</h3>
+<small>*현재날짜까지의 시간에서 생년월일까지의 시간의 차를 구하면 살아온 일수를 구할수 있다.(관련 메서드 getTime())</small>
+<fieldset>
+	*생년월일:<input type="date" name="birthday" value="1981-04-29"><br>
+	*날짜변환:<input type="date" id="nowDate" disabled><br>
+	*살아온 일수:<span id="dateVal"></span><br>
+	<button onclick="life()">일수보기</button>
+</fieldset>
+
+<!-- -----------------------------------------------------------------------------------------------------------  -->
+<h3>9.입력값 테이블로 출력하기(dom메서드사용)</h3>
+<fieldset>
+<legend>테이블의 스타일 적용: width:200px; td:background-color:yellow;</legend>
+<form name="info" id="formInfo">
+	아 이 디:<input type="text" name="id"><br>
+	패스워드:<input type="password" name="pw"><br>
+	주 소:<input type="text" name="addr"><br>
+	전화번호:<input type="text" name="phone"><br>
+	<input type="button" value="추가" onclick="domTest()">
+</form>
+<div id="domTable"></div>
+</fieldset>
+
+<!-- -----------------------------------------------------------------------------------------------------------  -->
+<h3>10.구구단 출력하기</h3>
+<fieldset>
+<legend>원하는 구구단을 입력하고 화면에 출력합니다.</legend>
+<input type="text" id="guguVal">
+<input type="button" value="출력" onclick="guguDanView()">
+<div id="guguPrint"></div>
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>location 객체</title>
+</head>
+<body>
+<!-- 
+	화면의 흐름을 제어 : 서버사이드 전송시 get방식 
+	#자신의 페이지를 호출, event.defaultPrevent()를 통해서 html 이번트 제어
+	URL#아이디 : 해당 URL의 HTML 아이디로 이동
+-->
+	<a href="#"> <!-- href가 없으면 span과 똑같다 -->
+		페이지 이동
+	</a>
+	<button onclick="locationFn()">이동</button>
+
+	<script type="text/javascript">
+		function locationFn(){
+			// location.href="http://www.naver.com";
+			// location.assign("http://www.naver.com");
+			// location.reload();
+			location.replace("http://www.naver.com"); // 전단계 사라짐(회원가입, 로그아웃 등)
+		}
+
+
+	</script>
+</body>
+</html>

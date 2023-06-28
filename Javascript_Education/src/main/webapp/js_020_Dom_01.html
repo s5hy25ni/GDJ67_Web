@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM(Document Object Model) 탐색(속성)</title>
+<script type="text/javascript" src="./js/js020.js"></script>
+<style type="text/css">
+	p:hover{
+		color:palevioletred;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	#bnt:hover{
+		color:palevioletred;
+		background-color: pink;
+		font-weight: bold;
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<p>Child01</p>
+		<p>Child02</p>
+		<p>Child03</p>		
+	</div>
+	<button onclick="searchParent()">부모탐색</button>
+	<button onclick="searchChilds()">자식탐색</button>
+
+	<hr>
+
+	<h1>1. Child01 태그를 포함한 div tag의 배경색을 바꾸세요</h1>
+	<h1>2. 마지막 div에 포함된 Child04 tag의 폰트 크기를 30pt로 변경하세요.</h1>
+	<div id="bnt" onclick="examDom()">적용하기</div>
+	<div>
+		<p>Child01</p>
+		<p>Child02</p>
+	</div>
+		
+	<div>
+		<p>Child03</p>
+		<p>Child04</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>select</title>
+<script type="text/javascript" src="./js/js019.js"></script>
+</head>
+<body>
+	<!--
+        select tag의 사용방법
+        키워드 : options, selected, selectedIndex
+        1) options : 탐색된 select tag의 자식 노드 전체
+        2) selected : 선택된 상태 -> 서버사이드에 전달되는 대상
+        3) selectedIndex : 선택된 자식 노드(option tag)의 index번호
+    -->
+    <h1>오늘의 점심 메뉴?!</h1>
+    <select name="food" onchange="showFood()">
+        <option value="">--선택--</option>
+        <option value="짜장면">짜장면$</option>
+        <option value="초밥">초밥$</option>
+        <option value="고기">고기고기$</option>
+        <option value="뼈해장국">뼈해장국$</option>
+    </select>
+    <hr>
+    <select name="food" multiple="multiple" size="5">
+        <option value="">--선택--</option>
+        <option value="짜장면">짜장면</option>
+        <option value="초밥">초밥</option>
+        <option value="고기">고기고기</option>
+        <option value="뼈해장국">뼈해장국</option>
+    </select>
+    <input type="button" value="음식다중선택" onclick="showFoodMulti()">
+
+    <div id="printFood"></div>
+    <textarea rows="5" cols="50" id="areaFood"></textarea>
+    <div id="divFood"></div>
+</body>
+</html>
