@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM을 이용한 Rolling Gallary</title>
+<script type="text/javascript" src="./js/js025.js"></script>
+</head>
+<body>
+    <form name="frm">
+        <table>
+            <col width="20%">
+            <col width="20%">
+            <col width="20%">
+            <col width="20%">
+            <tbody>
+                <tr>
+                    <td>아이디</td>
+                    <td>
+                        <input type="text" name="id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td>
+                        <input type="password" name="pw">
+                    </td>
+                </tr>
+                <tr>
+                    <td>주소</td>
+                    <td>
+                        <input type="text" name="address">
+                    </td>
+                </tr>
+                <tr>
+                    <td>전화번호</td>
+                    <td>
+                        <input type="text" name="phone">
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="추가" onclick="tableInput()">
+                    </td>
+                    <td colspan="2">
+                        <input type="button" value="전체 삭제" onclick="deleteTable(this)">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+    <hr>
+    <div id="addTable">
+        <table>
+            <col width="20%">
+            <col width="20%">
+            <col width="20%">
+            <col width="20%">
+            <thead>
+                <tr>
+                    <td>아이디</td>
+                    <td>비밀번호</td>
+                    <td>주소</td>
+                    <td>전화번호</td>
+                </tr>
+            </thead>
+            <tbody id="addRow">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

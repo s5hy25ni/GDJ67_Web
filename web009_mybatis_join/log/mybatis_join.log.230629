@@ -1,0 +1,378 @@
+[2023-06-29 08:51:25] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 08:51:25] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 08:51:25] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 08:51:25] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 08:51:25] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 08:51:25] [DEBUG] Opening JDBC Connection 
+[2023-06-29 08:51:25] [DEBUG] Created connection 1185917289. 
+[2023-06-29 08:51:25] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@46afa969] 
+[2023-06-29 08:51:25] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 08:51:26] [DEBUG] ==> Parameters: ss(String), 32c220482c68413fbf8290e3b1e49b0a85901cfcd62ab0738760568a2a6e8a57(String) 
+[2023-06-29 08:51:26] [DEBUG] <==      Total: 0 
+[2023-06-29 08:51:40] [DEBUG] Opening JDBC Connection 
+[2023-06-29 08:51:40] [DEBUG] Created connection 711560747. 
+[2023-06-29 08:51:40] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@2a698e2b] 
+[2023-06-29 08:51:40] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 08:51:40] [DEBUG] ==> Parameters: hyeon(String), f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3(String) 
+[2023-06-29 08:51:40] [TRACE] <==    Columns: ADMIN_ID, ADMIN_PW, LAST_LOGIN 
+[2023-06-29 08:51:40] [TRACE] <==        Row: hyeon, f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3, 2023-06-28 20:35:40 
+[2023-06-29 08:51:40] [DEBUG] <==      Total: 1 
+[2023-06-29 08:51:40] [DEBUG] ==>  Preparing: UPDATE ADMINS SET LAST_LOGIN=TO_DATE(?, 'YYYY/MM/DD HH24:MI:SS') WHERE ADMIN_ID=? 
+[2023-06-29 08:51:40] [DEBUG] ==> Parameters: 2023-06-29 08:51:40(String), hyeon(String) 
+[2023-06-29 08:51:40] [DEBUG] <==    Updates: 1 
+[2023-06-29 08:51:40] [DEBUG] Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@2a698e2b] 
+[2023-06-29 08:55:34] [DEBUG] Opening JDBC Connection 
+[2023-06-29 08:55:34] [DEBUG] Created connection 102535394. 
+[2023-06-29 08:55:34] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@61c90e2] 
+[2023-06-29 08:55:34] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 08:55:34] [DEBUG] ==> Parameters: hyeon(String), f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3(String) 
+[2023-06-29 08:55:34] [TRACE] <==    Columns: ADMIN_ID, ADMIN_PW, LAST_LOGIN 
+[2023-06-29 08:55:34] [TRACE] <==        Row: hyeon, f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3, 2023-06-29 08:51:40 
+[2023-06-29 08:55:34] [DEBUG] <==      Total: 1 
+[2023-06-29 08:55:34] [DEBUG] ==>  Preparing: UPDATE ADMINS SET LAST_LOGIN=TO_DATE(?, 'YYYY/MM/DD HH24:MI:SS') WHERE ADMIN_ID=? 
+[2023-06-29 08:55:34] [DEBUG] ==> Parameters: 2023-06-29 08:55:34(String), hyeon(String) 
+[2023-06-29 08:55:34] [DEBUG] <==    Updates: 1 
+[2023-06-29 08:55:34] [DEBUG] Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@61c90e2] 
+[2023-06-29 08:56:22] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 08:56:22] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 08:56:22] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 08:56:22] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 08:56:22] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 08:56:22] [DEBUG] Opening JDBC Connection 
+[2023-06-29 08:56:22] [DEBUG] Created connection 124440974. 
+[2023-06-29 08:56:22] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@76ad18e] 
+[2023-06-29 08:56:22] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 08:56:22] [DEBUG] ==> Parameters: hyeon(String), f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3(String) 
+[2023-06-29 08:56:22] [TRACE] <==    Columns: ADMIN_ID, ADMIN_PW, LAST_LOGIN 
+[2023-06-29 08:56:22] [TRACE] <==        Row: hyeon, f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3, 2023-06-29 08:55:34 
+[2023-06-29 08:56:22] [DEBUG] <==      Total: 1 
+[2023-06-29 08:56:22] [DEBUG] ==>  Preparing: UPDATE ADMINS SET LAST_LOGIN=TO_DATE(?, 'YYYY/MM/DD HH24:MI:SS') WHERE ADMIN_ID=? 
+[2023-06-29 08:56:22] [DEBUG] ==> Parameters: 2023-06-29 08:56:22(String), hyeon(String) 
+[2023-06-29 08:56:22] [DEBUG] <==    Updates: 1 
+[2023-06-29 08:56:22] [DEBUG] Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@76ad18e] 
+[2023-06-29 10:00:38] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 10:00:38] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:00:38] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:00:38] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:00:38] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:00:38] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:00:38] [DEBUG] Created connection 1901346985. 
+[2023-06-29 10:00:38] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@715440a9] 
+[2023-06-29 10:00:38] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:00:38] [DEBUG] ==> Parameters: hyeon(String), f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3(String) 
+[2023-06-29 10:00:38] [TRACE] <==    Columns: ADMIN_ID, ADMIN_PW, LAST_LOGIN 
+[2023-06-29 10:00:38] [TRACE] <==        Row: hyeon, f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3, 2023-06-29 08:56:22 
+[2023-06-29 10:00:38] [DEBUG] <==      Total: 1 
+[2023-06-29 10:00:38] [DEBUG] ==>  Preparing: UPDATE ADMINS SET LAST_LOGIN=TO_DATE(?, 'YYYY/MM/DD HH24:MI:SS') WHERE ADMIN_ID=? 
+[2023-06-29 10:00:38] [DEBUG] ==> Parameters: 2023-06-29 10:00:37(String), hyeon(String) 
+[2023-06-29 10:00:38] [DEBUG] <==    Updates: 1 
+[2023-06-29 10:00:38] [DEBUG] Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@715440a9] 
+[2023-06-29 10:00:57] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:00:57] [DEBUG] Created connection 707623546. 
+[2023-06-29 10:00:57] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@2a2d7a7a] 
+[2023-06-29 10:00:57] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:00:57] [DEBUG] ==> Parameters: hyeon(String), f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3(String) 
+[2023-06-29 10:00:57] [TRACE] <==    Columns: ADMIN_ID, ADMIN_PW, LAST_LOGIN 
+[2023-06-29 10:00:57] [TRACE] <==        Row: hyeon, f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3, 2023-06-29 10:00:37 
+[2023-06-29 10:00:57] [DEBUG] <==      Total: 1 
+[2023-06-29 10:00:57] [DEBUG] ==>  Preparing: UPDATE ADMINS SET LAST_LOGIN=TO_DATE(?, 'YYYY/MM/DD HH24:MI:SS') WHERE ADMIN_ID=? 
+[2023-06-29 10:00:57] [DEBUG] ==> Parameters: 2023-06-29 10:00:57(String), hyeon(String) 
+[2023-06-29 10:00:57] [DEBUG] <==    Updates: 1 
+[2023-06-29 10:00:57] [DEBUG] Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@2a2d7a7a] 
+[2023-06-29 10:01:32] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:01:32] [DEBUG] Created connection 1714791020. 
+[2023-06-29 10:01:32] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@6635a26c] 
+[2023-06-29 10:01:32] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:01:32] [DEBUG] ==> Parameters: hyeon(String), f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3(String) 
+[2023-06-29 10:01:32] [TRACE] <==    Columns: ADMIN_ID, ADMIN_PW, LAST_LOGIN 
+[2023-06-29 10:01:32] [TRACE] <==        Row: hyeon, f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3, 2023-06-29 10:00:57 
+[2023-06-29 10:01:32] [DEBUG] <==      Total: 1 
+[2023-06-29 10:01:32] [DEBUG] ==>  Preparing: UPDATE ADMINS SET LAST_LOGIN=TO_DATE(?, 'YYYY/MM/DD HH24:MI:SS') WHERE ADMIN_ID=? 
+[2023-06-29 10:01:32] [DEBUG] ==> Parameters: 2023-06-29 10:01:32(String), hyeon(String) 
+[2023-06-29 10:01:32] [DEBUG] <==    Updates: 1 
+[2023-06-29 10:01:32] [DEBUG] Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@6635a26c] 
+[2023-06-29 10:10:33] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 10:10:33] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:10:33] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:10:33] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:10:33] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:10:33] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:10:33] [DEBUG] Created connection 865766777. 
+[2023-06-29 10:10:33] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@339a8d79] 
+[2023-06-29 10:10:33] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:10:33] [DEBUG] ==> Parameters: hyeon(String), f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3(String) 
+[2023-06-29 10:10:33] [TRACE] <==    Columns: ADMIN_ID, ADMIN_PW, LAST_LOGIN 
+[2023-06-29 10:10:33] [TRACE] <==        Row: hyeon, f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3, 2023-06-29 10:01:32 
+[2023-06-29 10:10:33] [DEBUG] <==      Total: 1 
+[2023-06-29 10:10:33] [DEBUG] ==>  Preparing: UPDATE ADMINS SET LAST_LOGIN=TO_DATE(?, 'YYYY/MM/DD HH24:MI:SS') WHERE ADMIN_ID=? 
+[2023-06-29 10:10:33] [DEBUG] ==> Parameters: 2023-06-29 10:10:32(String), hyeon(String) 
+[2023-06-29 10:10:33] [DEBUG] <==    Updates: 1 
+[2023-06-29 10:10:33] [DEBUG] Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@339a8d79] 
+[2023-06-29 10:22:25] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 10:22:25] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:22:25] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:22:25] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:22:25] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:22:25] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:22:25] [DEBUG] Created connection 374370384. 
+[2023-06-29 10:22:25] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@16507050] 
+[2023-06-29 10:22:25] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:22:25] [DEBUG] ==> Parameters: hyeon(String), 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4(String) 
+[2023-06-29 10:22:25] [DEBUG] <==      Total: 0 
+[2023-06-29 10:23:23] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 10:23:23] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:23:23] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:23:23] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:23:23] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:23:24] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:23:24] [DEBUG] Created connection 1443523261. 
+[2023-06-29 10:23:24] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@560a6abd] 
+[2023-06-29 10:23:24] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:23:24] [DEBUG] ==> Parameters: sdf(String), 18ee24150dcb1d96752a4d6dd0f20dfd8ba8c38527e40aa8509b7adecf78f9c6(String) 
+[2023-06-29 10:23:24] [DEBUG] <==      Total: 0 
+[2023-06-29 10:23:46] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:23:46] [DEBUG] Created connection 1094635503. 
+[2023-06-29 10:23:46] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@413ecfef] 
+[2023-06-29 10:23:46] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:23:46] [DEBUG] ==> Parameters: sdf(String), 6f25b3f4bc7eadafb8f57d69f8a59db3b23f198151dbf3c66ac3082381518329(String) 
+[2023-06-29 10:23:46] [DEBUG] <==      Total: 0 
+[2023-06-29 10:24:02] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 10:24:02] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:24:02] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:24:02] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:24:02] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:24:02] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:24:03] [DEBUG] Created connection 1045210776. 
+[2023-06-29 10:24:03] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@3e4ca698] 
+[2023-06-29 10:24:03] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:24:03] [DEBUG] ==> Parameters: sdfsd(String), 4bac27393bdd9777ce02453256c5577cd02275510b2227f473d03f533924f877(String) 
+[2023-06-29 10:24:03] [DEBUG] <==      Total: 0 
+[2023-06-29 10:24:32] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 10:24:32] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:24:32] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:24:32] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:24:32] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:24:32] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:24:32] [DEBUG] Created connection 557084704. 
+[2023-06-29 10:24:32] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@21347020] 
+[2023-06-29 10:24:32] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:24:32] [DEBUG] ==> Parameters: sdfsd(String), 4bac27393bdd9777ce02453256c5577cd02275510b2227f473d03f533924f877(String) 
+[2023-06-29 10:24:32] [DEBUG] <==      Total: 0 
+[2023-06-29 10:25:01] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:25:01] [DEBUG] Created connection 1819433660. 
+[2023-06-29 10:25:01] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@6c725abc] 
+[2023-06-29 10:25:01] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:25:01] [DEBUG] ==> Parameters: sdfsdf(String), 25ec6cf5d2f0dbbcfc8435900f2425fa030cfab2933f29529f30512a9685810c(String) 
+[2023-06-29 10:25:01] [DEBUG] <==      Total: 0 
+[2023-06-29 10:25:24] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 10:25:24] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:25:24] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:25:24] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:25:24] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:25:24] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:25:24] [DEBUG] Created connection 1143845209. 
+[2023-06-29 10:25:24] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@442db159] 
+[2023-06-29 10:25:24] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:25:25] [DEBUG] ==> Parameters: sdfsd(String), ca7e3f3f3391b594650e7ba0fa4787c90bcd4a3abe5224c50c1d255a0a67a891(String) 
+[2023-06-29 10:25:25] [DEBUG] <==      Total: 0 
+[2023-06-29 10:25:31] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:25:31] [DEBUG] Created connection 585495388. 
+[2023-06-29 10:25:31] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@22e5f35c] 
+[2023-06-29 10:25:31] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:25:31] [DEBUG] ==> Parameters: hyeon(String), f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3(String) 
+[2023-06-29 10:25:31] [TRACE] <==    Columns: ADMIN_ID, ADMIN_PW, LAST_LOGIN 
+[2023-06-29 10:25:31] [TRACE] <==        Row: hyeon, f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3, 2023-06-29 10:10:32 
+[2023-06-29 10:25:31] [DEBUG] <==      Total: 1 
+[2023-06-29 10:25:31] [DEBUG] ==>  Preparing: UPDATE ADMINS SET LAST_LOGIN=TO_DATE(?, 'YYYY/MM/DD HH24:MI:SS') WHERE ADMIN_ID=? 
+[2023-06-29 10:25:31] [DEBUG] ==> Parameters: 2023-06-29 10:25:31(String), hyeon(String) 
+[2023-06-29 10:25:31] [DEBUG] <==    Updates: 1 
+[2023-06-29 10:25:31] [DEBUG] Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@22e5f35c] 
+[2023-06-29 10:49:40] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 10:49:40] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:49:40] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:49:40] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:49:40] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 10:49:40] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:49:41] [DEBUG] Created connection 1847418995. 
+[2023-06-29 10:49:41] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@6e1d6073] 
+[2023-06-29 10:49:41] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:49:41] [DEBUG] ==> Parameters: sohyeon(String), a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3(String) 
+[2023-06-29 10:49:41] [DEBUG] <==      Total: 0 
+[2023-06-29 10:50:05] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:50:05] [DEBUG] Created connection 1557318477. 
+[2023-06-29 10:50:05] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@5cd2cb4d] 
+[2023-06-29 10:50:05] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:50:05] [DEBUG] ==> Parameters: 123(String), a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3(String) 
+[2023-06-29 10:50:05] [DEBUG] <==      Total: 0 
+[2023-06-29 10:51:35] [DEBUG] Opening JDBC Connection 
+[2023-06-29 10:51:35] [DEBUG] Created connection 1912188479. 
+[2023-06-29 10:51:35] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@71f9ae3f] 
+[2023-06-29 10:51:35] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 10:51:35] [DEBUG] ==> Parameters: 123(String), fdee430d40bd57deeac186cd9790033d0f06f909a8806e7ce6e717ab7c7d5029(String) 
+[2023-06-29 10:51:35] [DEBUG] <==      Total: 0 
+[2023-06-29 11:05:15] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 11:05:15] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:05:15] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:05:15] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:05:15] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:05:15] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:05:15] [DEBUG] Created connection 651253466. 
+[2023-06-29 11:05:15] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@26d156da] 
+[2023-06-29 11:05:15] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:05:15] [DEBUG] ==> Parameters: sdf(String), 6f25b3f4bc7eadafb8f57d69f8a59db3b23f198151dbf3c66ac3082381518329(String) 
+[2023-06-29 11:05:15] [DEBUG] <==      Total: 0 
+[2023-06-29 11:07:01] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 11:07:01] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:07:01] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:07:01] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:07:01] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:07:01] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:07:01] [DEBUG] Created connection 1314739015. 
+[2023-06-29 11:07:01] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@4e5d5347] 
+[2023-06-29 11:07:01] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:07:02] [DEBUG] ==> Parameters: sdfsd(String), ca7e3f3f3391b594650e7ba0fa4787c90bcd4a3abe5224c50c1d255a0a67a891(String) 
+[2023-06-29 11:07:02] [DEBUG] <==      Total: 0 
+[2023-06-29 11:07:13] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:07:13] [DEBUG] Created connection 93209960. 
+[2023-06-29 11:07:13] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@58e4568] 
+[2023-06-29 11:07:13] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:07:13] [DEBUG] ==> Parameters: sdfsd(String), acd01f7923daadee168754f7455a5c8cee8efdde968e18ddbd1e40a1d2004340(String) 
+[2023-06-29 11:07:13] [DEBUG] <==      Total: 0 
+[2023-06-29 11:07:21] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 11:07:21] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:07:21] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:07:21] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:07:21] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:07:21] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:07:21] [DEBUG] Created connection 1342103607. 
+[2023-06-29 11:07:21] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@4ffee037] 
+[2023-06-29 11:07:21] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:07:22] [DEBUG] ==> Parameters: sdf(String), 6f25b3f4bc7eadafb8f57d69f8a59db3b23f198151dbf3c66ac3082381518329(String) 
+[2023-06-29 11:07:22] [DEBUG] <==      Total: 0 
+[2023-06-29 11:08:05] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:08:05] [DEBUG] Created connection 2126108824. 
+[2023-06-29 11:08:05] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@7eb9d898] 
+[2023-06-29 11:08:05] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:08:05] [DEBUG] ==> Parameters: sdfsd(String), e3a85178ea794f81a63c7e814a8a8b21756e2041e999c665134824cb9a88dd49(String) 
+[2023-06-29 11:08:05] [DEBUG] <==      Total: 0 
+[2023-06-29 11:08:35] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 11:08:35] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:08:35] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:08:35] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:08:35] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:08:36] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:08:36] [DEBUG] Created connection 362672057. 
+[2023-06-29 11:08:36] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@159defb9] 
+[2023-06-29 11:08:36] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:08:36] [DEBUG] ==> Parameters: sdfsd(String), e3a85178ea794f81a63c7e814a8a8b21756e2041e999c665134824cb9a88dd49(String) 
+[2023-06-29 11:08:36] [DEBUG] <==      Total: 0 
+[2023-06-29 11:09:00] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:09:00] [DEBUG] Created connection 93209960. 
+[2023-06-29 11:09:00] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@58e4568] 
+[2023-06-29 11:09:00] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:09:00] [DEBUG] ==> Parameters: sdfsd(String), 45883ee772df0f9c51ec6233e829239d9f413e1d43c24bc8efb108e1c51c8553(String) 
+[2023-06-29 11:09:00] [DEBUG] <==      Total: 0 
+[2023-06-29 11:09:42] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 11:09:42] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:09:42] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:09:42] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:09:42] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:09:43] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:09:43] [DEBUG] Created connection 1486343075. 
+[2023-06-29 11:09:43] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@5897cba3] 
+[2023-06-29 11:09:43] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:09:43] [DEBUG] ==> Parameters: sdfsd(String), da84e5104ec02982515127adda821ffc533acf7f07bd9b5839f31239e888feea(String) 
+[2023-06-29 11:09:43] [DEBUG] <==      Total: 0 
+[2023-06-29 11:10:01] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:10:01] [DEBUG] Created connection 265512530. 
+[2023-06-29 11:10:01] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@fd36652] 
+[2023-06-29 11:10:01] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:10:01] [DEBUG] ==> Parameters: sdfsd(String), a8ebfff7e54ebc78642cd671d142d18bba262109d1c2d83caf5a4a999fec9673(String) 
+[2023-06-29 11:10:01] [DEBUG] <==      Total: 0 
+[2023-06-29 11:14:01] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 11:14:01] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:14:01] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:14:01] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:14:01] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:14:01] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:14:01] [DEBUG] Created connection 199345026. 
+[2023-06-29 11:14:01] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@be1c382] 
+[2023-06-29 11:14:01] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:14:02] [DEBUG] ==> Parameters: sdfsd(String), 6f25b3f4bc7eadafb8f57d69f8a59db3b23f198151dbf3c66ac3082381518329(String) 
+[2023-06-29 11:14:02] [DEBUG] <==      Total: 0 
+[2023-06-29 11:15:08] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:15:08] [DEBUG] Created connection 656968654. 
+[2023-06-29 11:15:08] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@27288bce] 
+[2023-06-29 11:15:08] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:15:08] [DEBUG] ==> Parameters: sdfsd(String), 6f25b3f4bc7eadafb8f57d69f8a59db3b23f198151dbf3c66ac3082381518329(String) 
+[2023-06-29 11:15:08] [DEBUG] <==      Total: 0 
+[2023-06-29 11:15:40] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:15:40] [DEBUG] Created connection 1818192112. 
+[2023-06-29 11:15:40] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@6c5f68f0] 
+[2023-06-29 11:15:40] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:15:40] [DEBUG] ==> Parameters: sdfds(String), 6f25b3f4bc7eadafb8f57d69f8a59db3b23f198151dbf3c66ac3082381518329(String) 
+[2023-06-29 11:15:40] [DEBUG] <==      Total: 0 
+[2023-06-29 11:16:02] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:16:02] [DEBUG] Created connection 1244764470. 
+[2023-06-29 11:16:02] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@4a319936] 
+[2023-06-29 11:16:02] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:16:02] [DEBUG] ==> Parameters: sfsd(String), e3a85178ea794f81a63c7e814a8a8b21756e2041e999c665134824cb9a88dd49(String) 
+[2023-06-29 11:16:02] [DEBUG] <==      Total: 0 
+[2023-06-29 11:16:23] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:16:23] [DEBUG] Created connection 296506442. 
+[2023-06-29 11:16:23] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@11ac544a] 
+[2023-06-29 11:16:23] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:16:23] [DEBUG] ==> Parameters: sfds(String), 6f25b3f4bc7eadafb8f57d69f8a59db3b23f198151dbf3c66ac3082381518329(String) 
+[2023-06-29 11:16:23] [DEBUG] <==      Total: 0 
+[2023-06-29 11:16:38] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 11:16:38] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:16:38] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:16:38] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:16:38] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:16:38] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:16:38] [DEBUG] Created connection 1054572076. 
+[2023-06-29 11:16:38] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@3edb7e2c] 
+[2023-06-29 11:16:38] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:16:38] [DEBUG] ==> Parameters: sdfsd(String), 6f25b3f4bc7eadafb8f57d69f8a59db3b23f198151dbf3c66ac3082381518329(String) 
+[2023-06-29 11:16:38] [DEBUG] <==      Total: 0 
+[2023-06-29 11:32:16] [DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. 
+[2023-06-29 11:32:16] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:32:16] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:32:16] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:32:16] [DEBUG] PooledDataSource forcefully closed/removed all connections. 
+[2023-06-29 11:32:16] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:32:17] [DEBUG] Created connection 296952209. 
+[2023-06-29 11:32:17] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@11b32191] 
+[2023-06-29 11:32:17] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:32:17] [DEBUG] ==> Parameters: sdf(String), 4bac27393bdd9777ce02453256c5577cd02275510b2227f473d03f533924f877(String) 
+[2023-06-29 11:32:17] [DEBUG] <==      Total: 0 
+[2023-06-29 11:32:34] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:32:34] [DEBUG] Created connection 685667375. 
+[2023-06-29 11:32:34] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@28de742f] 
+[2023-06-29 11:32:34] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:32:34] [DEBUG] ==> Parameters: hyeon(String), f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3(String) 
+[2023-06-29 11:32:34] [TRACE] <==    Columns: ADMIN_ID, ADMIN_PW, LAST_LOGIN 
+[2023-06-29 11:32:34] [TRACE] <==        Row: hyeon, f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3, 2023-06-29 10:25:31 
+[2023-06-29 11:32:34] [DEBUG] <==      Total: 1 
+[2023-06-29 11:32:34] [DEBUG] ==>  Preparing: UPDATE ADMINS SET LAST_LOGIN=TO_DATE(?, 'YYYY/MM/DD HH24:MI:SS') WHERE ADMIN_ID=? 
+[2023-06-29 11:32:34] [DEBUG] ==> Parameters: 2023-06-29 11:32:34(String), hyeon(String) 
+[2023-06-29 11:32:34] [DEBUG] <==    Updates: 1 
+[2023-06-29 11:32:34] [DEBUG] Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@28de742f] 
+[2023-06-29 11:32:56] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:32:56] [DEBUG] Created connection 1397965205. 
+[2023-06-29 11:32:56] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@53534195] 
+[2023-06-29 11:32:56] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:32:56] [DEBUG] ==> Parameters: hyeon(String), 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4(String) 
+[2023-06-29 11:32:56] [DEBUG] <==      Total: 0 
+[2023-06-29 11:33:01] [DEBUG] Opening JDBC Connection 
+[2023-06-29 11:33:01] [DEBUG] Created connection 1815638126. 
+[2023-06-29 11:33:01] [DEBUG] Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@6c38706e] 
+[2023-06-29 11:33:01] [DEBUG] ==>  Preparing: SELECT ADMIN_ID, ADMIN_PW, LAST_LOGIN FROM ADMINS WHERE ADMIN_ID=? AND ADMIN_PW=? 
+[2023-06-29 11:33:01] [DEBUG] ==> Parameters: hyeon(String), f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3(String) 
+[2023-06-29 11:33:01] [TRACE] <==    Columns: ADMIN_ID, ADMIN_PW, LAST_LOGIN 
+[2023-06-29 11:33:01] [TRACE] <==        Row: hyeon, f6f2ea8f45d8a057c9566a33f99474da2e5c6a6604d736121650e2730c6fb0a3, 2023-06-29 11:32:34 
+[2023-06-29 11:33:01] [DEBUG] <==      Total: 1 
+[2023-06-29 11:33:01] [DEBUG] ==>  Preparing: UPDATE ADMINS SET LAST_LOGIN=TO_DATE(?, 'YYYY/MM/DD HH24:MI:SS') WHERE ADMIN_ID=? 
+[2023-06-29 11:33:01] [DEBUG] ==> Parameters: 2023-06-29 11:33:01(String), hyeon(String) 
+[2023-06-29 11:33:01] [DEBUG] <==    Updates: 1 
+[2023-06-29 11:33:01] [DEBUG] Committing JDBC Connection [oracle.jdbc.driver.T4CConnection@6c38706e] 

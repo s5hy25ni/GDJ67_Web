@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.min.edu.dao.UserDaoImpl">
+
+<!-- 
+	select	[parameterType]	resultType	resultMap(쿼리 개수 다를 때)	java.lang.String(String), java.lang.Integer(int), java.util.Map
+	update	[parameterType]	성공한 row 갯수	
+	insert	[parameterType]	성공한 row 갯수	SelectKey	
+	delete	[parameterType]	성공한 row 갯수	
+ -->
+ 	<sql id="allColumn">
+ 		SELECT SEQ, ID, PASSWORD, NAME, ADDRESS, PHONE, EMAIL, ENABLE, AUTH
+			FROM HR.MEMBERINFO
+ 	</sql>
+
+	<!-- 전체 사용자 조회 -->
+	<select id="getAllUserStatus" resultType="UDto">
+		<include refid="allColumn"/>
+	</select>
+	<!-- 전체 사용자 조회 -->
+	<select id="getAllUser" resultType="UDto">
+		<include refid="allColumn"/>
+			WHERE ENABLE='Y'
+	</select>
+	<!-- 권한 수정 -->
+	<update id="updateAuthUser" parameterType="java.util.Map">
+		UPDATE MEMBERINFO 
+			SET AUTH=#{auth} WHERE SEQ=#{seq}
+	</update>
+	<!-- 사용자 입력 -->	
+	<insert id="insertUser" parameterType="UDto">
+		INSERT INTO MEMBERINFO (SEQ, ID, PASSWORD, 
+								NAME, ADDRESS, PHONE, 
+								EMAIL, ENABLE, AUTH)
+			VALUES(MEMBERINFO_SEQ.NEXTVAL, #{id}, #{password}, 
+					#{name}, #{address}, #{phone},
+					#{email}, 'Y', 'USER')
+	</insert>
+	<!-- 로그인 -->
+	<select id="getLogin" parameterType="java.util.Map" resultType="UDto">
+		<include refid="allColumn"/>
+			WHERE UPPER(ID)=UPPER(#{id}) AND PASSWORD=#{password}
+				AND ENABLE='Y'
+	</select>
+	<!-- 사용자 정보 조회 -->
+	<select id="getUserInfo" parameterType="java.lang.String" resultType="UDto">
+		SELECT SEQ, ID, PASSWORD, NAME, ADDRESS, PHONE, EMAIL, ENABLE, AUTH
+			FROM HR.MEMBERINFO
+			WHERE SEQ=#{seq}
+	</select>
+	<!-- 사용자 정보 수정 -->
+	<update id="updateUserInfo" parameterType="java.util.Map">
+		UPDATE MEMBERINFO SET ADDRESS=#{address}, PHONE=#{phone}, EMAIL=#{email}
+			WHERE SEQ=#{seq}
+	</update>
+	<!-- 사용자 삭제 -->
+	<update id="delUser" parameterType="java.lang.String">
+		UPDATE MEMBERINFO SET ENABLE='N'
+			WHERE SEQ=#{seq}
+	</update>
+	<!-- 아이디 중복 검사 -->
+	<select id="duplicateId" parameterType="java.lang.String" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+			FROM MEMBERINFO
+			WHERE ID=#{id}
+	</select>
+
+</mapper>

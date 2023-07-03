@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <!-- 
+        Promise는 프로미스가 생성된 시점에는 알려지지 않았을 수도 있는 값을 위한 대리자로, 
+        비동기 연산이 종료된 이후에 결과 값과 실패 사유를 처리
+    -->
+<script type="text/javascript">
+    const condition = true;
+    const promise = new Promise((resolve, reject)=>{
+        let a = 1+1;
+        if(a==2){
+            resolve('success');
+        } else {
+            reject('fail');
+        }
+    });
+
+    promise
+        .then((msg)=>{
+            console.log("this is the then "+msg);
+        })
+        .catch((msg)=>{
+            console.log("this is the catch "+msg)
+        });
+    // 20번째 줄의 판단(if문)에 의해 resolve는 then을 실행, reject는 catch를 실행
+</script>
+</body>
+</html>
