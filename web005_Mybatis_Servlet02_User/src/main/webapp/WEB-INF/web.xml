@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>web005_Mybatis_Servlet02_User</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+	<!-- 로그인(post)과 로그아웃(get) -->
+	<servlet>
+		<servlet-name>loginLogout</servlet-name>
+		<servlet-class>com.min.edu.ctrl.LoginLogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginLogout</servlet-name>
+		<url-pattern>/loginLogout.servlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 회원 조회 -->
+	<servlet>
+		<servlet-name>getAllUserStatus</servlet-name>
+		<servlet-class>com.min.edu.ctrl.GetAllUserStatusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getAllUserStatus</servlet-name>
+		<url-pattern>/getAllUserStatus.servlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 사용가능 회원 조회 -->
+	<servlet>
+		<servlet-name>getAllUser</servlet-name>
+		<servlet-class>com.min.edu.ctrl.GetAllUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getAllUser</servlet-name>
+		<url-pattern>/getAllUser.servlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 회원등급 변경 및 입력 -->
+	<servlet>
+		<servlet-name>updateAuth</servlet-name>
+		<servlet-class>com.min.edu.ctrl.UpdateAuthServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateAuth</servlet-name>
+		<url-pattern>/updateAuth.servlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 사용자 개인정보 상세조회 -->
+	<servlet>
+		<servlet-name>userInfo</servlet-name>
+		<servlet-class>com.min.edu.ctrl.UserInfoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userInfo</servlet-name>
+		<url-pattern>/userInfo.servlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 사용자 정보 업데이트 -->
+	<servlet>
+		<servlet-name>updateUser</servlet-name>
+		<servlet-class>com.min.edu.ctrl.UpdateUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateUser</servlet-name>
+		<url-pattern>/updateUser.servlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 사용자 탈퇴 -->
+	<servlet>
+		<servlet-name>delUser</servlet-name>
+		<servlet-class>com.min.edu.ctrl.DelUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>delUser</servlet-name>
+		<url-pattern>/delUser.servlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 회원 정보 입력 -->
+	<servlet>
+		<servlet-name>regist</servlet-name>
+		<servlet-class>com.min.edu.ctrl.RegistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>regist</servlet-name>
+		<url-pattern>/regist.servlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 사용자 아이디 중복 검사 체크 -->
+	<servlet>
+		<servlet-name>idChk</servlet-name>
+		<servlet-class>com.min.edu.ctrl.IdChkServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>idChk</servlet-name>
+		<url-pattern>/idChk.servlet</url-pattern>
+	</servlet-mapping>
+</web-app>

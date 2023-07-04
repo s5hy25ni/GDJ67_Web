@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.dao.BoardDaoImpl">
+
+	<!-- 전체 게시글 조회 -->
+	<select id="getAllBoard" resultType="BDto">
+		SELECT SEQ, WRITER, TITLE, REGDATE, DELFALG 
+			FROM SIMPLEBOARD s 	
+			ORDER BY REGDATE DESC
+	</select>
+	
+	<!-- 한 개의 게시글 조회 -->
+	<select id="getOneBoard" resultType="BDto">
+		SELECT SEQ, WRITER, TITLE, CONTENT, REGDATE, DELFALG 
+			FROM SIMPLEBOARD 
+			WHERE SEQ=#{seq}
+	</select>
+	
+	<!-- 새글작성 -->
+	<insert id="setInsertBoard">
+		INSERT INTO SIMPLEBOARD(SEQ, WRITER, TITLE, CONTENT)
+			VALUES(SIMPLEBOARD_SEQ.NEXTVAL, #{writer}, #{title}, #{content})
+	</insert>
+	
+	<!-- 수정 -->
+	<update id="setUpdateBoard">
+		UPDATE SIMPLEBOARD SET CONTENT=#{content}
+			WHERE SEQ=#{seq}
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="setDeleteBoard">
+		UPDATE SIMPLEBOARD SET DELFALG=UPPER('y')
+			WHERE SEQ=#{seq}
+	</delete>
+</mapper>
