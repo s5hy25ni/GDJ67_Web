@@ -27,22 +27,22 @@ public class JUnitTest {
 	
 	@Test
 	public void testDao() {
-		List<BoardDto> lists = dao.getAllBoard();
-		assertNotNull(lists);
-		
-		String seq = "3";
-		BoardDto dto = dao.getOneBoard(seq);
-		assertNotNull(dto);
+//		List<BoardDto> lists = dao.getAllBoard();
+//		assertNotNull(lists);
+//		
+//		String seq = "3";
+//		BoardDto dto = dao.getOneBoard(seq);
+//		assertNotNull(dto);
 		
 //		BoardDto dto = new BoardDto("깡깡", "배고파욥", "저녁메뉴뭐할까");
 //		boolean isc = dao.setInsertBoard(dto);
 //		assertEquals(isc, true);
 		
-//		Map<String, Object> map = new HashMap<String, Object>();
-//		map.put("content", "갈비갈비갈비갈비ㅣㅣㅣ");
-//		map.put("seq", "3");
-//		boolean isc = dao.setUpdateBoard(map);
-//		assertEquals(isc, true);
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("content", "갈비갈비갈비갈비ㅣㅣㅣ");
+		map.put("seq", "3");
+		boolean isc = dao.setUpdateBoard(map);
+		assertEquals(isc, true);
 		
 //		String seq2 = "3";
 //		boolean isc = dao.setDeleteBoard(seq2);

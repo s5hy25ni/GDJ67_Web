@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+	
+	<display-name>Web Application</display-name>
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!--TODO 001 Servlet 2.x 방식 
+			web.xml의 환경설정에 mapping(주소, 클래스)를 xml을 작성해서 매핑 코드를 작성
+			1:1 이기 때문에 name이 같으면 안됨
+			<servlet> extends HttpServlet 클래스의 위치
+			<servlet-mapping> 브라우저에서 요청할 주소의 이름	
+	-->
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>com.min.edu.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello.do</url-pattern>
+	</servlet-mapping>
+	
+	<!--TODO 006 WEB-INF의 폴더는 server에서만 접근 가능
+		즉, servlet을 통해서 접근할 수 있기 때문에 주소를 통해서 접근이 불가능한 보안 화면을 만들 수 있음
+	 -->
+	 <servlet>
+		 <servlet-name>second</servlet-name>
+		 <servlet-class>com.min.edu.SecondServlet</servlet-class>
+	 </servlet>
+	 <servlet-mapping>
+	 	<servlet-name>second</servlet-name>
+	 	<url-pattern>/second.do</url-pattern>
+	 </servlet-mapping>
+</web-app>

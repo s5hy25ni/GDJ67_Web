@@ -2,6 +2,11 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
 <configuration>
 	<properties resource="properties/oracle.properties"/>
+	
+	<settings>
+		<setting name="lazyLoadingEnabled" value="true"/> <!-- true으로 한다. -->
+	</settings>
+	
 	<typeAliases>
 		<typeAlias type="com.min.edu.dto.BoardDto" alias="BDto"/>
 	</typeAliases>
@@ -19,6 +24,6 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="sqls/User_Statement.xml"/>
+		<mapper resource="sqls/user_statement.xml"/>
 	</mappers>
 </configuration>

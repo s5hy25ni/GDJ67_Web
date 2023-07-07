@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="./getAllBoard.do">게시판 보기</a>
+	servlet2.do의 GET 요청
 </body>
 </html>

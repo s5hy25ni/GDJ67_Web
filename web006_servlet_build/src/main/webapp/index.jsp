@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="./getAllBoard.do">게시판 보기</a>
+Hello World
 </body>
 </html>

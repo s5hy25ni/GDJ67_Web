@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="./getAllBoard.do">게시판 보기</a>
+forwardPage
+<%
+	String param = request.getParameter("name");
+%>
+<%=param%>
+<hr>
+${param.name}
 </body>
 </html>

@@ -16,6 +16,14 @@
 </style>
 </head>
 <body>
+<!-- 
+	JSP는 JAVA로 먼저 변경되고 실행되어짐
+	따라서 이동 흐름은 java 이기 때문에 먼저 실행
+	HTMl은 그려지지 않고 이동만 하게 됨
+ -->
+	<jsp:forward page="./forwardPage.jsp">
+		<jsp:param value="hoho" name="name"/>
+	</jsp:forward>
 	<%
 		// scriptlet 자바의 문법을 작성하는 영역
 /* 		Object obj = request.getAttribute("loginDto"); // 전달받은 객체의 name이 없으면 null

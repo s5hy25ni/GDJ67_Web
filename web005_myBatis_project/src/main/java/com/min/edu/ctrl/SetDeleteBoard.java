@@ -1,8 +1,6 @@
 package com.min.edu.ctrl;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,22 +12,27 @@ import org.apache.log4j.Logger;
 import com.min.edu.comm.Comm;
 import com.min.edu.dao.BoardDaoImpl;
 import com.min.edu.dao.IBoardDao;
-import com.min.edu.dto.BoardDto;
 
-public class GetAllBoard extends HttpServlet {
+public class SetDeleteBoard extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private IBoardDao dao;
-	private Logger logger = Logger.getLogger(GetAllBoard.class);
-	
-    public GetAllBoard() {
+	private Logger logger = Logger.getLogger(SetDeleteBoard.class);
+
+    public SetDeleteBoard() {
     	dao = new BoardDaoImpl();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		logger.info("GetAllBoard doGet");
-		List<BoardDto> lists = dao.getAllBoard();
-		request.setAttribute("all", lists);
-		Comm.forward(request, response, "/WEB-INF/views/ListBoard.jsp");
+		logger.info("SetDeleteBoard doGet");
+		String seq = request.getParameter("seq");
+		boolean isc = dao.setDeleteBoard(seq);
+		
+		if(isc == true) {
+			System.out.println(seq);
+			response.sendRedirect("./getAllBoard.do");
+		} else {
+			response.sendRedirect("./setUpdateBoard.do?seq="+seq);
+		}
 	}
 
 }
