@@ -2,43 +2,17 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.min.edu</groupId>
-  <artifactId>web008_AnswerBoard_Servlet</artifactId>
+  <artifactId>web009_XmlHttpRequest_Ajax</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>web008_AnswerBoard_Servlet Maven Webapp</name>
+  <name>web009_XmlHttpRequest_Ajax Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-  	<!-- Oracle Database를 접속하기 위한 ojdbc 라이브러리 -->
+  	<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 	<dependency>
-		<groupId>com.oracle.database.jdbc</groupId>
-		<artifactId>ojdbc10</artifactId>
-		<version>19.17.0.0</version>
-	</dependency>
-
-	<!-- myBatis Framework를 사용하기 위한 라이브러리 -->
-	<dependency>
-		<groupId>org.mybatis</groupId>
-		<artifactId>mybatis</artifactId>
-		<version>3.5.6</version>
-	</dependency>
-
-	<!-- DTO/VO의 은닉화된 객체를 쉽게 사용하기 위함 -->
-	<dependency>
-		<groupId>org.projectlombok</groupId>
-		<artifactId>lombok</artifactId>
-		<version>1.18.28</version>
-	</dependency>
-
-	<dependency>
-		<groupId>log4j</groupId>
-		<artifactId>log4j</artifactId>
-		<version>1.2.17</version>
-	</dependency>
-	
-	<dependency>
-    	<groupId>javax.servlet</groupId>
-	    <artifactId>jstl</artifactId>
-    	<version>1.2</version>
+	    <groupId>com.googlecode.json-simple</groupId>
+	    <artifactId>json-simple</artifactId>
+	    <version>1.1.1</version>
 	</dependency>
 
     <dependency>
@@ -49,7 +23,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>web008_AnswerBoard_Servlet</finalName>
+    <finalName>web009_XmlHttpRequest_Ajax</finalName>
     <plugins>
     	<plugin>
     		<groupId>org.apache.maven.plugins</groupId>
