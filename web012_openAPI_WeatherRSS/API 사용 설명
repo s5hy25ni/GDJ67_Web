@@ -1,0 +1,12 @@
+기상청(kma.go.kr)의 RSS를 이용하여 날씨앱을 만들어보자! => Weather API 사용
+기상청 RSS 링크 : https://devweather.kma.go.kr/weather/lifenindustry/sevice_rss.jsp > 생활과 산업 > 서비스 > 인터넷 > RSS
+
+http://devweather.kma.go.kr/wid/queryDFSRSS.jsp?zone=1154551000
+http://devweather.kma.go.kr/wid/queryDFSRSS.jsp?zone=1156055000
+zone의 값에 따라 예보의 결과를 xml로 준다(1154551000 금천구, 1156055000 당산1동)
+
+1) javascript에서 XML로 변경하는 방법
+2) jsoup를 사용해서 XML 이용하는 방법
+3) xalan 사용해서 <xml: 사용
+
+※※※※※ CORS 처리 방법

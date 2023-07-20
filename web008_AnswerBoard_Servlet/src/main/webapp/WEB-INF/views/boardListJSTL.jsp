@@ -16,7 +16,7 @@
 <c:set var="rows" value="${lists}" scope="page"/>
 <jsp:useBean id="dp" class="com.min.edu.comm.DatePatternBean" scope="page" />
 <jsp:useBean id="pp" class="com.min.edu.comm.PhotoBean" scope="page" />
-	<div id="container">
+	<div class="container">
     	<form action="./boardDelete.do" method="POST" onsubmit="return chkSubmit()">
 	      	<table class="table table-hover">
 	      		<thead>

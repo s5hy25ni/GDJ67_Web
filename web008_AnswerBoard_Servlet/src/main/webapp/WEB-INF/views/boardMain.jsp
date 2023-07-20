@@ -14,6 +14,7 @@
 <title>전체 게시글 보기</title>
 </head>
 <%
+
 	List<AnswerboardDto> lists = (List<AnswerboardDto>)request.getAttribute("lists");
 	/* List<AnswerboardDto> lists = new ArrayList(); */
 %>

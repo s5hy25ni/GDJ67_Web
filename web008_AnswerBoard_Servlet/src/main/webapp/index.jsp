@@ -10,6 +10,7 @@
 <title>답변형 게시판 처음 페이지</title>
 </head>
 <%
+
 	UserVo loginInfo = (UserVo)session.getAttribute("loginInfo");
 	List<AnswerboardDto> lists = (List<AnswerboardDto>)request.getAttribute("lists");
 %>

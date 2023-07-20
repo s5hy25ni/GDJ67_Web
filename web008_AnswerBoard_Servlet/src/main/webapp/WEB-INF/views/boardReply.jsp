@@ -11,15 +11,14 @@
 <title>답글 작성 화면</title>
 </head>
 <%
+
 	AnswerboardDto dto = (AnswerboardDto)request.getAttribute("dto");
 	UserVo loginVo = (UserVo)session.getAttribute("loginInfo");
 %>
-<%!
-	public String formatDate(Date d){
+<%!public String formatDate(Date d){
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyy년도 MM월 dd일");
 		return fmt.format(d);
-	}
-%>
+	}%>
 <%@ include file="./header.jsp"%>
 <body>
 	<div id="container">

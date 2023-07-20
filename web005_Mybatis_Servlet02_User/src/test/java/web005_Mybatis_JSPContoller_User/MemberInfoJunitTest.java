@@ -72,7 +72,7 @@ public class MemberInfoJunitTest {
 //		assertEquals(result, 1);
 	}
 	
-//	@Test
+	@Test
 	public void daoTest() {
 //		List<UserDto> lists = dao.getAllUserStatus();
 //		assertNotNull(lists);
@@ -86,9 +86,11 @@ public class MemberInfoJunitTest {
 //		int row = dao.updateAuthUser(map);
 //		assertEquals(row, 1);
 		
-//		UserDto dto = new UserDto("hi", "1234", "sohyeon", "서울", "01022", "hi@gmail.com");
-//		int row2 = dao.insertUser(dto);
-//		assertEquals(row2, 1);
+		/*
+		 * for(int i=0; i<41; i++) { UserDto dto = new UserDto("hi"+i, "소현"+i, "1234",
+		 * "hi"+i+"@gmail.com"); int row2 = dao.insertUser(dto); assertEquals(row2, 1);
+		 * }
+		 */
 		
 //		Map<String, Object> map2 = new HashMap<String, Object>();
 //		map2.put("id", "hi");
@@ -110,8 +112,9 @@ public class MemberInfoJunitTest {
 //		int row4 = dao.delUser("5");
 //		assertEquals(row4, 1);
 		
-		int result = dao.duplicateId("hi");
-		assertEquals(result, 1);
+		/*
+		 * int result = dao.duplicateId("hi"); assertEquals(result, 1);
+		 */
 	}
 
 }

@@ -30,7 +30,7 @@ public class BikeDaoImpl implements IBikeDao {
 	@Override
 	public int bikeDelete() {
 		logger.info("BikeDaoImpl bikeDelete");
-		SqlSession session = manager.openSession(true);
+		SqlSession session = manager.openSession();
 		int n = session.delete(NS+"bikeDelete");
 		return n;
 	}

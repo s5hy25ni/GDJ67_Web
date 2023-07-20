@@ -1,3 +1,4 @@
+<%@page import="com.min.edu.dto.AnswerboardDto"%>
 <%@page import="com.min.edu.dto.UserVo"%>
 <%@page import="com.min.edu.dto.AnswerboardDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -8,9 +9,9 @@
 <meta charset="UTF-8">
 <title>게시글 상세 보기</title>
 </head>
-	<% 
-		AnswerboardDto dto = (AnswerboardDto)request.getAttribute("dto");
-		UserVo loginVo = (UserVo)session.getAttribute("loginInfo");
+	<%	 
+			AnswerboardDto dto = (AnswerboardDto)request.getAttribute("dto");
+			UserVo loginVo = (UserVo)session.getAttribute("loginInfo");
 	%>
 <%@ include file="./header.jsp" %>
 <body>

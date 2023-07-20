@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-3.7.0.js"></script>
+<script type="text/javascript" src="./js/jq_007.js"></script>
+</head>
+<!-- 
+	Asynchronous javascript and xml : AJAX
+	비동기와 동기식의 경우 값을 화면에 출력하기 위해서는 Binding을 해야한다. : MPA 방식
+	하지만 비동기식처리에서는 특정한 곳의 화면에 응답을 통해서 받은 결과를 Data만을 교체하는 방식
+	비동기식에서 처리할 수 있는 값의 형태는(JSON, XML, Text, Map, CSV, ...)
+ -->
+<body>
+	<h1>데이터 가져오기</h1>
+	<fieldset>
+		<legend>사원번호 조회</legend>
+		<input type="text" name="empId" id="empId">
+		<input type="button" value="조회" id="emp_search">
+	</fieldset>
+	
+	<table>
+		<tbody>
+			<tr>
+				<th>사원번호</th>
+				<td>
+					<input type="text" name="empNum">
+				</td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="lastName">
+				</td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td>
+					<input type="text" name="email">
+				</td>
+			</tr>
+			<tr>
+				<th>전화번호</th>
+				<td>
+					<input type="text" name="phone">
+				</td>
+			</tr>
+			<tr>
+				<th>사원번호</th>
+				<td>
+					<input type="text" name="empNum">
+				</td>
+			</tr>
+			<tr>
+				<th>입사일</th>
+				<td>
+					<input type="text" name="hireDate">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

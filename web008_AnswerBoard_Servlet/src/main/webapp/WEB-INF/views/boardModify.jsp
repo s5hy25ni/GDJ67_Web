@@ -8,6 +8,7 @@
 <title>게시글 수정 화면</title>
 </head>
 <%
+
 	AnswerboardDto dto = (AnswerboardDto)request.getAttribute("dto");
 %>
 <%@ include file="./header.jsp" %>

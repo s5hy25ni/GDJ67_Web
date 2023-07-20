@@ -32,12 +32,18 @@
 	</update>
 	<!-- 사용자 입력 -->	
 	<insert id="insertUser" parameterType="UDto">
-		INSERT INTO MEMBERINFO (SEQ, ID, PASSWORD, 
+<!-- 		INSERT INTO MEMBERINFO (SEQ, ID, PASSWORD, 
 								NAME, ADDRESS, PHONE, 
 								EMAIL, ENABLE, AUTH)
 			VALUES(MEMBERINFO_SEQ.NEXTVAL, #{id}, #{password}, 
 					#{name}, #{address}, #{phone},
-					#{email}, 'Y', 'USER')
+					#{email}, 'Y', 'USER') -->
+		INSERT INTO USERINFO (ID, NAME, PASSWORD, 
+								EMAIL, AUTH, DELFLAG,
+								JOINDATE)
+			VALUES(#{id}, #{name}, #{password}, 
+					#{email}, 'U', 'N',
+					SYSDATE)
 	</insert>
 	<!-- 로그인 -->
 	<select id="getLogin" parameterType="java.util.Map" resultType="UDto">

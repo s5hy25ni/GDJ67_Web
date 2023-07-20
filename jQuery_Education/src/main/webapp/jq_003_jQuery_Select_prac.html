@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selector 표현식 실습</title>
+<script type="text/javascript" src="./js/jquery-3.7.0.js"></script>
+<script type="text/javascript" src="./js/jq_003.js"></script>
+<style type="text/css">
+	img {
+		width: 100px;
+		height: 100px;
+}
+	h1 {
+		font-size: 12pt;
+}
+</style>
+</head>
+<body>
+
+<h1>1. 이미지의 크기를 모두 300px*300px로 변경하세요</h1>
+<button onclick="imgSize()">클릭</button>
+
+<h1>2. 이미지중 id가 selId인 태그를 찾아 숨기세요</h1>
+<button onclick="idSelector()">클릭</button>
+
+<h1>3. 이미지중 클래스가 selClass인 태그를 찾아 투명도를 0.3으로 지정하세요</h1>
+<button onclick="classSelector()">클릭</button>
+
+<h1>4. 이미지 바꾸기 (td의 자식요소인 img 만 선택하여 img02로 바꾸세요)</h1>
+<button onclick="changeImg()">클릭</button>
+
+<h1>5. 이미지를 속성 값으로 탐색하여 slideup 기능을 적용하세요(title의 속성 중 02를 포함하고 있는 img 태그만을 선택)</h1>
+<button onclick="propSelector()">클릭</button>
+
+<hr>
+<table>
+	<tr>
+		<td><img id="selId" 		title="img01" 		src="./img/img01.png"></td>
+		<td><img 					title="img02" 		src="./img/img01.png"></td>
+		<td><img class="selClass" 	title="img03"		src="./img/img01.png"></td>
+		<td><img class="selClass" 	title="img04"		src="./img/img01.png"></td>
+	</tr>
+	<tr>
+		<td><img id="selId" 		title="img01" 		src="./img/img01.png"></td>
+		<td><span><img 				title="img02" 		src="./img/img01.png"></span></td>
+		<td><img class="selClass" 	title="img03"		src="./img/img01.png"></td>
+		<td><img class="selClass" 	title="img04"		src="./img/img01.png"></td>
+	</tr>
+</table>
+
+</body>
+</html>

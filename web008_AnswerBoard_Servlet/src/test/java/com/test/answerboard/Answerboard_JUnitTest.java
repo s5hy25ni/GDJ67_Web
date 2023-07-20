@@ -19,14 +19,14 @@ import com.min.edu.model.UserDaoImpl;
 
 public class Answerboard_JUnitTest {
 
-	@Test
+//	@Test
 	public void beanTest() {
 //		DatePatternBean bean = new DatePatternBean();
 //		String result = bean.datePattern("2023-07-10 16:28:00");		
 //		System.out.println(result);
 	}
 	
-//	@Test
+	@Test
 	public void daoTest() {
 		IAnswerboardDao dao = new AnswerboardImpl();
 		
@@ -34,11 +34,11 @@ public class Answerboard_JUnitTest {
 //		dao.selectDetailBoard(seq);
 		
 		//ID, TITLE, CONTENT
-//		AnswerboardDto dto = new AnswerboardDto();
-//		dto.setId("TEST_ID");
-//		dto.setTitle("TEST_TITLE");
-//		dto.setContent("TEST_CONTENT");
-//		dao.insertBoard(dto);
+		/*
+		 * AnswerboardDto dto = new AnswerboardDto(); for(int i=0; i<30; i++) {
+		 * dto.setId("TEST_ID"+i); dto.setTitle("TEST_TITLE"+i);
+		 * dto.setContent("TEST_CONTENT"+i); dao.insertBoard(dto); }
+		 */
 		
 //		AnswerboardDto dto = new AnswerboardDto();
 //		dto.setSeq(25);
@@ -64,12 +64,12 @@ public class Answerboard_JUnitTest {
 //		dao.selectAllBoard();
 //		System.out.println(result);
 		
-		IUserDao uDao = new UserDaoImpl();
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("id", "user");
-		map.put("pw", "1234");
-		uDao.loginSelect(map);
-		assertTrue(true);
+//		IUserDao uDao = new UserDaoImpl();
+//		Map<String, Object> map = new HashMap<String, Object>();
+//		map.put("id", "user");
+//		map.put("pw", "1234");
+//		uDao.loginSelect(map);
+//		assertTrue(true);
 	}
 	
 	

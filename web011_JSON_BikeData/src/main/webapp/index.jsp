@@ -16,6 +16,6 @@
 		</ul>
 	</fieldset>
 	<h3><a href="./bikeCtrl.do?command=first">첫 번째 방법</a></h3>
-	<h3><a href="<%=request.getRequestURL()%>bikeCtrl.do?command=second">두 번째 방법</a></h3>
+	<h3><a href="<%=request.getContextPath()%>/bikeCtrl.do?command=second">두 번째 방법</a></h3>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selector 표현식</title>
+<script type="text/javascript" src="./js/jquery-3.7.0.js"></script>
+<script type="text/javascript" src="./js/jq_002.js"></script>
+</head>
+<body>
+
+<fieldset>
+	<legend>Selector 표현식</legend>
+	<ul class="sub_menu">
+		<li><span>tag로 선택하기</span></li>
+		<li id="t1">ID로 선택하기</li>
+		<li class="t2">Class로 선택하기</li>
+		<li><span>parent child로 선택하기</span></li>
+		<li><b><span>parent &gt; child로 선택하기</span></b></li>
+		<li>:nth-child(n/odd/even)로 선택하기</li>
+		<li>:first-child</li>
+		<li>:last-child</li>
+	</ul>
+</fieldset>
+<fieldset>
+	<button onclick="a1()">tag로 선택하기</button>
+	<button onclick="a2()">ID로 선택하기</button>
+	<button onclick="a3()">Class로 선택하기</button>
+	<button onclick="a4()">parent child로 선택하기</button>
+	<button onclick="a5()">parent &gt; child로 선택하기</button>
+	<button onclick="a6()">:nth-child(n/odd/even)로 선택하기</button>
+	<button onclick="a7()">:first-child</button>
+	<button onclick="a8()">:last-child</button>
+	<div>
+		코드내용
+		<div id="view"></div>
+	</div>
+</fieldset>
+</body>
+</html>

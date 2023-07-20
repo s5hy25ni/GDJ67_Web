@@ -7,7 +7,7 @@
 			VALUES(#{new_addr}, #{content_id}, #{addr_gu}, #{longitude}, #{cradle_count}, #{latitude}, #{content_nm})	
 	</insert>
 	
-	<delete id="bikeDelete">
-		TRUNCATE TABLE SEOULBIKE;
-	</delete>
+   <delete id="bikeDelete">
+      TRUNCATE TABLE SEOULBIKE
+   </delete>
 </mapper>

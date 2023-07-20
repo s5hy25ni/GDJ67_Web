@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-3.7.0.js"></script>
+<script type="text/javascript" src="./js/jq_006.js"></script>
+</head>
+<body>
+   <form id="signal" action="http://www.naver.com" method="get">
+      <div>
+         <span class="label">User ID</span>
+         <input type="text" class="infoBox" name="userId">
+         
+         <span class="error" style="color:red;">반드시 입력해주세요</span>
+         <input type="submit" class="submit" value="전송하기">
+      </div>
+   </form>
+   
+   <hr>
+   <fieldset>
+      <legend>체크여부 확인하기</legend>
+      <input type="checkbox" name="all" onclick="allCheck(this.checked)">전체 선택하기<br>
+      <input type="checkbox" name="chk" value="20000"><b>셜록홈즈</b><br>
+      <input type="checkbox" name="chk" value="30000"><b>빨간머리 앤</b><br>
+      <input type="checkbox" name="chk" value="15000"><b>인천 상륙작전</b><br>
+      <input type="button" value="확인" id="confirm">
+      
+      <span>선택한 책의 가격</span>
+      <div id="result"></div>
+   </fieldset>
+
+</body>
+</html>
