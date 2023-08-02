@@ -44,4 +44,40 @@
 		<servlet-name>userList</servlet-name>
 		<url-pattern>/userList.do</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>fileList</servlet-name>
+		<servlet-class>com.min.edu.ctrl.FileList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>fileList</servlet-name>
+		<url-pattern>/fileList.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>fileWrite</servlet-name>
+		<servlet-class>com.min.edu.ctrl.FileWrite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>fileWrite</servlet-name>
+		<url-pattern>/fileWrite.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>fileDetail</servlet-name>
+		<servlet-class>com.min.edu.ctrl.FileDetail</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>fileDetail</servlet-name>
+		<url-pattern>/fileDetail.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>replyWrite</servlet-name>
+		<servlet-class>com.min.edu.ctrl.ReplyWrite</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>replyWrite</servlet-name>
+		<url-pattern>/replyWrite.do</url-pattern>
+	</servlet-mapping>
 </web-app>

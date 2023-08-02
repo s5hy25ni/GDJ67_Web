@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.BoardImpl">
+
+	<resultMap type="bDto2" id="bDto2Map">
+		<result column="B_SEQ" property="bSeq"/>
+		<result column="TITLE" property="title"/>
+		<result column="B_WRITER" property="bWriter"/>
+		<result column="B_CONTENT" property="bContent"/>
+		<result column="B_REGDATE" property="bRegdate"/>
+		<result column="B_DELFLAG" property="bDelflag"/>
+
+		<collection property="replyDto" resultMap="rDtoMap"></collection>
+		<collection property="fileDto" resultMap="fDtoMap"></collection>
+	</resultMap>
+	
+	<resultMap type="rDto" id="rDtoMap">
+		<result column="R_SEQ" property="rSeq"/>
+		<result column="B_SEQ" property="bSeq"/>
+		<result column="R_WRITER" property="rWriter"/>
+		<result column="R_CONTENT" property="rContent"/>
+		<result column="R_REGDATE" property="rRegdate"/>
+		<result column="R_DELFLAG" property="rDelflag"/>
+	</resultMap>
+	
+	<resultMap type="fDto" id="fDtoMap">
+		<result column="F_SEQ" property="fSeq"/>
+		<result column="B_SEQ" property="bSeq"/>
+		<result column="B_WRITER" property="bWriter"/>
+		<result column="ORIGIN_FNAME" property="originFname"/>
+		<result column="STORED_FNAME" property="storedFname"/>
+		<result column="FILE_SIZE" property="fileSize"/>
+		<result column="F_REGDATE" property="fRegdate"/>
+		<result column="F_DELFLAG" property="fDelflag"/>
+	</resultMap>
+	
+	<select id="getAllBoard" resultType="bDto2">
+		SELECT B_SEQ, TITLE || '(' || (SELECT COUNT(*)
+									FROM REPLY r
+									WHERE b.B_SEQ = r.B_SEQ) || ')' AS TITLE, 
+				B_WRITER, B_REGDATE , B_DELFLAG
+			FROM BOARD b
+			ORDER BY B_SEQ DESC
+	</select>
+	
+	<insert id="insertBoard">
+		<selectKey resultType="java.lang.Integer" keyProperty="bSeq" order="BEFORE">
+			SELECT MAX(B_SEQ)+1 FROM BOARD
+		</selectKey>
+		INSERT INTO HR.BOARD(B_SEQ, TITLE, B_WRITER, B_CONTENT)
+			VALUES(#{bSeq},#{title},#{bWriter},#{bContent})
+	</insert>
+	
+	<insert id="insertFile">
+		<selectKey resultType="java.lang.Integer" keyProperty="fSeq" order="BEFORE">
+			SELECT MAX(F_SEQ)+1 FROM FILEFILE
+		</selectKey>
+		INSERT ALL
+			<foreach collection="fDtos" item="one" index="vs">
+			INTO HR.FILEFILE(F_SEQ, B_SEQ, B_WRITER, ORIGIN_FNAME, STORED_FNAME, FILE_SIZE)
+			VALUES(#{fSeq}+#{vs}, #{one.bSeq}, #{one.bWriter}, #{one.originFname}, #{one.storedFname}, #{one.fileSize})
+			</foreach>
+		SELECT * FROM DUAL
+	</insert>
+	
+	<select id="getOneBoard" resultMap="bDto2Map">
+		SELECT b.B_SEQ AS B_SEQ, TITLE , b.B_WRITER AS B_WRITER  , B_CONTENT , B_REGDATE , B_DELFLAG , R_SEQ , R_WRITER , R_CONTENT , R_REGDATE , R_DELFLAG , F_SEQ , ORIGIN_FNAME 
+			FROM BOARD b LEFT JOIN (SELECT R_SEQ , B_SEQ, R_WRITER , R_CONTENT , R_REGDATE , R_DELFLAG, RN
+										FROM (SELECT R_SEQ , B_SEQ, R_WRITER , R_CONTENT , R_REGDATE , R_DELFLAG ,
+												ROW_NUMBER() OVER(ORDER BY R_SEQ ASC) RN
+												FROM REPLY
+												WHERE B_SEQ=#{seq})) r
+			ON b.B_SEQ = r.B_SEQ
+			LEFT JOIN FILEFILE f 
+			ON b.B_SEQ = f.B_SEQ 
+			WHERE f.B_SEQ = #{seq}
+				AND RN BETWEEN #{start} AND #{end}
+			ORDER BY F_SEQ ASC, R_SEQ ASC
+	</select>
+	
+	<insert id="insertReply">
+		<selectKey resultType="java.lang.Integer" keyProperty="rSeq" order="BEFORE">
+			SELECT MAX(R_SEQ)+1 FROM REPLY
+		</selectKey>
+		INSERT INTO HR.REPLY(R_SEQ, B_SEQ, R_WRITER, R_CONTENT)
+			VALUES(#{rSeq}, #{bSeq}, #{rWriter}, #{rContent})
+	</insert>
+	
+	<select id="getRCnt" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+			FROM REPLY r 
+			WHERE B_SEQ=#{seq}
+	</select>
+</mapper>
+

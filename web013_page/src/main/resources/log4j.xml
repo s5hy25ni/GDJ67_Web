@@ -15,7 +15,7 @@
 	<!-- file 로그 처리 -->
 	<appender name="dailyFile"
 		class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="File" value="C:/eclipse_web/log/crud.log" />
+		<param name="File" value="C:/eclipse_web/log/supply.log" />
 		<param name="DatePattern" value="'.'yyMMdd" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern"

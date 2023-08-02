@@ -83,7 +83,7 @@ public class PageController extends HttpServlet {
 	      // Paging 객체 startPage; endPage
 	      req.setAttribute("page", p);
 	      
-	      req.getRequestDispatcher("/allBoardPage.jsp").forward(req, resp);
+	      req.getRequestDispatcher("WEB-INF/views/allBoardPage.jsp").forward(req, resp);
 	      
 
 	}

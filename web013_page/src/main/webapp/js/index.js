@@ -1,4 +1,4 @@
-$(function(){
+/*$(function(){
 	$.ajax({
 		url:"./userCount.do",
 		type:"get",
@@ -11,7 +11,7 @@ $(function(){
 		error:function(){}
 	});
 	
-});
+});*/
 
 function makeTable(dataTable){
 	$tbody = $("tbody");

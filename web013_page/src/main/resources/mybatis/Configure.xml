@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
 <configuration>
-
+	
 	<properties resource="properties/oracle.properties" />
+
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
 	<typeAliases>
 		<typeAlias type="com.min.edu.dto.BoardDto" alias="bDto"/>
 		<typeAlias type="com.min.edu.dto.UserDto" alias="uDto"/>
+		<typeAlias type="com.min.edu.dto.BoardDto2" alias="bDto2" />
+		<typeAlias type="com.min.edu.dto.ReplyDto" alias="rDto" />
+		<typeAlias type="com.min.edu.dto.FileDto" alias="fDto" />
 	</typeAliases>
 	
 	<environments default="development">
@@ -23,5 +30,7 @@
 	<mappers>
 		<mapper resource="sqls/BoardPage_Statement.xml"/>
 		<mapper resource="sqls/User_Statement.xml"/>
+		<mapper resource="sqls/Board_Statement.xml"/>
+		<mapper resource="sqls/OneToMany.xml" />
 	</mappers>
 </configuration>
