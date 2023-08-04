@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.BoardPageImpl">
+	
+	<resultMap type="rtVo" id="rootMap">
+		<result column="SEQ" property="seq" />
+		<result column="ID" property="id" />
+		<result column="TITLE" property="title" />
+		<result column="CONTENT" property="content" />
+		<result column="REGDATE" property="regdate" />
+		
+		<collection property="fileVo" resultMap="fileMap"></collection>
+		<collection property="replyVo" resultMap="replyMap"></collection>
+	</resultMap>
+	<resultMap type="fVO" id="fileMap">
+		<result column="" property="originFname"/>
+		<result column="" property="storedFname"/>
+		<result column="" property="fileSize"/>
+	</resultMap>
+	<resultMap type="rpVo" id="replyMap"></resultMap>
+
+	<select id="getDetail">
+		SELECT rt.SEQ, rt.ID, rt.TITLE, rt.CONTENT, rt.REGDATE, B_SEQ , ORIGIN_FNAME , STORED_FNAME , FILE_SIZE, rp.SEQ, "REF", rp.TITLE, rp.REGDATE 
+			FROM ROOTBOARD rt LEFT JOIN (SELECT B_SEQ , ORIGIN_FNAME , STORED_FNAME , FILE_SIZE
+											FROM FILEBOARD
+											WHERE F_DELFLAG = 'N'
+												AND B_SEQ = '1') f 
+			ON rt.SEQ = B_SEQ LEFT JOIN (SELECT SEQ, "REF", TITLE, REGDATE 
+											FROM REPLYBOARD
+												WHERE "REF"='1'
+												ORDER BY SEQ) rp
+			ON rt.SEQ = "REF"
+	</select>
+	
+	<select id="getReply">
+	</select>
+	
+	<insert id="insertRoot">
+		
+	</insert>
+	
+	<insert id="insertFile">
+		
+	</insert>
+</mapper>

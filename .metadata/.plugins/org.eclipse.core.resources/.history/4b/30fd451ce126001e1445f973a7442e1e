@@ -1,0 +1,21 @@
+package com.test.page;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.Test;
+
+import com.min.edu.dto.BoardDto2;
+import com.min.edu.model.BoardImpl;
+import com.min.edu.model.IBoard;
+
+public class fileJUnit {
+
+	@Test
+	public void test() {
+		IBoard dao = new BoardImpl();
+		List<BoardDto2> lists = dao.getAllBoard();
+	}
+
+}

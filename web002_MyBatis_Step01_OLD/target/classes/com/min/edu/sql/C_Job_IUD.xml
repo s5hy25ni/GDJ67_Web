@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+  <!-- spring-boot(Framework) auto proxy이기 때문에 namespace를 클래스 이름으로 해야 함 -->
+<mapper namespace="com.min.edu.model.JobIUDDaoImpl">
+
+	<!-- 
+			INSERT, UPDATE, DELETE는 성공한 row의 갯수를 반환
+			
+			INSERT 성공한 row의 갯수를 반환(ResultType 사용 X) -> 성공여부를 판단
+				: 특징 tag <selectkey> // pass by reference 중요!!
+					=> INSERT 실행 후 INSERT 문에서 생성된 값을 사용하고 싶은 경우
+							<selectkey>를 통해서 전달 받은 객체에 값을 입력할 수 있다.
+			
+			myBatis는 preparedStatement 객체를 사용하여 만들어져 있음
+				=> JDBC에서 ? 바인딩 하여 하나의 SQL 문장을 만들어 처리
+					컬럼 = 값 이라고 할 때 '컬럼'='값'으로 가져와 컬럼을 인식할 수 없음
+				=> myBatis는 #은 '' 을 포함해서 가져오고(값)
+										$은 '' 없이 가져와서 컬럼을 인식할 수 있음
+	 -->
+	 <insert id="insert01" parameterType="JVO">
+	 	INSERT INTO JOB(JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY)
+			VALUES(#{job_id}, #{job_title}, #{min_salary}, #{max_salary})
+	 </insert>
+	 
+	 <delete id="delete01" parameterType="java.util.Map">
+	 	DELETE FROM JOB
+			WHERE JOB_ID=#{id}
+	 </delete>
+	 
+	 <!-- parameterType은 필수가 아님!!! -->
+	 <update id="update01" parameterType="java.util.Map"> 
+	 	UPDATE JOB
+			SET JOB_TITLE=#{job_title}
+			WHERE JOB_ID=#{job_id}
+	 </update>
+</mapper>

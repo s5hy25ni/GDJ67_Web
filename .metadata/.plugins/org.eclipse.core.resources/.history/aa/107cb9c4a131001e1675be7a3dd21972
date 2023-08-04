@@ -1,0 +1,22 @@
+package com.min.edu.test;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.Test;
+
+import com.min.edu.model.BoardPageImpl;
+import com.min.edu.model.IBoardPage;
+import com.min.edu.vo.RootVo;
+
+public class BoardJUnitTest {
+
+	@Test
+	public void test() {
+		IBoardPage dao = new BoardPageImpl();
+		List<RootVo> rtVo = dao.getDetail("1");
+		assertNotNull(rtVo);
+	}
+
+}

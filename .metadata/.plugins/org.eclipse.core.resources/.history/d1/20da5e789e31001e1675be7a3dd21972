@@ -1,0 +1,12 @@
+package com.min.edu.model;
+
+import java.util.List;
+
+import com.min.edu.vo.ReplyVo;
+import com.min.edu.vo.RootVo;
+
+public interface IBoardPage {
+	public List<RootVo> getDetail();
+	public List<ReplyVo> getReply();
+	public boolean insertRoot();	
+}

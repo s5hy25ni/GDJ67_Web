@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.BoardImpl">
+
+	<resultMap type="bDto2" id="bDto2Map">
+		<result column="B_SEQ" property="bSeq"/>
+		<result column="TITLE" property="title"/>
+		<result column="WRITER" property="writer"/>
+		<result column="CONTENT" property="content"/>
+		<result column="REGDATE" property="regdate"/>
+		<result column="DELFLAG" property="delflag"/>
+	</resultMap>
+	<resultMap type="rDto" id="rDtoMap">
+		<result column="R_SEQ" property="rSeq"/>
+		<result column="B_SEQ" property="bSeq"/>
+		<result column="WRITER" property="writer"/>
+		<result column="CONTENT" property="content"/>
+		<result column="REGDATE" property="regdate"/>
+		<result column="DELFLAG" property="delflag"/>
+	</resultMap>
+	<resultMap type="fDto" id="fDtoMap">
+		<result column="" property=""/>
+	</resultMap>
+</mapper>

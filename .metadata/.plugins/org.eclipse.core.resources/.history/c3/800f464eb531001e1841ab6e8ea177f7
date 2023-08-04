@@ -1,0 +1,6 @@
+$(function(){
+	var fileForm = /(.*?)\.(?!exe)[^\.]*$/i;
+	$("#file").on("change", funtion(){
+		
+	});
+});

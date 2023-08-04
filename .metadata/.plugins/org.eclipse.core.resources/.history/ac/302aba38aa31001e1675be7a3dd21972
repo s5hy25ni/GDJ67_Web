@@ -1,0 +1,7 @@
+$(function(){
+	
+});
+
+function page(start, end){
+	$.ajax(S);
+}

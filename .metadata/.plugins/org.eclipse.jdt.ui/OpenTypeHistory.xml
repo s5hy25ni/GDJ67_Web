@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=web002_MyBatis_Step01_OLD/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.min.edu.model{IJobIUDDao.java[IJobIUDDao" modifiers="513" timestamp="1686708150766"/>
+    <typeInfo handle="=web003_myBatis_dynamic/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.min.edu.model{IInfoSelectKey.java[IInfoSelectKey" modifiers="513" timestamp="1686789415093"/>
+    <typeInfo handle="=web003_myBatis_dynamic/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.min.edu.model{IBindingDao.java[IBindingDao" modifiers="513" timestamp="1686798840813"/>
+    <typeInfo handle="=web003_myBatis_dynamic/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.min.edu.model{IDynamicDao.java[IDynamicDao" modifiers="513" timestamp="1687144913704"/>
+    <typeInfo handle="=web003_myBatis_Join/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.min.edu.model{ISoccerDao.java[ISoccerDao" modifiers="513" timestamp="1687226940206"/>
+    <typeInfo handle="=web003_myBatis_Join_EMP/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.min.edu.model{ICompanyDao.java[ICompanyDao" modifiers="513" timestamp="1687228907383"/>
+    <typeInfo handle="=web005_myBatis_project/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.min.edu.dao{IBoardDao.java[IBoardDao" modifiers="513" timestamp="1688459585165"/>
+    <typeInfo handle="=web011_JSON_BikeData/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.min.edu.model{IBikeDao.java[IBikeDao" modifiers="513" timestamp="1689319152540"/>
+    <typeInfo handle="=web016_Schedule_Board/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.min.edu.model{ICalboardDao.java[ICalboardDao" modifiers="513" timestamp="1690245485992"/>
+    <typeInfo handle="=web003_myBatis_Join/C:\/webApplicationServer\/apache-tomcat-9.0.75-windows-x64\/apache-tomcat-9.0.75\/lib\/servlet-api.jar=/owner.project.facets=/jst.web=/=/javadoc_location=/https:\/\/javaee.github.io\/javaee-spec\/javadocs\/=/&lt;javax.servlet.http(HttpServlet.class[HttpServlet" modifiers="1057" timestamp="1685414853448"/>
+    <typeInfo handle="=web999_ServerTest/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.min.edu.model{IBoardPage.java[IBoardPage" modifiers="513" timestamp="1691041389257"/>
+</typeInfoHistroy>

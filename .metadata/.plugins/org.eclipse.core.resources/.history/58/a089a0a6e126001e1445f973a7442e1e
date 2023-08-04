@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.BoardImpl">
+
+	<resultMap type="bDto2" id="bDto2Map">
+		<result column="B_SEQ" property="bSeq"/>
+		<result column="TITLE" property="title"/>
+		<result column="WRITER" property="writer"/>
+		<result column="CONTENT" property="content"/>
+		<result column="REGDATE" property="regdate"/>
+		<result column="DELFLAG" property="delflag"/>
+		
+		<collection property="replyDto" resultMap="rDtoMap" />
+		<collection property="fileDto" resultMap="fDtoMap" />
+	</resultMap>
+	
+	<resultMap type="rDto" id="rDtoMap">
+		<result column="R_SEQ" property="rSeq"/>
+		<result column="B_SEQ" property="bSeq"/>
+		<result column="WRITER" property="writer"/>
+		<result column="CONTENT" property="content"/>
+		<result column="REGDATE" property="regdate"/>
+		<result column="DELFLAG" property="delflag"/>
+	</resultMap>
+	
+	<resultMap type="fDto" id="fDtoMap">
+		<result column="F_SEQ" property="fSeq"/>
+		<result column="B_SEQ" property="bSeq"/>
+		<result column="WRITER" property="writer"/>
+		<result column="ORIGIN_FNAME" property="originFname"/>
+		<result column="STORED_FNAME" property="storedFname"/>
+		<result column="FILE_SIZE" property="fileSize"/>
+		<result column="F_REGDATE" property="fRegdate"/>
+		<result column="F_DELFLAG" property="fDelflag"/>
+	</resultMap>
+	
+	<select id="getAllBoard" resultMap="bDto2">
+		SELECT B_SEQ, TITLE || '(' || (SELECT COUNT(*)
+									FROM REPLY r
+									WHERE b.B_SEQ = r.B_SEQ) || ')' AS TITLE, 
+				WRITER, REGDATE , DELFLAG
+			FROM BOARD b
+	</select>
+</mapper>

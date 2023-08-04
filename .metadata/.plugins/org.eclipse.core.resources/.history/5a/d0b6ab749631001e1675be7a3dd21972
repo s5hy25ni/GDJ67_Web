@@ -1,0 +1,4 @@
+driver=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@0.tcp.jp.ngrok.io:13872:xe
+user=hr
+pw=hr

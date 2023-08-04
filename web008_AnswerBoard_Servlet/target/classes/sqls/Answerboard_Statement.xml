@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.AnswerboardImpl">
+
+<select id="selectAllBoard" resultType="aDto">
+SELECT SEQ, ID, TITLE, CONTENT, "REF", STEP, "DEPTH", 
+	CASE TO_CHAR(REGDATE, 'YYYY-MM-DD') WHEN TO_CHAR(SYSDATE, 'YYYY-MM-DD') THEN '오늘' ELSE TO_CHAR(REGDATE, 'YYYY-MM-DD') END AS REGDATE
+	, DELFLAG
+	FROM ANSWERBOARD
+	ORDER BY "REF" DESC, STEP ASC
+</select>
+
+<select id="selectDetailBoard" resultType="aDto">
+	SELECT SEQ, ID, TITLE, CONTENT, "REF", STEP, "DEPTH", REGDATE, DELFLAG
+		FROM ANSWERBOARD
+		WHERE SEQ=#{seq}
+</select>
+
+<insert id="replyInsert" parameterType="aDto">
+	INSERT INTO ANSWERBOARD a (SEQ, ID, TITLE, 
+							CONTENT, "REF", STEP,
+							"DEPTH")
+		VALUES(ANSWERBOARD_SEQ.NEXTVAL, #{id}, #{title},
+				#{content}, (SELECT "REF" FROM ANSWERBOARD a2 WHERE SEQ=#{seq}), (SELECT STEP FROM ANSWERBOARD a3 WHERE SEQ=#{seq})+1,
+				(SELECT "DEPTH" FROM ANSWERBOARD a4 WHERE SEQ=#{seq})+1)
+	<selectKey keyProperty="seq" resultType="java.lang.Integer" order="AFTER">
+		SELECT ANSWERBOARD_SEQ.CURRVAL AS SEQ FROM DUAL
+	</selectKey>
+</insert>
+
+<update id="replyUpdate" parameterType="aDto">
+	UPDATE ANSWERBOARD SET STEP=STEP+1
+	WHERE REF=(SELECT REF FROM ANSWERBOARD a WHERE SEQ=#{seq})
+		AND STEP>(SELECT STEP FROM ANSWERBOARD a2 WHERE SEQ=#{seq})
+</update>
+
+<update id="modifyBoard" parameterType="java.util.Map">
+	UPDATE ANSWERBOARD SET CONTENT=#{content}
+		WHERE SEQ=#{seq}
+</update>
+
+<update id="deleteBoard" parameterType="java.lang.String">
+	UPDATE ANSWERBOARD SET DELFLAG='Y'
+		WHERE SEQ=#{seq}
+</update>
+
+<insert id="insertBoard" parameterType="aDto">
+	<selectKey keyProperty="seq" resultType="java.lang.Integer" order="BEFORE">
+		SELECT ANSWERBOARD_SEQ.NEXTVAL AS SEQ FROM DUAL
+	</selectKey>
+	INSERT INTO ANSWERBOARD a (SEQ, ID, TITLE, 
+							CONTENT, "REF", STEP,
+							"DEPTH")
+		VALUES(#{seq}, #{id}, #{title},
+				#{content}, (SELECT NVL(MAX(REF),0) FROM ANSWERBOARD a2 )+1, 0,
+				0)
+</insert>
+
+<delete id="deleteBoardReal" parameterType="java.lang.String">
+	DELETE FROM ANSWERBOARD a 
+	WHERE SEQ=#{seq}
+</delete>
+
+<update id="multiDelete" parameterType="java.lang.String">
+	UPDATE ANSWERBOARD SET DELFLAG='Y'
+		WHERE SEQ=#{seq}
+</update>
+
+<update id="multiDelete2" parameterType="java.util.Map">
+	UPDATE ANSWERBOARD SET DELFLAG='Y'
+		WHERE SEQ IN
+		<!-- parameterType="java.util.List" -> collection="list" || parameterType="java.util.Map" -> collection="key이름" -->
+		<foreach collection="seqs" item="seq" open="(" separator="," close=")">
+			#{seq}
+		</foreach>
+</update>
+
+</mapper>

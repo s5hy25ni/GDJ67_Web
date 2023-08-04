@@ -1,0 +1,14 @@
+127.0.0.1 - - [28/Jul/2023:16:41:12 +0900] "GET / HTTP/1.1" 404 807
+127.0.0.1 - - [28/Jul/2023:16:41:25 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:26 +0900] "GET /JQuery_Education/jq_018_jQuery_AccordianMenu.html HTTP/1.1" 200 1544
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:26 +0900] "GET /JQuery_Education/js/jq_018.js HTTP/1.1" 200 876
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:26 +0900] "GET /JQuery_Education/js/jquery-3.7.0.js HTTP/1.1" 200 284996
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:26 +0900] "GET /JQuery_Education/css/jq_018.css HTTP/1.1" 200 648
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:26 +0900] "GET /JQuery_Education/img/arrow-square.gif HTTP/1.1" 200 816
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:26 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:48 +0900] "GET /JQuery_Education/jq_018_jQuery_AccordianMenu.html HTTP/1.1" 200 1544
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:48 +0900] "GET /JQuery_Education/js/jquery-3.7.0.js HTTP/1.1" 200 284996
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:48 +0900] "GET /JQuery_Education/js/jq_018.js HTTP/1.1" 200 901
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:48 +0900] "GET /JQuery_Education/css/jq_018.css HTTP/1.1" 200 648
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:49 +0900] "GET /JQuery_Education/img/arrow-square.gif HTTP/1.1" 200 816
+0:0:0:0:0:0:0:1 - - [28/Jul/2023:16:41:49 +0900] "GET /favicon.ico HTTP/1.1" 404 818

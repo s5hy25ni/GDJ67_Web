@@ -1,0 +1,10 @@
+package com.min.edu.dto;
+
+public class BoardDto2 {
+	private int b_seq;
+	private String title;
+	private String writer;
+	private String content;
+	private String regdate;
+	private String delflag;
+}

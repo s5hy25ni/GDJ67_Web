@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+	
+	<display-name>Web Application</display-name>
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 전체 조회 -->
+	<servlet>
+		<servlet-name>getAllBoard</servlet-name>
+		<servlet-class>com.min.edu.ctrl.GetAllBoard</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getAllBoard</servlet-name>
+		<url-pattern>/getAllBoard.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 1개 조회 -->
+	<servlet>
+		<servlet-name>getOneBoard</servlet-name>
+		<servlet-class>com.min.edu.ctrl.GetOneBoard</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getOneBoard</servlet-name>
+		<url-pattern>/getOneBoard.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 새글 작성 -->
+	<servlet>
+		<servlet-name>setInsertBoard</servlet-name>
+		<servlet-class>com.min.edu.ctrl.SetInsertBoard</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>setInsertBoard</servlet-name>
+		<url-pattern>/setInsertBoard.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 수정 -->
+	<servlet>
+		<servlet-name>setUpdateBoard</servlet-name>
+		<servlet-class>com.min.edu.ctrl.SetUpdateBoard</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>setUpdateBoard</servlet-name>
+		<url-pattern>/setUpdateBoard.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 삭제 -->
+	<servlet>
+		<servlet-name>setDeleteBoard</servlet-name>
+		<servlet-class>com.min.edu.ctrl.SetDeleteBoard</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>setDeleteBoard</servlet-name>
+		<url-pattern>/setDeleteBoard.do</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

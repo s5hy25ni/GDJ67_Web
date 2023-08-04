@@ -1,0 +1,6 @@
+$(function(){
+	$("a").eq(0).on("click", function(){
+		$(location).attr("href","./download.do?seq="+$("input[type=hidden]").eq(0).val());
+	});
+	
+});

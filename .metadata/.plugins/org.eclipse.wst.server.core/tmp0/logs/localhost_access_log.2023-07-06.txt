@@ -1,0 +1,15 @@
+127.0.0.1 - - [06/Jul/2023:11:06:51 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:07:12 +0900] "GET /web005_myBatis_project HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:07:13 +0900] "GET /web005_myBatis_project/ HTTP/1.1" 200 176
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:07:13 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:07:15 +0900] "GET /web005_myBatis_project/getAllBoard.do HTTP/1.1" 200 3506
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:07:21 +0900] "GET /web005_myBatis_project/setInsertBoard.do HTTP/1.1" 200 771
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:07:24 +0900] "POST /web005_myBatis_project/setInsertBoard.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:07:24 +0900] "GET /web005_myBatis_project/getOneBoard.do?seq=33 HTTP/1.1" 200 536
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:07:25 +0900] "GET /web005_myBatis_project/getAllBoard.do HTTP/1.1" 200 3506
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:08:54 +0900] "GET /web005_myBatis_project/getAllBoard.do HTTP/1.1" 200 3506
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:08:59 +0900] "GET /web005_myBatis_project/getAllBoard.do HTTP/1.1" 200 3687
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:09:01 +0900] "GET /web005_myBatis_project/setInsertBoard.do HTTP/1.1" 200 771
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:09:03 +0900] "POST /web005_myBatis_project/setInsertBoard.do HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:09:03 +0900] "GET /web005_myBatis_project/getOneBoard.do?seq=34 HTTP/1.1" 200 539
+0:0:0:0:0:0:0:1 - - [06/Jul/2023:11:09:04 +0900] "GET /web005_myBatis_project/getAllBoard.do HTTP/1.1" 200 3869

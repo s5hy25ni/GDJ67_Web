@@ -1,0 +1,10 @@
+package com.min.edu.dto;
+
+public enum ReplyDto {
+	private int r_seq;
+	private int b_seq;
+	private String writer;
+	private String content;
+	private String regdate;
+	private String delflag;
+}

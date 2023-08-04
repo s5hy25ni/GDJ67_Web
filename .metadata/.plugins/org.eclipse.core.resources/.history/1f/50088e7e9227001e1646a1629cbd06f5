@@ -1,0 +1,67 @@
+package com.min.edu.ctrl;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.tomcat.util.http.fileupload.MultipartStream;
+
+import com.min.edu.dto.BoardDto;
+import com.min.edu.model.BoardFileImpl;
+import com.min.edu.model.IBoardFile;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.MultipartParser;
+
+public class FileController extends HttpServlet{
+
+	private static final long serialVersionUID = 938871408338950278L;
+	
+	// 상세, 조회, 글작성, 다운로드
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html; charset=UTF-8;");
+		
+		System.out.println("doGet 실행");
+		
+		IBoardFile dao = new BoardFileImpl();
+		
+		String command = req.getParameter("command");
+		System.out.println("요청받은 command : "+command);
+		
+		if(command.equalsIgnoreCase("boardList")) {
+			List<BoardDto> lists = dao.getAllList();
+			req.setAttribute("lists", lists);
+			req.getRequestDispatcher("/WEB-INF/views/boardList.jsp").forward(req, resp);
+			
+		} else if(command.equalsIgnoreCase("detail")) {
+			String seq = req.getParameter("seq");
+			List<BoardDto> dtos = dao.getBoard(seq);
+			req.setAttribute("dto", dtos.get(0));
+			req.getRequestDispatcher("/WEB-INF/views/boardDetail.jsp").forward(req, resp);
+		} else if(command.equalsIgnoreCase("boardWriteForm")) {
+			req.getRequestDispatcher("/WEB-INF/views/boardWriteForm.jsp").forward(req, resp);
+		}
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html; charset=UTF-8");
+		
+		System.out.println("doPost 실행");
+		
+		String writer = req.getParameter("writer");
+		String title = req.getParameter("title");
+		String filename = req.getParameter("filename");
+		String content = req.getParameter("content");
+		
+		
+		
+		System.out.printf("%s %s %s %s", writer, title, filename, content);
+	}
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.BoardImpl">
+
+	<resultMap type="bDto2" id="bDto2Map">
+		<result column="" property=""/>
+	</resultMap>
+	<resultMap type="rDto" id="rDtoMap">
+	</resultMap>
+	<resultMap type="fDto" id="fDtoMap">
+	</resultMap>
+</mapper>

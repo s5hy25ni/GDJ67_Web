@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.BindingDaoImpl">
+
+	<!-- 
+			myBatis settings 처리를 통해서 컬럼이 mapUnderbarToCamel 
+			JOB_ID -> getJob_id()
+			JOB_ID -> getJobId()		
+	-->
+	<select id="binding01" parameterType="java.util.Map" resultType="JobDTO">
+		SELECT JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY
+	   		FROM JOB
+	   		<!-- WHERE #{column} = #{value}  -->
+	   		WHERE ${column} = #{value}
+	</select>
+	
+	<select id="binding02" parameterType="java.util.Map" resultType="JobDTO">
+		SELECT JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY
+	   		FROM JOB
+	   		<!-- 전달되는 쿼리에서 Concatenation으로 처리 -->
+	   		<!-- WHERE JOB_ID LIKE #{val} || '%' -->
+	   			   		
+	   		<!-- 값으로 전달하여 처리 : DAO나 Controller에서 다시 값을 만들어줘야 함 -> 불편 -->
+	   		<!-- 화면에서 검색어를 넣으면 그 값을 검색어%로 변경 -->
+	   		<!-- 있는 값을 그대로 넣는게 좋다 -->
+	   		<!-- 화면 -> Ctrl -> Service -> Dao -> SQL -->
+	   		WHERE JOB_ID LIKE #{val}
+	   		
+	   		<!-- $ 바인딩 방법(-> 쿼리가 노출된다) : 사용하지 말 것 -->
+	   		<!-- WHERE JOB_ID LIKE '%${val}%' --> <!-- 서브쿼리를 넣으면 먼저 작동 -> SQL Injection -->
+	</select>
+</mapper>

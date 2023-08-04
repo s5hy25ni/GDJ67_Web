@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;oracle.properties&apos; to &apos;properties&apos;&#x0D;&#x0A;- Original project: &apos;web014_FileBoard&apos;&#x0D;&#x0A;- Destination element: &apos;properties&apos;&#x0D;&#x0A;- Original element: &apos;oracle.properties&apos;" description="Copy file" element1="src/main/resources/properties/oracle.properties" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1690184845071" target="/web016_Schedule_Board/src/main/resources/properties" units="0" version="1.0"/>
+</session>
