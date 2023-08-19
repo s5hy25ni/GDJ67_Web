@@ -25,6 +25,6 @@ public class MainController extends HttpServlet {
 		int n = udao.getMyUser();
 		logger.info("$$$UserImpl에 getMyUser 실행 결과 :"+n+"$$$");
 		req.setAttribute("userCnt", n);
-		req.getRequestDispatcher("./WEB-INF/index.jsp").forward(req, resp);
+		req.getRequestDispatcher("./WEB-INF/views/index.jsp").forward(req, resp);
 	}
 }

@@ -74,7 +74,7 @@ private Logger logger = Logger.getLogger(PageController.class);
 		// Paging 객체 startPage; endPage
 		req.setAttribute("page", p);
 
-		req.getRequestDispatcher("/allUserPage.jsp").forward(req, resp);
+		req.getRequestDispatcher("WEB-INF/views/allUserPage.jsp").forward(req, resp);
 	      
 
 	}
