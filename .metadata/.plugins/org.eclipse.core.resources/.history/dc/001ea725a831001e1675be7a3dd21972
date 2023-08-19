@@ -1,0 +1,15 @@
+package com.min.edu.vo;
+
+public class PageVo {
+	private int curPage; // 현재 페이지
+	
+	private int totalBoard; // 총 게시글 개수
+	private int cntBoard; // 한 페이지 게시글 개수
+	
+	private int totalPage; // 총 페이지 개수
+	private int cntPage; // 화면에 보이는 페이지 개수
+	
+	private int startPage;
+	private int endPage;
+	
+}

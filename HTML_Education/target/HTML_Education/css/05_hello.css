@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+#container {
+	width: 760px;
+	margin: 15px auto;
+}
+
+div#op{
+	border: 1px solid #ccc;
+	width: 500px;
+	height: 100px;
+	margin: 30px auto;
+	/* inline-block은 소속된 inline block들을 왼쪽으로 붙이고, margin도 0으로 만듦 */
+	/* display: inline-block; */
+	position: relative;
+}
+
+#a, #b{
+	border: 1px solid blue;
+	width: 200px;
+	/* absolute는 relative(부모) 안에 */
+	position: absolute;
+}
+
+#b{
+	right: 0px;
+}
+
+body{
+	margin: 10px;	
+}
+
+h2{
+	background: orange;
+}
+
+h2#point{
+	cursor: pointer;
+}
+
+h2#point:hover {
+	color: tomato;
+}
+
+img{
+	width: 50px;
+}
+
+ol{
+	padding-left: 20px; 
+}
+
+li>img{
+	width: 20px;
+}

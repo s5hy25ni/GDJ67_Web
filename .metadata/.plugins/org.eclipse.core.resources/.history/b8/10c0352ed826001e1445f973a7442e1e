@@ -1,0 +1,15 @@
+package com.min.edu.dto;
+
+import java.util.List;
+
+public class BoardDto2 {
+	private int b_seq;
+	private String title;
+	private String writer;
+	private String content;
+	private String regdate;
+	private String delflag;
+	
+	private List<ReplyDto> replyDto;
+	private List<FileDto> fileDto;
+}

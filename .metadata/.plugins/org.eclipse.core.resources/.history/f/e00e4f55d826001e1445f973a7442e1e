@@ -1,0 +1,11 @@
+package com.min.edu.model;
+
+import java.util.List;
+
+import com.min.edu.dto.BoardDto2;
+
+public interface IBoard {
+	public List<BoardDto2> getAllBoard();
+	public boolean insertBoard();
+	public BoardDto2 getOneBoard();
+}

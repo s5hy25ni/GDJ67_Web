@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Table 태그</title>
+<!--  CDN 방식 : 다른 서버에 있는 파일을 요청하여 local -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/04_hello.css">
+</head>
+<body>
+
+	<div class="container">
+		<h1>테이블 만들기</h1>
+		<h2>테이블 병합하기</h2>
+		
+			<table class="table table-hover">
+				<thead>
+					<tr class="info">
+						<th>연번</th>
+						<th>과목</th>
+						<th>난이도</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>자바</td>
+						<td>★★★★★</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>HTML</td>
+						<td>★★</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2"> 소계</td>
+						<td>★★★</td>
+					</tr>
+				</tfoot>
+			</table>
+	</div>
+	
+	
+	<div class="tab2">
+		<table>
+			<thead>
+				<tr>
+					<th>연번</th>
+					<th>과목</th>
+					<th>난이도</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>자바</td>
+					<td>★★★★★</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>HTML</td>
+					<td>★★</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2"> 소계</td>
+					<td>★★★</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	
+	
+	
+	<table>
+		<tr>
+			<td colspan="2">Apple</td>
+			<!-- <td>Banana</td>			 -->
+			<td class="txt_bold" rowspan="2">Lime</td>			
+		</tr>
+		<tr>
+			<td>devil</td>
+			<td>angel</td>			
+			<!-- <td>god</td>		 -->	
+		</tr>
+	</table>
+	
+</body>
+</html>

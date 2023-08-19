@@ -1,0 +1,12 @@
+$(function(){
+	
+});
+
+function page(start, end){
+	$.ajax({
+		url:"./reply.do",
+		type:"post",
+		async: true,
+		
+	});
+}

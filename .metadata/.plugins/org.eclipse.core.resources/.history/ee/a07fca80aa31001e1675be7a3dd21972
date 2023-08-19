@@ -1,0 +1,19 @@
+$(function(){
+	
+});
+
+function page(start, end){
+	$.ajax({
+		url:"./reply.do",
+		type:"post",
+		async: true,
+		dataType:"json",
+		data:{},
+		success:function(resp){
+			console.log(resp)
+		},
+		error:function(){
+			alert("잘못된 요청");
+		}
+	});
+}

@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+body{
+	margin : 0px 0px;
+	padding : 0px 0px;
+}
+
+#resume{
+	width : 700px;	
+	height : 870px;
+	margin: 0 auto;
+}
+
+table {
+	width : 100%;
+	height : 100%;
+}
+
+td{
+	border-bottom: 1px solid #e4e4e4;
+}
+
+#reHeader {
+	width : 100%;
+	height : 15%;
+	margin-top: 5%
+}
+
+#title {
+	width : 100%;
+	height : 100%;
+	text-align: center;
+	font-size: xx-large;
+	vertical-align: center;
+	background-color : #b1b5eb;
+	border-radius: 0 0 50px 50px ;	
+	color : white;
+}
+
+#title div{
+	padding-top: 5%;	
+}
+
+#reBody {
+	width : 100%;
+	height : 75%;
+}
+
+.area{
+	margin-top : 3%;
+	width : 100%;
+	height : 30%;
+}
+
+#photo{
+	width : 25%;
+	height : 100%;
+	background-color: #e4e4e4;
+	text-align: center;
+	border-right: 5px solid white;
+}
+
+.conTitle{
+	font-weight: bold;
+	font-size: 20px;
+	width : 80%;
+	border-bottom: 3px solid #b1b5eb;
+}
+
+.attribute{
+	text-align: center;
+	font-weight : bold;
+}
+
+.content{
+	text-align: center;
+}
+
+#reFooter {
+	width : 100%;
+	height : 10%;
+}
+
+#stamp{
+	text-align : right;
+	color: gray;
+}

@@ -5,8 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>전체 리스트 조회</title>
+<<<<<<< HEAD
 <script type="text/javascript" src="./js/jquery-3.7.0.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
+=======
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 <%
 	int n = (int)request.getAttribute("userCnt");
 %>

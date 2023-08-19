@@ -1,0 +1,33 @@
+package com.min.edu.model;
+
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+
+import com.min.edu.vo.FileVo;
+import com.min.edu.vo.ReplyVo;
+import com.min.edu.vo.RootVo;
+
+public class BoardPageImpl implements IBoardPage {
+	private Logger logger = Logger
+	
+	@Override
+	public List<RootVo> getDetail(String seq) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ReplyVo> getReply(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean insertRoot(RootVo rtVo, FileVo fVo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

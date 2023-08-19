@@ -49,10 +49,14 @@ function replayPage(page){
 		success:function(resp){
 			var ths = $("#replys th");
 			var tds = $("#replys td");
+<<<<<<< HEAD
 			var lis = $("#rPage li");
 			console.log(lis);
 			var rDto = resp.bDto.replyDto;
 			var page = resp.page;
+=======
+			var rDto = resp.bDto.replyDto;
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 			for(let i=0; i<rDto.length; i++){
 				ths[i].childNodes[0].data=rDto[i].RWriter;				
 				ths[i].childNodes[2].data=rDto[i].RRegdate;
@@ -60,6 +64,7 @@ function replayPage(page){
 					tds[i].childNodes[0].data=rDto[i].RContent;
 				}
 			}
+<<<<<<< HEAD
 			if(page.startPage>1){
 				
 			}
@@ -105,6 +110,43 @@ function replayPage(page){
 					</ul>
 				</div>")*/
 			$("#madeTable").addClass("table table-hover");
+=======
+			
+			var page = resp.page;
+			var allowBox = $("#allowBox");
+			allowBox.children().remove();
+			var html = "";
+			html+="<ul class='pagination'>";
+			if(page.startPage>1){
+				html+="<li><a id='leftWhite'>◁</a></li><li><a id='leftBlack'>◀</a></li>";
+			}
+			for(let i=page.startPage; i<=page.endPage; i++){
+				if(i==page.page){
+					html+="<li class='active'><a>";
+					html+=i;
+					html+="</a></li>";
+				} else {
+					html+="<li><a id='goToPage'>";
+					html+=i;
+					html+="</a></li>";
+				}
+			}
+			if(page.endPage<page.totalPage){
+				html+="<li><a id='rightBlack'>▶</a></li>";
+				html+="<li><a id='rightWhite'>▷</a></li>";
+			}			
+			html+="</ul>";
+			allowBox.append(html);
+			/*$("#leftWhite").on("click",replayPage(1));
+			$("#leftBlack").click(replayPage(Math.floor(Number(page.totalPage)/Number(page.countPage))));
+			var goTo = $(".goToPage");
+			for(let i=0; i<goTo.length; i++){
+				console.log(goTo.text());
+				goTo[i].on("click", replayPage())
+			}
+			$("#rigthBlack").click(replayPage(Number(page.startPage)+Number(page.countPage)));*/
+			$("#rigthWhite").click(replayPage(Math.floor(Number(page.totalPage)/Number(page.countPage)))*Number(page.countPage)+1);
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 		},
 		error:function(request, error){
 			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);

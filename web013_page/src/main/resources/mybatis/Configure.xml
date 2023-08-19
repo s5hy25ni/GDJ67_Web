@@ -31,5 +31,9 @@
 		<mapper resource="sqls/BoardPage_Statement.xml"/>
 		<mapper resource="sqls/User_Statement.xml"/>
 		<mapper resource="sqls/Board_Statement.xml"/>
+<<<<<<< HEAD
+=======
+		<mapper resource="sqls/OneToMany.xml" />
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 	</mappers>
 </configuration>

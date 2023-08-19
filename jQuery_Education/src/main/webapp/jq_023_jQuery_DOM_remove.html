@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-3.7.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("p:eq(0)").click(function(){
+			let obj = $(this);
+			//화면에서 진짜 삭제
+			$(this).remove();
+			console.log("변수저장",obj);
+			console.log("탐색",$("p:eq(0)").text());
+		});
+		
+		$("p:eq(1)").click(function(){
+// 			$(this).parent().empty();
+			$(this).parent().html("");
+		});
+		
+		$("p:eq(2)").click(function(){
+			//detach() 잘라내기
+			//clone() 복제
+			
+// 			var ele = $(this);
+// 			var ele = $(this).detach();
+			
+// 			var ele = $(this).clone();
+
+			var ele = $(this);
+			var ele2 = ele;
+			let ele3 = ele;
+			const ele4 = ele;
+			
+			
+			//같은 Node Level(siblings)로 만들고 싶다면 상위 태그를 반드시 확인해야함
+			//만약에 append로 붙여 넣는다면 선택된 tag의 자식 node로 붙게 됨
+			//아니라면 after 혹은 before를 사용하여 같은 node로 붙여넣을 수 있다
+			
+			$("h1").append(ele4);
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>엘리먼트 제거하기</h1>
+	<div>
+		<p>remove()</p>
+		<p>비우기</p>
+		<p>잘라내기</p>
+	</div>
+</body>
+</html>

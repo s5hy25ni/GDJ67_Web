@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.join03">
+
+	<resultMap type="com.min.edu.dto.Dept_DTO" id="JoinDto">
+		<result property="deptno" column="DEPTNO" />
+		<result property="dname" column="DNAME" />
+		<result property="loc" column="LOC" />
+		<collection property="edto" resultMap="EmpDto" />
+	</resultMap>
+
+	<resultMap type="com.min.edu.dto.Emp_DTO" id="EmpDto">
+		<result property="empno" column="EMPNO" />
+		<result property="ename" column="ENAME" />
+		<result property="job" column="JOB" />
+		<result property="mgr" column="MGR" />
+		<result property="hiredate" column="HIREDATE" />
+		<result property="sal" column="SAL" />
+		<result property="comm" column="COMM" />
+	</resultMap>
+
+	<select id="joinCombine03" resultMap="JoinDto">
+		SELECT EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM,
+				DEPTNO, DNAME, LOC
+			FROM DEPT JOIN EMP
+			USING(DEPTNO)
+	</select>
+  
+</mapper>

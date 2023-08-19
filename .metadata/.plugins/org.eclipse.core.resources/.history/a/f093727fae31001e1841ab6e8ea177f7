@@ -1,0 +1,21 @@
+$(function(){
+	page(1, 3);
+});
+
+function page(start, end){
+	$.ajax({
+		url:"./reply.do",
+		type:"post",
+		async: true,
+		dataType:"json",
+		data:{"ref":$("input[type=hidden]").val(),
+				"start":start,
+				"end":end},
+		success:function(resp){
+			console.log(resp)
+		},
+		error:function(){
+			alert("잘못된 요청");
+		}
+	});
+}

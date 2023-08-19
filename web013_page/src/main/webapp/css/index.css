@@ -14,6 +14,15 @@ header{
 	color: white;
 	padding-top:20px;
 }
+#foot{
+		height: 50px;
+		background-color: rgb(34,34,34);
+		margin: 0 auto;
+		text-align: center;
+		font-size: 1.2em;
+		color: white;
+		padding-top:15px;
+	}
 #left{
 	float: left;
 	display: flex;
@@ -68,6 +77,10 @@ caption{
 
 .container th{
 	width: 120px;
+<<<<<<< HEAD
+=======
+	text-align: center;
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 }
 
 #replys table{
@@ -78,6 +91,18 @@ caption{
 	text-align: left;
 }
 
+<<<<<<< HEAD
+=======
+li a{
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	margin : 0px 3px;
+	border-radius: 3px;
+	padding: 0px;
+}
+
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 a:hover{
 	cursor: pointer;
 }

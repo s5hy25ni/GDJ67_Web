@@ -1,0 +1,23 @@
+ IO문제(큰 회사)
+ 
+ 파일에 내용이 중복되어 있는 글자들이 있다.
+ 중복된 라인이 포함된 파일이 주어진다면,
+ 중복된 라인의 개수를 실행 결과로 출력하고,
+ 중복이 제거된 라인의 결과를 파일(result.txt)에 쓰는 프로그램을 작성하세요.
+ 
+ 
+ [입력예시]
+ testrow123
+ testrow456
+ testrow123 - 중복
+ testrow123 - 중복
+ testrow123 - 중복
+ testrow789
+ 
+ [실행결과]
+ 중복 라인 횟수 : 3
+ 출력(result.txt)
+ testrow123
+ testrow456
+ testrow789
+ 

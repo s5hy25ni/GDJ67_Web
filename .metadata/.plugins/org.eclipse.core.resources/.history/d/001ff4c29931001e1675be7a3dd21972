@@ -1,0 +1,11 @@
+package com.min.edu.vo;
+
+public class FileVo {
+	private int b_seq;
+	private String writer;
+	private String origin_fname;
+	private String stored_fname;
+	private int file_size;
+	private String f_regdate;
+	private String f_delflag;
+}

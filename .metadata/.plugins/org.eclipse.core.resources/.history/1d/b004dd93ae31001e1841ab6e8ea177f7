@@ -1,0 +1,7 @@
+$(function(){
+	page(1, 3);
+});
+
+function page(start, end){
+
+}

@@ -2,33 +2,34 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>form 요소 사용</title>
+<title>Insert title here</title>
 <script type="text/javascript" src="./js/jquery-3.7.0.js"></script>
 <script type="text/javascript" src="./js/jq_004.js"></script>
 </head>
 <body>
-	<form action="#">
-		<input type="text">
-		<input type="button" value="선택" onclick="btn01()">
-		<input type="radio" class="rdo" value="멍뭉이1" onclick="btn02()">멍뭉이1
-		<input type="radio" class="rdo" value="멍뭉이2">멍뭉이2
-		<input type="checkbox" value="Gold Dragon" onclick="btn03()">Dragon
-		
-		<div id="a"></div>
-		
-		<select>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-		</select>
-	</form>
+<form action="#">
+	<input type="text">
+	<input type="button" value="선택" onclick="btn01()">
+	
+	<input class="rdo" type="radio" value="멍뭉이1" onclick="btn02()"> 멍뭉이1
+	
+	<input class="rdo" type="radio" value="멍뭉이2"> 멍뭉이2
+	
+	<input type="checkbox" value="Gold Dragon" onclick="btn03()"> Dragon
+	<div id="a"></div>
+	<select>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+	</select>
+</form>
 	<hr>
-	<form action="#">
-		<input type="button" value="checkbox확인" onclick="btn04()">
-		<input type="checkbox" name="isChk">five
-		<input type="checkbox" name="isChk">star
-		<input type="checkbox" name="isChk">★★★★★
-		<input type="checkbox" name="isChk">story
-	</form>
+<form action="#">
+	<input type="button" value="checkbox확인" onclick="btn04()">
+	<input type="checkbox" name="isChk"> five
+	<input type="checkbox" name="isChk"> star
+	<input type="checkbox" name="isChk"> ★★★★★
+	<input type="checkbox" name="isChk"> story
+</form>
 </body>
 </html>

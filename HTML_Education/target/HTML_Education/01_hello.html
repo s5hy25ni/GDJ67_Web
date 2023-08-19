@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<!-- 전송될 page의 정보를 정의 하는 곳 head tag -->
+<head>
+<meta charset="UTF-8">
+<!-- <meta http-equiv="refresh" content="5; url=http://192.168.8.132:8080/HTML_Education"> -->
+<link rel="shortcut icon" href="./img/favicon.ico">
+<title>HTML 수업 01</title>
+</head>
+<script type="text/javascript">
+	function naverSearch(){
+//		alert("스크립트 만듦");
+		console.log("naverSerch 작동");
+		var obj = document.getElementById("searchNaver").value;
+		console.log(obj);
+		var url = "https://search.naver.com/search.naver?query="+obj;
+		location.href=url;
+	}
+</script>
+<!-- 
+			화면에 그려질 tag와 내용을 작성하는 부분은 body 
+			웹페이지(page)의 기본 구조는 Mark Up 입니다.
+			Mark Up이란 열림tag 값 닫힘tag가 쌍으로 작성하는 문법
+			HTML 전체 = Document 
+			하위의 구성 = 요소(Element) = 시작tag + 콘텐츠 + 닫힘tag
+-->
+
+<body style="text-align:center;font-size: 12px; margin: 0px">
+	<fieldset>
+		<legend>네이버 검색</legend>
+		<div style="text-align:left;">
+			<input class="txt" name="search" id="searchNaver" 
+				type="text" placeholder="글자를 입력해주세요"
+				value="">
+			<button onclick="naverSearch()">검색</button>
+		</div>
+		<div>
+			<iframe width="200px"
+				src="https://www.youtube.com/embed/e6zp5Qob9ko"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen></iframe>
+		</div>
+	</fieldset>
+	<hr>
+	<h1>HTML은 마크업 언어를 사용합니다.</h1>
+	<!-- WS의 처음 실행은 web.xml 설정을 따라갑니다. -->
+	<h2>web.xml을 확인하세요(welcom-file tag)</h2>
+	
+	<!-- h1~h5는 헤드라인 tag : 현재 세팅되어 있는 글자에 대비하여 글자의 크기를 조절 -->
+	<h1>안녕</h1>
+	<h2>안녕</h2>
+	<span style="font-size: 20px;">안                             녕</span><br><span>하세요</span>
+	
+	<br>
+	<br>
+	
+	<!-- HTML은 Browser가 번역하여 보여주게 됨 -->
+	<div>&#169;오늘의&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;날씨</div>
+	
+	<hr id="hrColor" size="10" width="250px" color="tomato">
+	<input id="hrColor"  type="button" value="색변경" onclick="changeColor()">
+	
+	<script type="text/javascript">
+		function changeColor() {
+			console.log("changeColor");
+			var hr = document.getElementById("hrColor").color;
+//			alert(hr);
+//			hr="orange"
+			console.log(hr);
+			if(hr=="tomato"){
+				document.getElementById("hrColor").color = 'orange';				
+			} else {
+				document.getElementById("hrColor").color = 'tomato';
+			}
+		}	
+	</script>
+	
+	<!-- 요소의 구분 : 블럭요소 / 인라인요소 -->
+	<!-- 
+			블럭 요소 영역이나 범위 블럭 요소 + 범위 블럭요소가 되지 않음 
+			인라인 요소는 블럭 요소에 포함되거나 인라인 요소에 사용될 수 있음		
+	-->
+	<!-- 
+			node tree 구조로 되어 있고, 상위 node는 하위 node에 영향을 준다.
+			만약 하위 node를 다르게 하고 싶으면 재정의를 통해 사용 
+	-->
+	
+<!-- 	<h1><h2>안녕</h2>하이 시리야</h1> -->
+		<h1><a href="#"><font color="skyblue">하이 시리야</font></a></h1>
+		
+		<!-- 
+				div : 영엮을 묶음, 한 라인
+				span : 영엮을 묶음, 컨텐츠 크기 만큼
+		-->
+		<div>
+			안녕하세요
+		</div>
+		<div>
+			반갑습니다
+			<span>인라인</span>
+		</div>
+		
+		<div style="text-align: left;">
+			<h1>저는 1.5em의 크기인 h1 입니다.</h1>
+			
+			<!-- 화면의 흐름을 제어하는 태그 location.href -->
+			<a href="http://www.google.com">바로가기</a><br>
+			<a href="https://hybus.net/ko/#footer">바로가기</a>
+			<br>
+			<a href="https://search.naver.com/search.naver?query=지금날씨" target="_blank">
+				네이버 검색하면서 바로가기
+			</a>
+			
+			<!-- div는 margin이 없지만 p는 기본 margin이 있음 -->
+			<p  style="border:1px solid red;">
+				거울나라&nbsp;&nbsp;&nbsp;&nbsp;앨리스<br>
+				어벤져스<br>
+				하늘을 나는                  코끼리<br>
+				영원히 사는 <em>피카츄</em>
+			</p>
+			
+			<!-- tag 들 중에서 자신의 기본 margin과 padding을 가지고 있는 스타일이 되어 있다 -->
+		</div>
+</body>
+</html>

@@ -39,7 +39,10 @@
 			</tr>
 		</table>
 		<div>
+<<<<<<< HEAD
 			<c:set var="b" value="홍길동" />
+=======
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 			<button id="replyShow" style="float:left; margin-bottom:10px;">댓글보기</button>
 			<div id="replys">
 				<table class="table table-hover">
@@ -64,17 +67,30 @@
 							<th colspan="2">
 								<b>${loginInfo.id}</b>
 								<textarea rows="5" cols="95" id="replyTxt"></textarea>
+<<<<<<< HEAD
 								<button id="replyWriteForm" style="float:right;">등록</button>
+=======
+								<button id=replyWriteForm style="float:right;">등록</button>
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 							</th>
 						</tr>
 					</c:if>
 				</table>
+<<<<<<< HEAD
 				<div style="text-align: center">
 		      		<fmt:parseNumber var="end" value="${page.totalPage/page.countPage}" integerOnly="true"/>
 					<ul id="rPage" class="pagination">
 						<c:if test="${page.startPage > 1}">
 		      				<li><a onclick="replayPage(1)">◁</a></li>
 		      				<li><a onclick="replayPage(${page.endPage-page.countPage})">◀</a></li>
+=======
+				<div id="allowBox" style="text-align: center">
+		      		<fmt:parseNumber var="end" value="${page.totalPage/page.countPage}" integerOnly="true"/>
+					<ul class="pagination">
+						<c:if test="${page.startPage > 1}">
+		      				<li><a id="leftWhite" onclick="replayPage(1)">◁</a></li>
+		      				<li><a id="leftBlack" onclick="replayPage(${page.endPage-page.countPage})">◀</a></li>
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 		      			</c:if>
 						<c:forEach begin="${page.startPage}" end="${page.endPage}" var="p">
 							<c:choose>
@@ -82,13 +98,22 @@
 									<li class="active"><a onclick="replayPage(${p})">${p}</a></li>
 								</c:when>
 								<c:otherwise>
+<<<<<<< HEAD
 									<li><a onclick="replayPage(${p})">${p}</a></li>
+=======
+									<li><a id="goToPage" onclick="replayPage(${p})">${p}</a></li>
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 								</c:otherwise>
 							</c:choose>	  
 						</c:forEach>
 		   				<c:if test="${page.endPage < page.totalPage}">
+<<<<<<< HEAD
 		    				<li><a onclick="replayPage(${page.startPage + page.countPage})">▶</a></li>
 		   					<li><a onclick="replayPage(${end*page.countPage+1})">▷</a></li>
+=======
+		    				<li><a id="rightBlack" onclick="replayPage(${page.startPage + page.countPage})">▶</a></li>
+		   					<li><a id="rightWhite" onclick="replayPage(${end*page.countPage+1})">▷</a></li>
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 		   				</c:if>
 					</ul>
 				</div>

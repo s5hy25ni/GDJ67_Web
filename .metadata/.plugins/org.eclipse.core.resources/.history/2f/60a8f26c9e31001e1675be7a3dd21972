@@ -1,0 +1,28 @@
+package com.min.edu.model;
+
+import java.util.List;
+
+import com.min.edu.vo.ReplyVo;
+import com.min.edu.vo.RootVo;
+
+public class BoardPageImpl implements IBoardPage {
+
+	@Override
+	public List<RootVo> getDetail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ReplyVo> getReply() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean insertRoot() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

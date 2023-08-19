@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"resources":{"Scripts/Script-1.sql":{"default-datasource":"oracle_thin-18967b2098b-67bd089aa0a1cee0","default-schema":"HR"},"Scripts/Script-2.sql":{"default-datasource":"oracle_thin-189730778d8-65fbdaec3bbc1802","default-schema":"HR"},"Scripts/Script.sql":{"default-schema":"HR","default-datasource":"oracle_thin-18967b2098b-67bd089aa0a1cee0"}}}
+=======
+{"resources":{"Scripts/1대다선생님.sql":{"default-datasource":"oracle_thin-18967b2098b-67bd089aa0a1cee0","default-schema":"HR"},"Scripts/Script-1.sql":{"default-schema":"HR","default-datasource":"oracle_thin-18967b2098b-67bd089aa0a1cee0"},"Scripts/Script-2.sql":{"default-schema":"HR","default-datasource":"oracle_thin-189730778d8-65fbdaec3bbc1802"},"Scripts/Script.sql":{"default-schema":"HR","default-datasource":"oracle_thin-18967b2098b-67bd089aa0a1cee0"}}}
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac

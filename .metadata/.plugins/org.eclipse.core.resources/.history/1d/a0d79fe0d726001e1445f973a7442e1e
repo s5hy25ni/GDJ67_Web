@@ -1,0 +1,12 @@
+package com.min.edu.dto;
+
+public class FileDto {
+	private String f_seq;
+	private String b_seq;
+	private String writer;
+	private String origin_fname;
+	private String stored_fname;
+	private String file_size;
+	private String f_regdate;
+	private String f_delflag;
+}

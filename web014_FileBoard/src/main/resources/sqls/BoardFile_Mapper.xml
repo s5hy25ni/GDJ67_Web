@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.BoardFileImpl">
+
+	<resultMap type="com.min.edu.dto.BoardDto" id="BoardDtoMap">
+		<result column="SEQ" property="seq"/>
+		<result column="ID" property="id"/>
+		<result column="TITLE" property="title"/>
+		<result column="CONTENT" property="content"/>
+		<result column="REGDATE" property="regdate"/>
+		
+		<collection property="filedto" resultMap="FileDtoMap"></collection>
+	</resultMap>
+	
+	<resultMap type="com.min.edu.dto.FileBoardDto" id="FileDtoMap">
+		<result column="F_SEQ" property="f_seq"/>
+		<result column="B_SEQ" property="b_seq"/>
+		<result column="WRITER" property="writer"/>
+		<result column="ORIGIN_FNAME" property="origin_fname"/>
+		<result column="STORED_FNAME" property="stored_fname"/>
+		<result column="FILE_SIZE" property="file_size"/>
+		<result column="F_REGDATE" property="f_regdate"/>
+		<result column="F_DELFLAG" property="f_delflag"/>
+	</resultMap>
+	
+	
+	<select id="getAllList" resultType="com.min.edu.dto.BoardDto">
+		SELECT SEQ, ID, TITLE || '(' || COUNT || ')' AS TITLE, CONTENT, REGDATE
+			FROM (
+					SELECT SEQ, ID, TITLE, CONTENT, REGDATE, (SELECT COUNT(*) 
+												FROM FILEBOARD f
+												WHERE a.SEQ=f.B_SEQ) AS COUNT,
+							ROW_NUMBER() OVER(ORDER BY REF DESC, STEP ASC) RN
+					FROM ANSWERBOARD a 
+				)
+		<![CDATA[WHERE RN<11]]>
+	</select>
+	
+	<insert id="insertBoard" parameterType="com.min.edu.dto.BoardDto">
+		<selectKey keyProperty="seq" resultType="java.lang.Integer" order="BEFORE">
+			SELECT ANSWERBOARD_SEQ.NEXTVAL AS SEQ FROM DUAL
+		</selectKey>
+		INSERT INTO HR.ANSWERBOARD(SEQ, ID, TITLE, 
+									CONTENT, "REF", STEP, 
+									"DEPTH", REGDATE, DELFLAG)
+						VALUES(#{seq}, #{id}, #{title}, 
+								#{content}, (SELECT MAX(REF)+1 FROM ANSWERBOARD), 0, 
+								0, SYSDATE , 'N')
+	</insert>
+	
+	<insert id="insertFile" parameterType="com.min.edu.dto.FileBoardDto">
+		INSERT INTO FILEBOARD(F_SEQ, B_SEQ, WRITER, 
+								ORIGIN_FNAME, STORED_FNAME, FILE_SIZE, 
+								F_REGDATE, F_DELFLAG)
+			VALUES(FILE_SEQ.NEXTVAL, #{b_seq}, #{writer}, 
+					#{origin_fname}, #{stored_fname}, #{file_size}, 
+					SYSDATE, 'N')
+	</insert>
+	
+	<select id="getFile" resultType="com.min.edu.dto.FileBoardDto">
+		SELECT F_SEQ, B_SEQ, WRITER, ORIGIN_FNAME, STORED_FNAME, FILE_SIZE, F_REGDATE, F_DELFLAG
+			FROM FILEBOARD f 
+			WHERE B_SEQ=#{b_seq}
+	</select>
+	
+	<select id="getBoard" resultMap="BoardDtoMap">
+		SELECT SEQ, ID, TITLE, CONTENT, REGDATE, ORIGIN_FNAME
+			FROM ANSWERBOARD a LEFT JOIN FILEBOARD f
+			ON a.SEQ = f.B_SEQ
+			WHERE SEQ=#{seq}
+	</select>
+</mapper>

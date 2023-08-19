@@ -1,0 +1,38 @@
+package com.min.edu.model;
+
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import com.min.edu.dto.BoardDto2;
+
+public class BoardImpl implements IBoard {
+	
+	private Logger logger = Logger.getLogger(this.getClass());
+	private final String NS = "com.min.edu.model.BoardImpl";
+	
+	@Override
+	public List<BoardDto2> getAllBoard() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean insertBoard() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public BoardDto2 getOneBoard() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public boolean insertReply() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

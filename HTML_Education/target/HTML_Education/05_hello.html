@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>HTML 정리</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/05_hello.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<div id="op">
+		<div id="a">안녕하세요</div>
+		<div id="b">반갑습니다</div>
+	</div>
+
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"	data-target="#showBar">
+						<span class="icon-bar"></span> 
+						<span class="icon-bar"></span> 
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="http://www.naver.com">Naver</a>
+				</div>
+				<div class="collapse navbar-collapse" id="showBar">
+					<ul class="nav navbar-nav">
+						<li ><a href="#">Home</a></li>
+						<li class="active"><a href="#">게시판</a></li>
+						<li><a href="#">일정관리</a></li>
+						<li><a href="./04_hello.html">내부연결</a></li>
+						<li><a href="http://192.168.8.132:8080/web003_myBatis_Join/joinCtrl.do">외부연결</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- h1은 블럭요소 (전체 한 줄의 크기를 가지고 있음) -->
+		<h1>
+			<a href="#" target="_blank" title="네이버">다른 사이트로 이동</a>
+		</h1>
+		<h1>코로나 종료 되었습니다.</h1>
+		<div>
+			<strong>내일은 비가 그칠까요?</strong> 내일은 <input type="date" value="2023-06-21" disabled="disabled"> 입니다.
+		</div>
+		
+		<!-- q 요소는 인라인 요소 -->
+		<!-- <blockquote> 블럭 요소는 고유한 영역을 가지고 있음(h1 등) -->
+		<!-- <h1><blockquote></blockquote></h1> -->
+		<!-- <div>는 영역요소, 다른 태그의 영향을 받지 않고 영역을 나눌 때 사용 => class, id를 통해 css 적용 또는 이벤트 처리 = selector 표현식, DOM 탐색 -->
+		<!-- 인라인/블럭/영역 요소가 있음 블럭 안에는 인라인 밖에 못넣음, 영역에는 모두 가능 -->
+		<blockquote>
+			오늘은 즐거운 보충
+			<em><q>DB</q>가 준비되어 있습니다.</em>
+			내일을 위한 오늘을 만들어 봅시다.
+		</blockquote>
+		
+		<h2>2023년도 6월 20일</h2>
+		<img alt="흐림" src="./img/cloud.png">
+		<p>
+			이제는 <q>HTML 시작하고</q>
+			초중반을 진행하고 있다<br>
+			누군가의 끝이 아닌 시작의 연결고리가 되어야 한다.
+		</p>
+		
+		<h2 id="point" onclick="javascript:alert('클릭');"><time>2023년도 6월 21일</time></h2>
+		<img alt="시작" src="./img/sunny.png">
+		<p>
+			오늘은 HTML을 배우고 서버사이드 개발과 <br>
+			자신이 개발한 디자인을 적용하는 것을 학습해야 합니다. <br>
+			예쁜 디자인과 편리한 기능을 만들어 주세요.
+		</p>
+		
+		<!-- 
+			리스트 tag
+			UL과 OL
+			하위 node LI
+		 -->
+		<ol>
+			<li>Java</li>
+			<li>DataBase</li>
+			<li>HTML</li>
+			<li>
+				<img alt="javascript" src="./img/javascript.png"> javascript
+			</li>
+		</ol>
+		<button class="btn btn-success btn-lg btn-block">버튼</button>
+	</div>
+
+</body>
+</html>

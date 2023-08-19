@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-3.7.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("b").click(function(){
+// 			$(this).next().slideDown();
+// 			$(this).parent().siblings().find("ul").slideUp();
+			$(this).next().slideDown().end().parent().siblings().find("ul").slideUp();
+// 			$(this).next().slideToggle();
+		});		
+	});
+</script>
+<style type="text/css">
+	.main_menu{
+		width: 400px;
+	}
+	
+	.sub_menu1{
+		cursor: pointer;
+	}
+	
+	.sub_menu2{
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<p>메뉴</p>
+	<ul type="square" class="main_menu">
+		<li class="sub_menu1">
+			<b>(1)CSS 셀렉터</b>
+			<ul type="circle" class="sub_menu2">
+				<li>tag로 선택하기</li>
+				<li>#ID로 선택하기</li>
+				<li>.Class로 선택하기</li>
+				<li>parent child 선택하기</li>
+				<li>parent &gt; child 선택하기</li>
+				<li>:nth-child(n/odd/even)로 선택하기</li>
+				<li>:first-child()로 선택하기</li>
+				<li>:last-child()로 선택하기</li>
+			</ul>
+		</li>
+		<li class="sub_menu1">
+			<b>(2)속성탐색</b>
+			<ul type="circle" class="sub_menu2">
+				<li>[attr]</li>
+				<li>[attr=value]</li>
+				<li>[attr*=value]</li>
+				<li>[attr|=value]</li>
+			</ul>
+		</li>
+		<li class="sub_menu1">
+			<b>(3)폼 셀렉터</b>
+			<ul type="circle" class="sub_menu2">
+				<li>:input</li>
+			</ul>
+		</li>
+		<li class="sub_menu1">
+			<b>(4)사용자 셀렉터</b>
+			<ul type="circle" class="sub_menu2">
+				<li>:eq()</li>
+				<li>:first()</li>
+				<li>:last()</li>
+				<li>:even()</li>
+				<li>:odd()</li>
+				<li>:parent()</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

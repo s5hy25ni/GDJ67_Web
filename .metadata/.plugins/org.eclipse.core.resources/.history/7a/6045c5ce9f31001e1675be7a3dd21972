@@ -1,0 +1,49 @@
+package com.min.edu.model;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.min.edu.database.SqlSessionFactoryManager;
+import com.min.edu.vo.FileVo;
+import com.min.edu.vo.ReplyVo;
+import com.min.edu.vo.RootVo;
+
+public class BoardPageImpl implements IBoardPage {
+	private Logger logger = LoggerFactory.getLogger(BoardPageImpl.class);
+	private final String NS = "com.min.edu.model.BoardPageImpl.";
+	private SqlSessionFactory manager;
+	
+	public BoardPageImpl() {
+		manager = SqlSessionFactoryManager.getFactory();
+	}
+	
+	@Override
+	public List<RootVo> getDetail(String seq) {
+		logger.info(">>>>> 게시글 상세 조회 : {}", seq);
+		SqlSession session = manager.openSession();
+		return session.selectList(NS+"getDetail",seq);
+	}
+
+	@Override
+	public List<ReplyVo> getReply(Map<String, Object> map) {
+		logger.info(">>>>> 댓글 조회 : {}", map);
+		SqlSession session = manager.openSession();
+		return session.selectList(NS+"getReply", map);
+	}
+
+	@Override
+	public boolean insertRoot(RootVo rtVo, FileVo fVo) {
+		logger.info(">>>>> 게시글 작성 : {}, {}", rtVo, fVo);
+		SqlSession session = manager.openSession();
+		int n = session.insert(NS+"insertRoot", rtVo);
+		fVo.setBSeq(rtVo.getSeq());
+		fVo.setWriter(rtVo.getId());
+		return false;
+	}
+
+}
