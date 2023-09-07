@@ -1,6 +1,0 @@
-$(function(){
-	var fileForm = /(.*?)\.(?!exe)[^\.]*$/i;
-	$("#file").on("change", function(){
-		if(!($(this).val().match(fileForm)))
-	});
-});

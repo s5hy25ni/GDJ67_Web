@@ -1,8 +1,0 @@
-package com.min.edu.vo;
-
-public class ReplyVo {
-	private String seq;
-	private int ref;
-	private String title;
-	private String regdate;
-}

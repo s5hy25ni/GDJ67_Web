@@ -1,9 +1,0 @@
-package com.min.edu.vo;
-
-public class RootVo {
-	private int seq;
-	private String id;
-	private String title;
-	private String content;
-	private String regdate;
-}

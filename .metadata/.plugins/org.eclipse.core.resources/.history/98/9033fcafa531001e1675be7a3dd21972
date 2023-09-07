@@ -1,9 +1,0 @@
-$(function(){
-	$("input[type=button]").eq(0).on("click", function(){
-		console.log("상세보기 클릭");
-	});
-	$("input[type=button]").eq(1).on("click", function(){
-		console.log("새글작성 클릭");
-	});
-	
-});

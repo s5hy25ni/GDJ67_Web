@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\eclipse_web\workspace_web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\eclipse_web\workspace_web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\web999_ServerTest" path="/web999_ServerTest" reloadable="true" source="org.eclipse.jst.jee.server:web999_ServerTest"/></Host>
+      <Context docBase="C:\eclipse_web\workspace_web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\eclipse_web\workspace_web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\web999_ServerTest" path="/web999_ServerTest" reloadable="true" source="org.eclipse.jst.jee.server:web999_ServerTest"/><Context docBase="C:\eclipse_web\workspace_web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\web011_JSON_BikeData" path="/web011_JSON_BikeData" reloadable="true" source="org.eclipse.jst.jee.server:web011_JSON_BikeData"/></Host>
     </Engine>
   </Service>
 </Server>

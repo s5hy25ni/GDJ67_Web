@@ -1,7 +1,0 @@
-$(function(){
-	$("a").eq(0).on("click", function(){
-		console.log($("input[type=hidden]").eq(0).val());
-		$(location).attr("href","./detail.do?seq="+$("input[type=hidden]").eq(0).val());
-	});
-	
-});
