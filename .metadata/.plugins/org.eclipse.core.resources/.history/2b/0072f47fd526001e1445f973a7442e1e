@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>JSTL Board List 페이지</title>
 </head>
-<%@ include file="./header.jsp" %>
+<%@ include file="../../header.jsp" %>
 <body>
 <!-- 요청 값 받기 -->
 <jsp:useBean id="dp" class="com.min.edu.comm.DatePatternBean" scope="page" />
@@ -49,7 +49,8 @@
      								</c:otherwise>
      							</c:choose>	      						
       						<td>
-      							<fmt:parseDate var="patternDate" value="${dto.regdate}" pattern="yyyy-MM-dd"></fmt:parseDate>
+      							
+   								<fmt:parseDate var="patternDate" value="${dto.regdate}" pattern="yyyy-MM-dd"></fmt:parseDate>
 	   							<fmt:formatDate value="${patternDate}" pattern="YYYY년도 MM월 dd일"/>
       						</td>
       					</tr>
@@ -82,5 +83,5 @@
 		</div>
 	</div>
 </body>
-<%@ include file="./footer.jsp" %>
+<%@ include file="../../footer.jsp" %>
 </html>

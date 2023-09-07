@@ -12,10 +12,10 @@
 %>
 </head>
 <body>
-<%@ include file="../header.jsp" %>
+<%@ include file="../../header.jsp" %>
 <div class="container">
 	<h1><%=n%> 명이 타닥타닥과 함께합니다.</h1>
 </div>
-<%@ include file="../footer.jsp" %>
+<%@ include file="../../footer.jsp" %>
 </body>
 </html>

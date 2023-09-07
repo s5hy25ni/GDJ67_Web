@@ -8,6 +8,7 @@
 <script type="text/javascript" src="./js/jquery-3.7.0.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
 <link rel="stylesheet" href="./css/index.css">
+<script type="text/javascript" src="./js/jquery-3.7.0.js"></script>
 </head>
 <%
 	UserDto dto = (UserDto)session.getAttribute("loginInfo");

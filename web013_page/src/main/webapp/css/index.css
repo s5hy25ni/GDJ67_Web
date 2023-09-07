@@ -77,7 +77,10 @@ caption{
 
 .container th{
 	width: 120px;
+<<<<<<< HEAD
+=======
 	text-align: center;
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 }
 
 #replys table{
@@ -88,6 +91,8 @@ caption{
 	text-align: left;
 }
 
+<<<<<<< HEAD
+=======
 li a{
 	width: 35px;
 	height: 35px;
@@ -97,6 +102,7 @@ li a{
 	padding: 0px;
 }
 
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 a:hover{
 	cursor: pointer;
 }

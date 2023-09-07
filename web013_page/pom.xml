@@ -56,6 +56,8 @@
 		    <classifier>jdk15</classifier>	
 	    </dependency>
 	    
+<<<<<<< HEAD
+=======
 	    <!-- https://mvnrepository.com/artifact/com.servlets/cos -->
 		<dependency>
 		    <groupId>com.servlets</groupId>
@@ -63,6 +65,7 @@
 		    <version>05Nov2002</version>
 		</dependency>
 		
+>>>>>>> f1d3b30fa6895d4f7054704293f04df4079befac
 	</dependencies>
 	<build>
 		<finalName>web013_page</finalName>
